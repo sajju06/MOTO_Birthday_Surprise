@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100b20">
+  <title>For MOTO — A Little Universe of Love</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div>
+    <div id="particles"></div>
+  </div>
+
+  <div id="lockScreen" class="lock-screen">
+    <div class="lock-card">
+      <div class="lock-emblem">✦</div>
+      <p class="eyebrow">A LITTLE SECRET, JUST FOR YOU</p>
+      <h1>For <span>MOTO</span></h1>
+      <p class="lock-copy">Some doors open only with a memory.</p>
+      <label class="sr-only" for="passwordInput">Password</label>
+      <input id="passwordInput" type="password" placeholder="your birthday date (day-month-year)="off">
+      <button id="unlockBtn" class="btn btn-primary">Unlock my surprise <span>→</span></button>
+      <p id="lockError" class="error" aria-live="polite"></p>
+      <p class="tiny-note">A private little world made with love.</p>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="MOTO birthday surprise"><span class="brand-star">✦</span> MOTO <i>∞</i></a>
+    <div class="top-actions">
+      <div class="music-label" id="musicLabel">OUR SONG</div>
+      <button id="musicToggle" class="icon-btn" aria-label="Play or pause music">♫</button>
+    </div>
+  </header>
+
+  <div class="progress-wrap"><div id="progressBar"></div></div>
+
+  <main id="experience">
+    <section class="page active" data-page="0" id="welcome">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">A WORLD MADE FOR ONE PERSON</p>
+          <h1 class="hero-title reveal">To my favourite<br><em>kind of magic.</em></h1>
+          <p class="lead reveal">Today, the stars have a little secret. Every page, every heartbeat, every tiny surprise here is for you, MOTO.</p>
+          <button class="btn btn-primary reveal" data-next>Step into our story <span>→</span></button>
+          <div class="hero-foot reveal"><span class="mini-line"></span> MADE WITH ALL MY HEART</div>
+        </div>
+        <div class="hero-art reveal">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="moon">M</div>
+          <div class="orbit-word word-one">YOU ARE MY HOME</div><div class="orbit-word word-two">MY ALWAYS</div>
+          <span class="spark s1">✧</span><span class="spark s2">✦</span><span class="spark s3">✧</span>
+          <div class="art-caption">one heart <span>·</span> one universe</div>
+        </div>
+      </div>
+      <div class="scroll-hint">SCROLL THROUGH OUR LITTLE UNIVERSE <span>↓</span></div>
+    </section>
+
+    <section class="page" data-page="1" id="hello">
+      <div class="center-content">
+        <p class="eyebrow">CHAPTER 01 · THE MOST BEAUTIFUL PERSON</p>
+        <div class="giant-heart">♡</div>
+        <h2 class="section-title">Hello, <em>MOTO.</em></h2>
+        <p class="lead narrow">Its a small wish to you from your loving husband krna to bohot kuch chahta ho aap ke leye leken halat aor waqt aisa hai ke kuch nahi kr sakta per karonga bohot kuch aap ke leye its a promise |HAPPY BIRTHDAY TO MAH KACH WIFE|</p>
+        <p class="script-line">You make ordinary days feel like poetry.</p>
+        <button class="btn btn-primary" data-next>Keep going <span>→</span></button>
+      </div>
+    </section>
+
+<section class="page" data-page="2" id="question">
+  <div class="center-content question-card">
+    <p class="eyebrow">A VERY IMPORTANT QUESTION</p>
+    <span class="question-mark">?</span>
+
+    <h2 class="section-title">
+      Do you know how<br><em>special you are?</em>
+    </h2>
+
+    <p class="lead narrow">
+      Not a little. Not sometimes. In all the ways words still struggle to explain.
+    </p>
+
+    <div class="choice-row">
+      <button class="btn btn-primary" id="yesSpecial">I have a little idea ♡</button>
+      <button class="btn btn-ghost" id="noSpecial">Tell me again</button>
+    </div>
+
+    <p id="specialReply" class="reply"></p>
+
+    <button class="btn btn-primary" id="continueJourney">
+      Continue Journey →
+    </button>
+
+  </div>
+</section>    
+
+
+    <section class="page" data-page="3" id="quiz">
+      <div class="section-head">
+        <p class="eyebrow">CHAPTER 02 · A LITTLE LOVE QUIZ</p>
+        <h2 class="section-title">How well do you know<br><em>our little world?</em></h2>
+        <p class="lead">No pressure. The only prize is another reason to smile.</p>
+      </div>
+      <div class="quiz-panel">
+        <div class="quiz-top"><span id="quizCount">QUESTION 01 / 03</span><span id="quizScore">♡ 0</span></div>
+        <div class="quiz-track"><div id="quizProgress"></div></div>
+        <h3 id="quizQuestion">What is my favourite place to be?</h3>
+        <div id="quizOptions" class="quiz-options"></div>
+        <p id="quizFeedback" class="reply" aria-live="polite"></p>
+        <button id="quizNext" class="btn btn-primary hidden">Next question <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="page" data-page="4" id="game">
+      <div class="game-intro">
+        <p class="eyebrow">CHAPTER 03 · CATCH A LITTLE LOVE</p>
+        <h2 class="section-title">Catch <em>10 hearts.</em></h2>
+        <p class="lead narrow">A few hearts are falling just for you. Tap or click ten of them to unlock the next memory.</p>
+        <div class="game-count"><strong id="heartCount">00</strong><span> / 10 hearts collected</span></div>
+        <div class="game-track"><div id="heartProgress"></div></div>
+        <button id="startGame" class="btn btn-primary">Let the hearts fall <span>♡</span></button>
+      </div>
+      <div id="heartField" class="heart-field" aria-label="Falling hearts game"></div>
+      <p id="gameComplete" class="game-complete hidden">You caught them all. Imagine how many more I have for you. ♡</p>
+      <button id="gameContinue" class="btn btn-primary hidden" data-next>Unlock the next page <span>→</span></button>
+    </section>
+
+    <section class="page" data-page="5" id="story">
+      <div class="section-head">
+        <p class="eyebrow">CHAPTER 04 · OUR STORY</p>
+        <h2 class="section-title">Little moments.<br><em>One big love.</em></h2>
+        <p class="lead">Some stories are written in books. Ours is written in the moments we keep.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item"><span class="timeline-dot">01</span><div><p class="eyebrow">THE BEGINNING</p><h3>When our paths crossed</h3><p>Somehow, the universe made room for a person who would become so important.</p></div></article>
+        <article class="timeline-item"><span class="timeline-dot">02</span><div><p class="eyebrow">THE LITTLE THINGS</p><h3>Our own kind of happiness</h3><p>The conversations, the laughter, the silly things — the details that became everything.</p></div></article>
+        <article class="timeline-item"><span class="timeline-dot">03</span><div><p class="eyebrow">STILL UNWRITTEN</p><h3>And this is only the beginning</h3><p>There are so many beautiful chapters waiting for us. I cannot wait to live them.</p></div></article>
+      </div>
+      <button class="btn btn-primary" data-next>See our memories <span>→</span></button>
+    </section>
+
+   
+<section class="page memories-page" data-page="6" id="memories">
+
+  <div class="memories-container">
+
+    <p class="eyebrow">A LITTLE PIECE OF MY HEART</p>
+
+    <h2 class="section-title">
+      A Thousand Little<br>
+      <em>Memories</em>
+    </h2>
+
+    <p class="lead narrow">
+      Some moments become memories. Some people become home.
+      And you, my love, have become both. ♡
+    </p>
+
+    <div class="memory-list">
+
+      <article class="memory-card">
+        <span class="memory-number">01</span>
+        <span class="memory-icon">♡</span>
+        <h3>The Day Everything Changed</h3>
+        <p>
+          I don't know when you became such an important part
+          of my life. Maybe it was your smile, maybe your words,
+          or maybe it was simply the way my heart felt whenever
+          you were around.
+        </p>
+        <span class="memory-footer">A moment I'll always treasure</span>
+      </article>
+
+      <article class="memory-card">
+        <span class="memory-number">02</span>
+        <span class="memory-icon">✧</span>
+        <h3>Little Moments, Big Memories</h3>
+        <p>
+          It's never been about expensive gifts or perfect places.
+          It's about our silly conversations, unexpected smiles,
+          little arguments, and those moments when everything
+          feels right just because you're with me.
+        </p>
+        <span class="memory-footer">The little things mean everything</span>
+      </article>
+
+      <article class="memory-card">
+        <span class="memory-number">03</span>
+        <span class="memory-icon">♡</span>
+        <h3>My Favourite Person</h3>
+        <p>
+          If I could relive a thousand moments of my life,
+          I would choose the ones where I get to laugh with you,
+          talk to you, hold you close, and remind you how much
+          you mean to me.
+        </p>
+        <span class="memory-footer">Always my favourite</span>
+      </article>
+
+      <article class="memory-card">
+        <span class="memory-number">04</span>
+        <span class="memory-icon">∞</span>
+        <h3>A Lifetime of Us</h3>
+        <p>
+          We may not have a perfect story, but I want every
+          chapter of it with you. Through every season,
+          every challenge, every laugh and every tear —
+          I want it to be us.
+        </p>
+        <span class="memory-footer">Every chapter, together</span>
+      </article>
+
+      <article class="memory-card">
+        <span class="memory-number">05</span>
+        <span class="memory-icon">♥</span>
+        <h3>My Forever Promise</h3>
+        <p>
+          I cannot promise that every day will be perfect,
+          but I promise to keep choosing you, appreciating you,
+          respecting you, and finding new reasons to fall
+          in love with you.
+        </p>
+        <span class="memory-footer">You, today and always</span>
+      </article>
+
+    </div>
+
+    <div class="memory-ending">
+      <span class="ending-heart">♡</span>
+
+      <h2>Our Story Is Still<br><em>Being Written...</em></h2>
+
+      <p>
+        And the most beautiful part is that
+        I still have a lifetime of memories to make with you.
+      </p>
+
+      <button class="btn btn-primary" id="memoryContinue">
+        There Is Still So Much More I Want To Tell You ❤️
+      </button>
+    </div>
+
+  </div>
+
+  <div class="memory-hearts" aria-hidden="true">
+    ♡　♥　♡　✧　♡
+  </div>
+
+</section>
+
+    <section class="page" data-page="7" id="letter">
+      <div class="section-head">
+        <p class="eyebrow">CHAPTER 06 · SOMETHING FROM MY HEART</p>
+        <h2 class="section-title">A letter, <em>just for you.</em></h2>
+        <p class="lead">Take a breath. This one is meant to be opened slowly.</p>
+      </div>
+      <div class="letter-stage">
+        <button id="envelope" class="envelope" aria-label="Open the love letter">
+          <span class="envelope-back"></span><span class="letter-paper"><span class="letter-mini">MAH KHOG KACH BACHA</span><span class="letter-lines"></span></span>
+          <span class="envelope-front"></span><span class="envelope-flap"></span><span class="seal">M</span>
+        </button>
+        <p id="envelopeHint" class="envelope-hint">TAP THE ENVELOPE TO OPEN</p>
+        <div id="letterText" class="letter-text hidden">
+          <p class="eyebrow">TO MY MOTO</p>
+          <p id="typedLetter">**Happy Birthday, My Beautiful Wife! ❤️🎂**
+
+Meri jaan, tum meri zindagi ka woh khoobsurat hissa ho jiske bina meri duniya adhoori hai. Tumhari muskurahat mere din ko roshan kar deti hai, tumhari awaaz mere dil ko sukoon deti hai, aur tumhara saath meri zindagi ka sabse khoobsurat tohfa hai.
+
+Main shayad lafzon mein kabhi bayan na kar sakoon ke tum mere liye kitni khaas ho. Bas itna jaanta hoon ke har guzarta din mujhe tumse aur zyada mohabbat karna sikha deta hai. ❤️
+
+Aaj tumhare birthday par meri dua hai ke Allah tumhari zindagi ko khushiyon, sehat, kamyabi aur bepanah mohabbat se bhar de. Tumhari aankhon mein kabhi aansu na aayein, tumhari muskurahat kabhi kam na ho, aur tumhare har khwab ko haqeeqat banne ka mauqa mile.
+
+Main tumse sirf aaj nahi, har aane wale din mohabbat karna chahta hoon. Main chahta hoon ke zindagi ke har naye saal mein tumhare saath naye khwab dekhoon, naye lamhe jeeyoon aur hazaaron khoobsurat yaadein banaoon.
+
+**You are not just my wife, you are my favourite person, my happiness, my peace, and my forever love.** 💕
+
+Happy Birthday, meri mohabbat!  
+**I love you more than words could ever explain. Today, tomorrow, and forever.** ❤️♾️</p>
+          <span class="letter-sign">Always yours ♡</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" data-next>Make a wish <span>→</span></button>
+    </section>
+
+    <section class="page" data-page="8" id="stars">
+      <div class="section-head">
+        <p class="eyebrow">CHAPTER 07 · WISH UPON A STAR</p>
+        <h2 class="section-title">Pick a star.<br><em>Find a little promise.</em></h2>
+        <p class="lead">Tap the stars scattered across your sky. Each one is holding a message.</p>
+      </div>
+      <div class="star-sky" id="starSky">
+        <button class="wish-star" style="--x:13%;--y:24%" data-message="I will keep choosing you, in every season.">✦</button>
+        <button class="wish-star" style="--x:31%;--y:68%" data-message="Your happiness will always matter to me.">✧</button>
+        <button class="wish-star" style="--x:49%;--y:29%" data-message="I hope we never stop laughing together.">✦</button>
+        <button class="wish-star" style="--x:67%;--y:61%" data-message="May your dreams always find their way to you.">✧</button>
+        <button class="wish-star" style="--x:84%;--y:22%" data-message="Wherever life takes us, you will never walk alone.">✦</button>
+        <button class="wish-star" style="--x:76%;--y:82%" data-message="You are loved more than this little page can say.">✧</button>
+        <div id="wishMessage" class="wish-message">Choose a star above ♡</div>
+      </div>
+      <button class="btn btn-primary" data-next>Dream with me <span>→</span></button>
+    </section>
+
+    <section class="page" data-page="9" id="future">
+      <div class="section-head">
+        <p class="eyebrow">CHAPTER 08 · OUR NEXT CHAPTER</p>
+        <h2 class="section-title">A future full of <em>little adventures.</em></h2>
+        <p class="lead">Choose the dream you would love to live together first.</p>
+      </div>
+      <div class="future-grid">
+        <button class="future-choice" data-future="A quiet trip, long talks, and a sky full of stars."><span>01 / ESCAPE</span><b>Somewhere under<br>the stars</b><i>↗</i></button>
+        <button class="future-choice" data-future="A cosy home, warm lights, and a thousand ordinary happy days."><span>02 / HOME</span><b>A little place<br>of our own</b><i>↗</i></button>
+        <button class="future-choice" data-future="New places, new stories, and your hand in mine."><span>03 / ADVENTURE</span><b>A thousand<br>new memories</b><i>↗</i></button>
+      </div>
+      <p id="futureReply" class="reply">Whatever we choose, I want the story to be with you.</p>
+      <button class="btn btn-primary" data-next>One last surprise <span>→</span></button>
+    </section>
+
+    <section class="page" data-page="10" id="gift">
+      <div class="center-content">
+        <p class="eyebrow">CHAPTER 09 · A LITTLE MYSTERY</p>
+        <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Open mystery gift"><div class="gift-lid"></div><div class="gift-bow">♡</div><div class="gift-ribbon"></div><div class="gift-body"></div></div>
+        <h2 class="section-title">A gift for <em>my favourite human.</em></h2>
+        <p class="lead narrow">There is something waiting inside. Go on — open it.</p>
+        <p id="giftMessage" class="gift-message">A lifetime of little reasons to smile. And me, cheering for you in every one. ♡</p>
+        <button id="openGift" class="btn btn-primary">Open your gift <span>✦</span></button>
+        <button class="btn btn-primary hidden" id="giftNext" data-next>To your birthday finale <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="page finale" data-page="11" id="finale">
+      <canvas id="fireworks"></canvas>
+      <div class="finale-content">
+        <p class="eyebrow">TODAY, THE UNIVERSE CELEBRATES YOU</p>
+        <div class="cake">🎂</div>
+        <h1 class="final-title">Happy Birthday,<br><em>MOTO.</em></h1>
+        <p class="final-message">May this year bring you the softest mornings, the loudest laughter, beautiful surprises, and every dream your heart is brave enough to hold.</p>
+        <p class="final-script">You are my favourite person. Today and always. ♡</p>
+        <button id="replay" class="btn btn-ghost">Replay our little universe ↺</button>
+      </div>
+      <div class="final-confetti" aria-hidden="true">✦　♡　✧　♡　✦　✧　♡　✦</div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
+    <button id="closeLightbox" class="lightbox-close" aria-label="Close photo">×</button>
+    <img id="lightboxImage" alt="Our memory">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="music/our-song.mp3.mp4" type="audio/mpeg">
+  </audio>
+  <script src="script.js"></script>
+</body>
+</html>
