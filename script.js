@@ -306,3 +306,40 @@ document.getElementById("continueJourney").addEventListener("click", function ()
     document.querySelector('[data-page="3"]').classList.add("active");
 });
 
+
+
+// ===== MESSAGE BOOK SUPABASE =====
+const SUPABASE_URL = 'https://smqovufaykygviwhctsi.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_0hVvSvMEYMqkLBpPWpL7nw_8IQ1GrGO';
+const loveDb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const loveForm = document.getElementById('loveMessageForm');
+if (loveForm) {
+  loveForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const sendButton = document.getElementById('sendLoveMessage');
+    const status = document.getElementById('messageStatus');
+    const name = document.getElementById('messageName').value.trim();
+    const message = document.getElementById('messageText').value.trim();
+    if (!name || !message) {
+      status.textContent = 'Please write your name and a little message. ♡';
+      return;
+    }
+    sendButton.disabled = true;
+    sendButton.textContent = 'Sending your love...';
+    status.textContent = '';
+    const { error } = await loveDb.from('love_messages').insert([{ name, message }]);
+    if (error) {
+      status.textContent = 'Could not send right now. Please try again in a moment.';
+      console.error('Message Book error:', error.message);
+      sendButton.disabled = false;
+      sendButton.textContent = 'Send my message ♡';
+      return;
+    }
+    loveForm.reset();
+    status.textContent = 'Your message has been saved. I will read it with a smile. ♡';
+    sendButton.disabled = false;
+    sendButton.textContent = 'Send my message ♡';
+  });
+}
+document.getElementById('backToFinale')?.addEventListener('click', () => showPage(11));
