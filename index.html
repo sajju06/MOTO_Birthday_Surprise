@@ -338,9 +338,29 @@ Happy Birthday, meri mohabbat!
         <p class="final-message">May this year bring you the softest mornings, the loudest laughter, beautiful surprises, and every dream your heart is brave enough to hold.</p>
         <p class="final-script">You are my favourite person. Today and always. ♡</p>
         <button id="replay" class="btn btn-ghost">Replay our little universe ↺</button>
+        <button class="btn btn-primary" data-next>Leave me a little message ♡</button>
       </div>
       <div class="final-confetti" aria-hidden="true">✦　♡　✧　♡　✦　✧　♡　✦</div>
     </section>
+
+    <section class="page message-book-page" data-page="12" id="messageBook">
+      <div class="message-book-card">
+        <p class="eyebrow">A LITTLE NOTE FOR MY HEART</p>
+        <h2 class="section-title">Your words, <em>my forever keepsake.</em></h2>
+        <p class="lead narrow">Before you go, leave me a message. I will keep every word close to my heart. ♡</p>
+        <form id="loveMessageForm" class="love-message-form">
+          <label for="messageName">Your name</label>
+          <input id="messageName" name="name" maxlength="80" required placeholder="Your lovely name">
+          <label for="messageText">A little message for me</label>
+          <textarea id="messageText" name="message" maxlength="5000" required rows="5" placeholder="Write anything you want me to remember..."></textarea>
+          <button class="btn btn-primary" id="sendLoveMessage" type="submit">Send my message ♡</button>
+          <p id="messageStatus" class="message-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="message-private-note">Your message will be saved privately for me to read later. ♡</p>
+        <button class="btn btn-ghost" id="backToFinale" type="button">Back to our birthday wish</button>
+      </div>
+    </section>
+
   </main>
 
   <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
@@ -352,6 +372,7 @@ Happy Birthday, meri mohabbat!
   <audio id="backgroundMusic" loop preload="none">
     <source src="music/our-song.mp3.mp4" type="audio/mpeg">
   </audio>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 </html>
