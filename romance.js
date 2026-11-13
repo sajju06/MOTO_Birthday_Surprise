@@ -99,7 +99,8 @@
     "Because my favourite future is one with you in it.",
     "Because you are loved more than this list can ever explain.",
     "Because if I could choose again, I would still choose you.",
-    "Because you are MOTO — my one and only kind of magic."
+    "Because you are MOTO — my one and only kind of magic.",
+    "Because loving you is a journey I want to keep choosing, every single day."
   ];
   const reasonText = document.getElementById('reasonText');
   let reasonIndex = 0;
