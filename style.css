@@ -165,3 +165,17 @@
     margin-top: 65px;
   }
 }
+
+
+/* ===== PRIVATE LOVE MESSAGE BOOK ===== */
+.message-book-page{min-height:100vh}
+.message-book-card{width:min(650px,100%);margin:auto;text-align:center}
+.love-message-form{display:flex;flex-direction:column;gap:12px;text-align:left;margin:35px auto 0;max-width:520px;padding:30px;border:1px solid var(--line);background:#ffffff08;backdrop-filter:blur(12px)}
+.love-message-form label{font-size:11px;letter-spacing:.12em;color:var(--gold);margin-top:8px}
+.love-message-form input,.love-message-form textarea{width:100%;padding:15px;color:var(--ink);background:#ffffff0a;border:1px solid var(--line);outline:none;border-radius:2px;resize:vertical}
+.love-message-form input:focus,.love-message-form textarea:focus{border-color:var(--pink)}
+.love-message-form input::placeholder,.love-message-form textarea::placeholder{color:#b8aabd99}
+.love-message-form .btn{margin-top:12px}
+.message-status{min-height:20px;text-align:center;color:var(--gold);font-size:13px}
+.message-private-note{font-size:11px;color:var(--muted);margin:20px 0 28px}
+@media(max-width:480px){.love-message-form{padding:22px 17px}}
