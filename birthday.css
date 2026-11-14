@@ -267,3 +267,11 @@ body.gift-cinema-open{overflow:hidden!important}
 .memory-museum .moto-photo-caption small{color:#fff4e8;text-shadow:0 2px 8px #000}
 .memory-museum .photo-upload-note{color:#f3dfbc;text-shadow:0 2px 12px #000}
 @media(max-width:700px){.memory-museum .birthday-section-head{padding:15px 12px}.memory-museum .birthday-film-bg{object-position:center}}
+
+/* Chapter 8: user will supply the night-sky fireworks background image */
+#birthdayParty.party-mode{background-color:#080b1b;background-image:none!important;position:relative;isolation:isolate;overflow:hidden}
+#birthdayParty.party-mode:before,#birthdayParty.party-mode:after{background-image:none!important;content:none!important}
+#birthdayParty.party-mode .birthday-scene-content{position:relative;z-index:2}
+#birthdayParty.party-mode .birthday-heading em{color:#f5d69b;text-shadow:0 0 24px #f2c66a66}
+#birthdayParty.party-mode .birthday-copy{max-width:760px;line-height:1.85}
+#birthdayParty.party-mode .birthday-kicker{color:#f2d69b;letter-spacing:.2em}
