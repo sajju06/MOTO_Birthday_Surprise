@@ -11,10 +11,16 @@
 
   const dreamCards = [...document.querySelectorAll('.dream-card')];
   const dreamReveal = document.getElementById('dreamReveal');
+  const dreamBackdrop = document.getElementById('dreamBackdrop');
+  const dreamSceneCaption = document.getElementById('dreamSceneCaption');
   dreamCards.forEach(card => card.addEventListener('click', () => {
     dreamCards.forEach(item => item.classList.remove('selected'));
     card.classList.add('selected');
     dreamReveal.textContent = card.dataset.dream;
+    const scene = card.dataset.scene || 'home';
+    dreamBackdrop?.classList.remove('dream-scene-home','scene-travel','scene-joy');
+    dreamBackdrop?.classList.add(scene === 'travel' ? 'scene-travel' : scene === 'joy' ? 'scene-joy' : 'dream-scene-home');
+    if (dreamSceneCaption) dreamSceneCaption.textContent = scene === 'travel' ? 'ہاتھ میں ہاتھ، دنیا کے خوبصورت راستے' : scene === 'joy' ? 'بارش، چائے، اور تمہارا ساتھ' : 'ہمارا اپنا چھوٹا سا گھر';
   }));
 
   const heartbeatButton = document.getElementById('heartbeatButton');
@@ -48,12 +54,14 @@
   let scene = 0;
   const sceneText = document.getElementById('filmSceneText');
   const sceneNumber = document.getElementById('filmSceneNumber');
+  const filmFrame = document.getElementById('filmFrame');
   const filmNext = document.getElementById('filmNext');
   const filmFinalLine = document.getElementById('filmFinalLine');
   const filmToFinale = document.getElementById('filmToFinale');
   filmNext?.addEventListener('click', () => {
     if (scene < scenes.length - 1) {
       scene++;
+      if (filmFrame) filmFrame.dataset.scene = String(scene);
       sceneText.textContent = scenes[scene];
       sceneNumber.textContent = 'منظر ' + '۱۲۳۴۵'[scene] + ' / ۵';
       sceneText.classList.remove('scene-change');
