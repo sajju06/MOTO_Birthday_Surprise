@@ -147,3 +147,23 @@
 .star-night .star-night-label,.star-night .birthday-kicker{color:#f2d69d}
 .star-night .spotlight-ring{border-color:rgba(235,198,129,.7);box-shadow:0 0 35px rgba(219,171,91,.3),inset 0 0 25px rgba(219,171,91,.14)}
 .star-night .birthday-heading em{color:#f4d69b;text-shadow:0 0 20px rgba(226,183,104,.4)}
+
+/* Chapter 3: secret wrapped food surprises — no video backdrop */
+.mystery-gifts{background:radial-gradient(ellipse at 50% 12%,#533044 0%,#241529 48%,#100b17 100%);position:relative;overflow:hidden}
+.mystery-gifts .birthday-gift-grid{align-items:stretch}
+.mystery-gifts .birthday-gift{min-height:225px;background:linear-gradient(145deg,#5b2339,#241324 72%);border:1px solid #dcb77888;position:relative;overflow:hidden}
+.mystery-gifts .birthday-gift:before{content:"";position:absolute;inset:9px;border:1px solid #e8c98755;border-radius:13px;pointer-events:none}
+.mystery-gifts .birthday-gift .gift-emoji{font-size:58px;filter:drop-shadow(0 0 18px #ffd58b88)}
+.mystery-gifts .birthday-gift b{font:italic 23px Georgia,serif;color:#ffedcf}
+.mystery-gifts .birthday-gift small{color:#e7cbb7}
+.mystery-gifts .birthday-gift.opened{transform:translateY(-5px) scale(1.035);background:linear-gradient(145deg,#8c4a54,#3c1e34);border-color:#ffe0a0;box-shadow:0 0 35px #f0c47b44}
+.mystery-gifts .birthday-gift-reveal{position:relative;min-height:0;width:min(760px,100%);margin:24px auto 16px;padding:0;border:0;background:transparent;overflow:hidden;max-height:0;opacity:0;transform:translateY(14px);transition:max-height .55s ease,opacity .4s ease,transform .4s ease}
+.mystery-gifts .birthday-gift-reveal.is-open{max-height:580px;min-height:270px;opacity:1;transform:translateY(0);padding:16px;border:1px solid #e9d1a277;border-radius:20px;background:linear-gradient(135deg,#261622ee,#130e19f2);box-shadow:0 20px 60px #0006;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:22px}
+.gift-reveal-picture{width:100%;height:245px;border-radius:14px;overflow:hidden;background:#1b111a}
+.gift-reveal-picture img{width:100%;height:100%;object-fit:cover;display:block}
+.gift-reveal-copy{text-align:left;padding:12px}
+.gift-reveal-copy h3{font:italic clamp(23px,3vw,34px) Georgia,serif;color:#ffe6b7;margin:8px 0 12px}
+.gift-reveal-copy p:last-child{font:16px/1.7 Georgia,serif;color:#f4e2e8}
+.gift-reveal-close{position:absolute;right:10px;top:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid #f0d5a588;background:#1c101dcc;color:#ffe7c1;font-size:25px;cursor:pointer}
+.gift-reveal-hint{display:block;padding:18px;color:#f6e5ed;font:16px/1.7 Georgia,serif}
+@media(max-width:650px){.mystery-gifts .birthday-gift-grid{grid-template-columns:1fr;gap:12px;width:min(380px,100%)}.mystery-gifts .birthday-gift{min-height:135px;display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;column-gap:12px;padding:16px;text-align:left;justify-items:start}.mystery-gifts .birthday-gift .gift-number{grid-row:1/3;align-self:center}.mystery-gifts .birthday-gift .gift-emoji{font-size:34px;grid-column:2}.mystery-gifts .birthday-gift b,.mystery-gifts .birthday-gift small{grid-column:2}.mystery-gifts .birthday-gift-reveal.is-open{grid-template-columns:1fr;gap:8px;max-height:760px}.gift-reveal-picture{height:190px}.gift-reveal-copy{text-align:center}}
