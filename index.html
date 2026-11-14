@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cinematic.css">
   <link rel="stylesheet" href="extra-love.css">
+  <link rel="stylesheet" href="birthday.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -34,6 +35,7 @@
     <a class="brand" href="#" aria-label="MOTO birthday surprise"><span class="brand-star">✦</span> MOTO <i>∞</i></a>
     <div class="top-actions">
       <div class="music-label" id="musicLabel">OUR SONG</div>
+      <button id="musicModeToggle" class="icon-btn" aria-label="Play birthday music" title="Birthday music">🎉</button>
       <button id="musicToggle" class="icon-btn" aria-label="Play or pause music">♫</button>
     </div>
   </header>
@@ -522,6 +524,7 @@ Happy Birthday, meri mohabbat!
         <h1 class="final-title">Happy Birthday,<br><em>MOTO.</em></h1>
         <p class="final-message">May this year bring you the softest mornings, the loudest laughter, beautiful surprises, and every dream your heart is brave enough to hold.</p>
         <p class="final-script">You are my favourite person. Today and always. ♡</p>
+        <button id="enterBirthdayExperience" class="btn btn-primary">Open MOTO’s Birthday Celebration ✨</button>
         <button id="replay" class="btn btn-ghost">Replay our little universe ↺</button>
         <button class="btn btn-primary" data-next>Leave me a little message ♡</button>
       </div>
@@ -546,6 +549,103 @@ Happy Birthday, meri mohabbat!
       </div>
     </section>
 
+
+    <!-- BIRTHDAY EXPERIENCE: royal entrance -->
+    <section class="page birthday-page birthday-entrance" data-page="23" id="birthdayEntrance">
+      <video class="birthday-bg-video" autoplay muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1530103862676-de8c9debadf1?auto=format&fit=crop&w=1600&q=80">
+        <source src="https://www.pexels.com/download/video/34955006/" type="video/mp4">
+      </video>
+      <div class="birthday-video-shade"></div>
+      <div class="birthday-scene-content">
+        <p class="birthday-kicker">TONIGHT, THE WORLD HAS ONE QUEEN</p>
+        <div class="birthday-crown">♛</div>
+        <h1 class="birthday-heading">The night is<br><em>all yours, MOTO.</em></h1>
+        <p class="birthday-copy">Aaj ki raat sirf tumhare naam. Lights, music, wishes aur har surprise — sab tumhare liye.</p>
+        <div class="birthday-seal">MOTO · THE STAR OF TONIGHT</div>
+        <button class="btn btn-primary birthday-next" data-next>Open the celebration ✦</button>
+      </div>
+      <div class="birthday-side-note">A NIGHT TO REMEMBER · EST. WITH LOVE</div>
+    </section>
+
+    <!-- HOLLYWOOD star moment -->
+    <section class="page birthday-page star-night" data-page="24" id="starNight">
+      <div class="star-night-backdrop" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div>
+      <div class="star-night-content">
+        <p class="birthday-kicker">RED CARPET · FLASHES · APPLAUSE</p>
+        <div class="spotlight-ring"><span> M </span></div>
+        <p class="star-night-label">AND THE AWARD GOES TO…</p>
+        <h2 class="birthday-heading">MOTO<br><em>THE STAR OF THE NIGHT</em></h2>
+        <p class="birthday-copy">For being beautifully, wonderfully, unmistakably YOU. May life keep giving you reasons to shine.</p>
+        <div class="award-line">♡ MOST LOVED · MOST PRECIOUS · ONE OF A KIND ♡</div>
+        <button class="btn btn-primary birthday-next" data-next>Accept your birthday surprises 🎁</button>
+      </div>
+    </section>
+
+    <!-- mystery gifts -->
+    <section class="page birthday-page gift-night" data-page="25" id="birthdayGifts">
+      <div class="birthday-section-head">
+        <p class="birthday-kicker">THREE LITTLE SURPRISES</p>
+        <h2 class="birthday-heading">Choose your<br><em>birthday gift.</em></h2>
+        <p class="birthday-copy">Har gift ke andar ek alag si khushi chhupi hai. Ek ek karke kholo.</p>
+      </div>
+      <div class="birthday-gift-grid">
+        <button class="birthday-gift" data-gift="0"><span class="gift-number">01</span><span class="gift-emoji">💌</span><b>A letter</b><small>From my heart</small></button>
+        <button class="birthday-gift" data-gift="1"><span class="gift-number">02</span><span class="gift-emoji">✨</span><b>A wish</b><small>For your new year</small></button>
+        <button class="birthday-gift" data-gift="2"><span class="gift-number">03</span><span class="gift-emoji">👑</span><b>Your crown</b><small>Because you deserve it</small></button>
+      </div>
+      <div class="birthday-gift-reveal" id="birthdayGiftReveal" aria-live="polite">Choose any gift to reveal what is inside ♡</div>
+      <button class="btn btn-primary birthday-next" data-next>Now, make a birthday wish 🎂</button>
+    </section>
+
+    <!-- cake and wishes -->
+    <section class="page birthday-page cake-night" data-page="26" id="birthdayCake">
+      <div class="cake-night-glow"></div>
+      <p class="birthday-kicker">A WISH JUST FOR YOU</p>
+      <h2 class="birthday-heading">Make a wish,<br><em>beautiful MOTO.</em></h2>
+      <p class="birthday-copy">Close your eyes for a moment. Think of the dream closest to your heart.</p>
+      <div class="real-cake" aria-label="Birthday cake with candles">
+        <div class="cake-candles"><button class="cake-candle" aria-label="Blow out candle">🕯️</button><button class="cake-candle" aria-label="Blow out candle">🕯️</button><button class="cake-candle" aria-label="Blow out candle">🕯️</button></div>
+        <div class="cake-topper">MOTO</div><div class="cake-tier tier-top"></div><div class="cake-tier tier-bottom"></div><div class="cake-plate"></div>
+      </div>
+      <p class="cake-instruction" id="cakeInstruction">Tap the candles to make your wish come true ✨</p>
+      <p class="cake-blessing hidden" id="cakeBlessing">اللہ تمہاری ہر جائز دعا قبول کرے، تمہیں صحت، سکون، کامیابی اور بے شمار خوشیاں عطا فرمائے۔ آمین ❤️</p>
+      <button class="btn btn-primary birthday-next" id="cakeNext" disabled>See your birthday memories ♡</button>
+    </section>
+
+    <!-- memory museum: personal photos are loaded from photos/moto-01.jpg ... -->
+    <section class="page birthday-page memory-museum" data-page="27" id="birthdayMuseum">
+      <div class="birthday-section-head">
+        <p class="birthday-kicker">THE MOTO MEMORY MUSEUM</p>
+        <h2 class="birthday-heading">A gallery of<br><em>your beautiful moments.</em></h2>
+        <p class="birthday-copy">Har tasveer ek kahani hai. Yeh jagah tumhari personal photos ke liye hai.</p>
+      </div>
+      <div class="moto-photo-grid">
+        <button class="moto-photo-slot" data-photo="photos/moto-01.jpg" data-caption="A moment worth keeping"><img src="photos/moto-01.jpg" alt="MOTO memory 1"><span class="photo-placeholder"><b>♡</b><small>Memory 01</small></span></button>
+        <button class="moto-photo-slot" data-photo="photos/moto-02.jpg" data-caption="Your smile, my favourite view"><img src="photos/moto-02.jpg" alt="MOTO memory 2"><span class="photo-placeholder"><b>✧</b><small>Memory 02</small></span></button>
+        <button class="moto-photo-slot" data-photo="photos/moto-03.jpg" data-caption="A little piece of forever"><img src="photos/moto-03.jpg" alt="MOTO memory 3"><span class="photo-placeholder"><b>♡</b><small>Memory 03</small></span></button>
+        <button class="moto-photo-slot" data-photo="photos/moto-04.jpg" data-caption="One of my happiest memories"><img src="photos/moto-04.jpg" alt="MOTO memory 4"><span class="photo-placeholder"><b>✦</b><small>Memory 04</small></span></button>
+        <button class="moto-photo-slot" data-photo="photos/moto-05.jpg" data-caption="A day I will always remember"><img src="photos/moto-05.jpg" alt="MOTO memory 5"><span class="photo-placeholder"><b>♡</b><small>Memory 05</small></span></button>
+        <button class="moto-photo-slot" data-photo="photos/moto-06.jpg" data-caption="My favourite person"><img src="photos/moto-06.jpg" alt="MOTO memory 6"><span class="photo-placeholder"><b>∞</b><small>Memory 06</small></span></button>
+      </div>
+      <p class="photo-upload-note">Personal photos will appear here once the six image files are added to the <code>photos</code> folder.</p>
+      <button class="btn btn-primary birthday-next" data-next>One last birthday surprise ✨</button>
+    </section>
+
+    <!-- birthday grand finale -->
+    <section class="page birthday-page birthday-grand-finale" data-page="28" id="birthdayGrandFinale">
+      <div class="grand-finale-stars" aria-hidden="true"></div>
+      <div class="grand-finale-content">
+        <p class="birthday-kicker">THE WHOLE UNIVERSE CELEBRATES YOU</p>
+        <div class="grand-finale-crown">♛</div>
+        <h1 class="birthday-heading">Happy Birthday,<br><em>MOTO.</em></h1>
+        <p class="birthday-copy">May every candle you blow out become a wish that comes true. May every new morning bring you peace, every year bring you growth, and every day remind you how deeply you are loved.</p>
+        <p class="grand-finale-urdu" lang="ur" dir="rtl">تمہاری زندگی کا ہر آنے والا سال، اس سال سے زیادہ خوبصورت ہو۔ سالگرہ مبارک، میری جان۔ ❤️</p>
+        <div class="grand-finale-confetti">✦　♡　✧　🎂　✧　♡　✦</div>
+        <button class="btn btn-primary" id="birthdayToMessageBook">Leave me your birthday message ♡</button>
+        <button class="btn btn-ghost" id="birthdayReplay">Replay birthday celebration ↺</button>
+      </div>
+    </section>
+
   </main>
 
   <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true">
@@ -554,6 +654,7 @@ Happy Birthday, meri mohabbat!
     <p id="lightboxCaption"></p>
   </div>
 
+  <audio id="birthdayAudio" loop preload="none"><source src="music/birthday-song.mp3" type="audio/mpeg"></audio>
   <audio id="backgroundMusic" loop preload="none">
     <source src="music/our-song.mp3.mp4" type="audio/mpeg">
   </audio>
@@ -562,5 +663,6 @@ Happy Birthday, meri mohabbat!
   <script src="romance.js"></script>
   <script src="cinematic.js"></script>
   <script src="extra-love.js"></script>
+  <script src="birthday.js"></script>
 </body>
 </html>
