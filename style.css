@@ -42,8 +42,8 @@
   transition: transform .4s ease,
               border-color .4s ease,
               background .4s ease;
-  opacity: 0;
-  transform: translateY(35px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .memory-card.visible {
