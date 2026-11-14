@@ -11,17 +11,94 @@
 
   const dreamCards = [...document.querySelectorAll('.dream-card')];
   const dreamReveal = document.getElementById('dreamReveal');
-  const dreamBackdrop = document.getElementById('dreamBackdrop');
-  const dreamSceneCaption = document.getElementById('dreamSceneCaption');
+  const dreamCinema = document.getElementById('dreamCinema');
+  const dreamVideo = document.getElementById('dreamCinemaVideo');
+  const dreamBack = document.getElementById('dreamCinemaBack');
+  const dreamTitle = document.getElementById('dreamCinemaTitle');
+  const dreamKicker = document.getElementById('dreamCinemaKicker');
+  const dreamLine = document.getElementById('dreamCinemaLine');
+  const dreamProgress = document.getElementById('dreamCinemaProgress');
+  let dreamTimer = null;
+  let dreamLineIndex = 0;
+  const dreamScenes = {
+    home: {
+      title: 'ہمارا اپنا گھر',
+      kicker: 'ایک چھوٹا سا جہاں، صرف ہم دونوں کے لیے',
+      video: 'https://www.pexels.com/download/video/31346772/',
+      lines: [
+        'ایک چھوٹا سا گھر ہو، جہاں ہر کونے میں ہماری محبت بسی ہو۔',
+        'صبح تمہاری مسکراہٹ سے ہو، اور شام تمہارے ساتھ چائے سے۔',
+        'دنیا کتنی بھی مصروف ہو، گھر لوٹ کر سکون صرف تم میں ملے۔',
+        'میں تمہارے ساتھ ایسی ہزاروں عام مگر خوبصورت شامیں جینا چاہتا ہوں۔',
+        'میرا خواب کوئی محل نہیں… بس تم، میں، اور ہمارا اپنا سا گھر۔'
+      ]
+    },
+    travel: {
+      title: 'دنیا کی سیر',
+      kicker: 'ہاتھ میں ہاتھ، منزل سے زیادہ تمہارا ساتھ',
+      video: 'https://www.pexels.com/download/video/11598335/',
+      lines: [
+        'کبھی پہاڑوں کے راستے ہوں، کبھی ڈوبتے سورج کے رنگ۔',
+        'نئے شہر دیکھیں، نئی یادیں بنائیں، اور ہر سفر میں تم ساتھ ہو۔',
+        'راستے لمبے ہوں تو کیا، تمہارا ہاتھ میرے ہاتھ میں ہو۔',
+        'میں دنیا کی خوبصورتی تمہاری آنکھوں سے دیکھنا چاہتا ہوں۔',
+        'میری پسندیدہ منزل ہمیشہ وہ جگہ ہوگی جہاں تم میرے ساتھ ہو۔'
+      ]
+    },
+    joy: {
+      title: 'چھوٹی چھوٹی خوشیاں',
+      kicker: 'وہ لمحے جو تمہارے ساتھ خاص بن جاتے ہیں',
+      video: 'https://www.pexels.com/download/video/34786652/',
+      lines: [
+        'بارش کی ہلکی آواز، کھڑکی کے پاس دو کپ چائے۔',
+        'بے وجہ ہنسنا، چھوٹی چھوٹی باتیں، اور تمہاری پیاری سی مسکراہٹ۔',
+        'کبھی خاموشی بھی ہو تو وہ تمہارے ساتھ خوبصورت لگے۔',
+        'مجھے بڑی خوشیوں سے زیادہ تمہارے ساتھ کے یہ چھوٹے لمحے عزیز ہیں۔',
+        'زندگی کی سب سے خوبصورت عادت… ہر دن تمہیں چننا ہے۔'
+      ]
+    }
+  };
+  function showDreamLine() {
+    const scene = dreamScenes[dreamCinema?.dataset.scene];
+    if (!scene) return;
+    dreamLine.textContent = scene.lines[dreamLineIndex];
+    dreamLine.classList.remove('dream-line-refresh');
+    void dreamLine.offsetWidth;
+    dreamLine.classList.add('dream-line-refresh');
+    dreamProgress.style.width = ((dreamLineIndex + 1) / scene.lines.length * 100) + '%';
+    dreamLineIndex = (dreamLineIndex + 1) % scene.lines.length;
+  }
+  function closeDreamCinema() {
+    dreamCinema?.classList.remove('is-open');
+    dreamCinema?.setAttribute('aria-hidden','true');
+    if (dreamTimer) clearInterval(dreamTimer);
+    dreamTimer = null;
+    if (dreamVideo) { dreamVideo.pause(); dreamVideo.removeAttribute('src'); dreamVideo.load(); }
+  }
   dreamCards.forEach(card => card.addEventListener('click', () => {
+    const key = card.dataset.scene || 'home';
+    const scene = dreamScenes[key];
+    if (!scene || !dreamCinema || !dreamVideo) return;
     dreamCards.forEach(item => item.classList.remove('selected'));
     card.classList.add('selected');
-    dreamReveal.textContent = card.dataset.dream;
-    const scene = card.dataset.scene || 'home';
-    dreamBackdrop?.classList.remove('dream-scene-home','scene-travel','scene-joy');
-    dreamBackdrop?.classList.add(scene === 'travel' ? 'scene-travel' : scene === 'joy' ? 'scene-joy' : 'dream-scene-home');
-    if (dreamSceneCaption) dreamSceneCaption.textContent = scene === 'travel' ? 'ہاتھ میں ہاتھ، دنیا کے خوبصورت راستے' : scene === 'joy' ? 'بارش، چائے، اور تمہارا ساتھ' : 'ہمارا اپنا چھوٹا سا گھر';
+    dreamCinema.dataset.scene = key;
+    dreamTitle.textContent = scene.title;
+    dreamKicker.textContent = scene.kicker;
+    dreamLineIndex = 0;
+    dreamVideo.src = scene.video;
+    dreamCinema.classList.add('is-open');
+    dreamCinema.setAttribute('aria-hidden','false');
+    showDreamLine();
+    dreamVideo.load();
+    const playAttempt = dreamVideo.play();
+    if (playAttempt?.catch) playAttempt.catch(() => {});
+    if (dreamTimer) clearInterval(dreamTimer);
+    dreamTimer = setInterval(showDreamLine, 5200);
   }));
+  dreamBack?.addEventListener('click', closeDreamCinema);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && dreamCinema?.classList.contains('is-open')) closeDreamCinema();
+  });
 
   const heartbeatButton = document.getElementById('heartbeatButton');
   const heartbeatMessage = document.getElementById('heartbeatMessage');
