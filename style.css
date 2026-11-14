@@ -210,3 +210,8 @@
 .promise-card.open{background:#e8a5bd12;border-color:#e8a5bd77}.promise-card.open p{display:block}.promise-card.open i{display:none}
 .pre-finale-whisper{font:italic 19px Georgia,serif;color:#e8a5bd;margin:12px auto 30px;max-width:580px}
 @media(max-width:700px){.love-chapters{grid-template-columns:1fr}.love-chapter{min-height:0;padding:22px}.chapter-symbol{margin:15px 0 8px}.promise-card{grid-template-columns:30px 1fr}.promise-card i{grid-column:2}.promise-card p{grid-column:2}.reason-card{padding:30px 20px}.touch-heart-button{width:165px;height:165px}.touch-heart-button span{font-size:78px}}
+
+
+/* Navigation safeguard: only the selected experience page may be visible */
+#experience > .page:not(.active){display:none!important}
+#experience > .page.active{display:flex!important}
