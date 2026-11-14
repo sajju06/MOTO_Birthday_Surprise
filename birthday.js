@@ -69,12 +69,14 @@
           await birthdayAudio.play();
           musicMode.textContent = 'BIRTHDAY MUSIC ON';
         } catch (error) {
-          musicMode.textContent = 'ADD birthday-song.mp3';
+          musicMode.textContent = 'BIRTHDAY TRACK MISSING — OUR SONG';
           birthdayMode = false;
+          if (mainMusic) { try { await mainMusic.play(); } catch (_) {} }
         }
       } else {
         birthdayAudio.pause();
-        musicMode.textContent = 'BIRTHDAY MUSIC';
+        if (mainMusic) { try { await mainMusic.play(); } catch (_) {} }
+        musicMode.textContent = 'OUR SONG PLAYING';
       }
     });
   }
