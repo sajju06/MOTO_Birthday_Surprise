@@ -37,6 +37,7 @@
     const img = slot.querySelector('img');
     img.addEventListener('load', () => slot.classList.add('has-photo'));
     img.addEventListener('error', () => slot.classList.remove('has-photo'));
+    if(img.complete && img.naturalWidth>0) slot.classList.add('has-photo');
     slot.addEventListener('click', () => {
       if (!slot.classList.contains('has-photo')) return;
       const lightbox = document.getElementById('lightbox');
@@ -50,9 +51,65 @@
   });
 
   cakeNext?.addEventListener('click', () => { if (!cakeNext.disabled) showPage(4); });
-  document.getElementById('birthdayToMessageBook')?.addEventListener('click', () => showPage(23));
-  document.getElementById('continueToOldChapters')?.addEventListener('click', () => showPage(6));
+  document.getElementById('birthdayToMessageBook')?.addEventListener('click', () => showPage(27));
+  document.getElementById('continueToOldChapters')?.addEventListener('click', () => showPage(10));
   document.getElementById('birthdayReplay')?.addEventListener('click', () => showPage(0));
+
+
+  // Birthday sky wishes reveal one personal dua at a time.
+  document.querySelectorAll('.sky-wish').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('.sky-wish').forEach(item => item.classList.remove('selected'));
+    button.classList.add('selected');
+    const reveal=document.getElementById('skyWishReveal');
+    if(reveal) reveal.textContent=button.dataset.wish;
+  }));
+
+  // Future-self letter opens like a sealed keepsake.
+  document.getElementById('openFutureLetter')?.addEventListener('click', () => {
+    const reveal=document.getElementById('futureLetterReveal');
+    if(reveal){reveal.hidden=false;reveal.classList.add('revealed');}
+    const button=document.getElementById('openFutureLetter');
+    if(button){button.classList.add('opened');button.innerHTML='<span>♡</span><small>LETTER OPENED</small>';button.disabled=true;}
+  });
+
+  // Party mode: launch a short confetti burst on demand.
+  document.getElementById('startBirthdayParty')?.addEventListener('click', () => {
+    const status=document.getElementById('partyStatus');
+    if(status) status.textContent='HAPPY BIRTHDAY, MOTO! Tonight is yours! ♡';
+    const page=document.getElementById('birthdayParty');
+    page?.classList.add('party-started');
+    for(let i=0;i<65;i++){
+      const piece=document.createElement('i');
+      piece.className='party-confetti';
+      piece.style.left=(Math.random()*100)+'%';
+      piece.style.animationDelay=(Math.random()*1.8)+'s';
+      piece.style.setProperty('--drift',(Math.random()*180-90)+'px');
+      page?.appendChild(piece);
+      setTimeout(()=>piece.remove(),4800);
+    }
+  });
+
+  // Twelve month wishes, each with a different blessing.
+  const monthWishes=[
+    'May January bring fresh beginnings, calm mornings and renewed hope.',
+    'May February surround you with tenderness, kindness and affection.',
+    'May March bring courage for every new step you take.',
+    'May April fill your days with blooming happiness and beautiful surprises.',
+    'May May bring success to the work you put your heart into.',
+    'May June give you peaceful days and laughter that lasts.',
+    'May July bring new adventures and memories worth keeping.',
+    'May August bless you with strength, confidence and good health.',
+    'May September open doors to opportunities you have been praying for.',
+    'May October bring warmth, comfort and the sweetest little moments.',
+    'May November reward your patience with progress and barakah.',
+    'May December end your year with gratitude, love and countless reasons to smile.'
+  ];
+  document.querySelectorAll('.month-wish').forEach(button=>button.addEventListener('click',()=>{
+    document.querySelectorAll('.month-wish').forEach(item=>item.classList.remove('selected'));
+    button.classList.add('selected');
+    const reveal=document.getElementById('monthWishReveal');
+    if(reveal) reveal.textContent=monthWishes[Number(button.dataset.month)];
+  }));
 
   // A separate birthday track can be added without replacing the couple's original song.
   const birthdayAudio = document.getElementById('birthdayAudio');
