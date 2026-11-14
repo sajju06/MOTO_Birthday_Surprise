@@ -51,6 +51,7 @@
 
   cakeNext?.addEventListener('click', () => { if (!cakeNext.disabled) showPage(4); });
   document.getElementById('birthdayToMessageBook')?.addEventListener('click', () => showPage(23));
+  document.getElementById('continueToOldChapters')?.addEventListener('click', () => showPage(6));
   document.getElementById('birthdayReplay')?.addEventListener('click', () => showPage(0));
 
   // A separate birthday track can be added without replacing the couple's original song.
