@@ -181,3 +181,38 @@ body.gift-cinema-open{overflow:hidden!important}
 .gift-cinema-title{margin:0;color:#fff0d2;font:italic clamp(25px,4vw,48px)/1.15 Georgia,serif;text-shadow:0 0 24px #d9a65b66}
 .gift-cinema-message{margin:10px 0 0;color:#f6e6e8;font:clamp(14px,1.5vw,18px)/1.55 Georgia,serif}
 @media(max-width:650px){.gift-cinema-modal{padding:76px 12px 25px;gap:16px}.gift-cinema-back{top:14px;left:12px;padding:10px 14px;font-size:10px}.gift-cinema-image-wrap{width:100%;height:58vh;border-radius:14px}.gift-cinema-image{object-fit:contain}.gift-cinema-title{font-size:28px}.gift-cinema-message{font-size:14px}}
+
+/* Chapter 4: grand MOTO cake and candle-blown dua */
+.cake-night.moto-cake-scene{isolation:isolate;overflow-y:auto;overflow-x:hidden;background:radial-gradient(ellipse at 50% 55%,#552438 0%,#25101f 48%,#090710 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:0}
+.moto-cake-scene:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 68%,#f4b85b25,transparent 43%),linear-gradient(180deg,#09071022,#09071077)}
+.cake-scene-heading{position:relative;z-index:4;text-align:center;width:min(900px,100%);margin:0 auto 4px}
+.cake-scene-heading .birthday-kicker{color:#f3d39b;letter-spacing:.3em}
+.cake-scene-heading .birthday-heading{margin:7px 0;font-size:clamp(32px,5vw,58px)}
+.cake-scene-heading .birthday-copy{margin:4px auto;color:#f6e3d5}
+.grand-moto-cake{position:relative;z-index:3;width:min(760px,94vw);height:clamp(340px,53vh,510px);margin:12px auto 0;filter:drop-shadow(0 25px 35px #000a)}
+.grand-moto-cake .cake-plate{left:3%;bottom:3%;width:94%;height:24px;border:2px solid #ffe3a4;background:linear-gradient(180deg,#fff8df,#d7a65e 48%,#71432c);box-shadow:0 8px 28px #0008,0 0 35px #edbd6b55}
+.grand-moto-cake .cake-tier{border:2px solid #f6d59c;background:linear-gradient(90deg,#7b233d 0%,#d98591 16%,#fff0df 48%,#e7a4ad 82%,#6e1d38 100%);box-shadow:inset 0 -15px 0 #9f3d59,inset 0 12px 15px #fff7e5,0 12px 22px #0006}
+.grand-moto-cake .cake-tier:before{content:"";position:absolute;top:-12px;left:-2px;right:-2px;height:26px;border-radius:50%;background:linear-gradient(90deg,#e8a9b2,#fff4e5 48%,#d78391);border:2px solid #ffe6bb;box-shadow:0 4px 10px #0003}
+.grand-moto-cake .tier-top{z-index:3;bottom:65%;width:34%;height:22%;border-radius:18px 18px 12px 12px}
+.grand-moto-cake .tier-middle{z-index:2;bottom:35%;width:62%;height:29%;border-radius:22px 22px 14px 14px}
+.grand-moto-cake .tier-bottom{z-index:1;bottom:7%;width:88%;height:30%;border-radius:25px 25px 17px 17px}
+.cake-name{position:absolute;z-index:5;left:0;right:0;top:42%;text-align:center;color:#fff0c9;font:italic 700 clamp(35px,6vw,66px) Georgia,serif;letter-spacing:.22em;padding-left:.22em;text-shadow:0 2px 3px #6b1e32,0 0 12px #fff0bf,0 0 30px #f4c76d}
+.grand-moto-cake .cake-topper{z-index:6;bottom:88%;left:0;right:0;text-align:center;font:700 clamp(24px,4vw,43px) Georgia,serif;letter-spacing:.32em;color:#ffe8ad;text-shadow:0 0 12px #ffd879,0 0 35px #f2b94d}
+.grand-moto-cake .cake-candles{z-index:8;bottom:86%;left:0;right:0;display:flex;justify-content:center;gap:clamp(32px,7vw,74px)}
+.grand-moto-cake .cake-candle{position:relative;width:24px;height:76px;padding:0;display:block;border:0;background:transparent;cursor:pointer;filter:none;transition:transform .3s,opacity .3s}
+.candle-stick{position:absolute;bottom:0;left:8px;width:9px;height:52px;border-radius:4px;background:repeating-linear-gradient(45deg,#fff0ce 0 7px,#b63a58 7px 13px);box-shadow:0 0 12px #ffe1ad55}
+.candle-flame{position:absolute;top:0;left:7px;width:13px;height:21px;border-radius:60% 45% 55% 45%;transform:rotate(4deg);background:radial-gradient(ellipse at 50% 70%,#fffbdc 0 20%,#ffd45d 43%,#f47735 72%,transparent 74%);filter:drop-shadow(0 0 9px #ffb52e);animation:candleFlicker .7s ease-in-out infinite alternate}
+.grand-moto-cake .cake-candle.blown{opacity:.5;transform:translateY(-5px) scale(.9)}
+.grand-moto-cake .cake-candle.blown .candle-flame{opacity:0;transform:scale(.1);animation:none}
+.grand-moto-cake .cake-candle.blown:after{content:"";position:absolute;top:-5px;left:8px;width:15px;height:23px;border-radius:50%;background:radial-gradient(ellipse,#ddd9d4aa,transparent 70%);filter:blur(5px);animation:smokeFade 1.2s forwards}
+@keyframes smokeFade{to{opacity:0;transform:translateY(-25px) scale(1.8)}}
+.cake-ground-glow{position:absolute;z-index:-1;bottom:0;left:15%;width:70%;height:45px;border-radius:50%;background:#e8b95b55;filter:blur(24px)}
+.cake-instruction{position:relative;z-index:4;margin:4px auto 14px;text-align:center;color:#ffe6bd;font:15px/1.8 Georgia,serif;text-shadow:0 2px 8px #000}
+.cake-blessing{position:relative;z-index:5;width:min(900px,94vw);margin:0 auto 15px;padding:18px 24px;border:1px solid #e9c77b88;border-radius:20px;background:linear-gradient(135deg,#1b101def,#3c1a2cef);box-shadow:0 12px 50px #0008,0 0 35px #e8bd6b22;text-align:center;color:#fff0d0}
+.cake-blessing.hidden{display:none}
+.blessing-heading{margin:0 0 8px;color:#f5d49a;font:italic 24px Georgia,serif}
+.blessing-urdu{margin:0 auto;font:clamp(17px,2vw,23px)/2.1 'Noto Nastaliq Urdu',serif;color:#fff0dc;direction:rtl}
+.blessing-sign{margin:10px 0 0;color:#f3d39b;font:italic 16px Georgia,serif}
+#cakeNext{position:relative;z-index:6;margin:5px auto 0}
+#cakeNext:disabled{opacity:.35;cursor:not-allowed}
+@media(max-width:700px){.cake-night.moto-cake-scene{padding:105px 4vw 34px;justify-content:flex-start}.cake-scene-heading .birthday-heading{font-size:clamp(31px,9vw,43px)}.cake-scene-heading .birthday-copy{font-size:13px;line-height:1.6}.grand-moto-cake{width:98vw;height:clamp(300px,43vh,390px);margin-top:24px;transform:none}.grand-moto-cake .tier-top{bottom:65%;height:22%;width:38%}.grand-moto-cake .tier-middle{bottom:35%;height:29%;width:68%}.grand-moto-cake .tier-bottom{bottom:7%;height:30%;width:94%}.grand-moto-cake .cake-candles{bottom:86%;gap:32px}.grand-moto-cake .cake-candle{height:65px}.candle-stick{height:44px}.cake-blessing{padding:13px 12px;margin:0 auto 10px}.blessing-heading{font-size:20px}.blessing-urdu{font-size:16px;line-height:2}.blessing-sign{font-size:14px}.cake-instruction{font-size:13px;margin:3px auto 10px}}
