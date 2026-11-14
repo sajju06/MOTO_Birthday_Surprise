@@ -220,12 +220,33 @@ body.gift-cinema-open{overflow:hidden!important}
 /* Photographic cake stage: use a real cake photograph, not CSS cake shapes */
 .photo-cake-stage{position:relative;isolation:isolate;width:min(660px,94vw);height:clamp(370px,54vh,560px);margin:10px auto 0;display:flex;align-items:center;justify-content:center}
 .photo-cake-image{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 25px 28px #0009);border-radius:12px}
-.photo-cake-candles{position:absolute;z-index:3;top:8%;left:50%;transform:translateX(-50%);display:flex;gap:clamp(24px,5vw,55px)}
+.photo-cake-candles{
+  position:absolute;
+  z-index:3;
+  inset:0;
+  pointer-events:none;
+}
+
+.photo-cake-candles .cake-candle{
+  position:absolute;
+  top:8%;
+  width:23px;
+  height:72px;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  pointer-events:auto;
+  transform:translateX(-50%);
+}
+.photo-cake-candles .cake-candle:nth-child(1){left:1%}
+.photo-cake-candles .cake-candle:nth-child(2){left:2%}
+.photo-cake-candles .cake-candle:nth-child(3){left:3%}
 .photo-cake-candles .cake-candle{position:relative;width:23px;height:72px;padding:0;border:0;background:transparent;cursor:pointer;filter:none;transition:opacity .3s,transform .3s}
 .photo-cake-candles .candle-stick{position:absolute;bottom:0;left:7px;width:10px;height:49px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff5d9 0 6px,#c34c66 6px 12px);box-shadow:inset -2px 0 2px #713044,0 2px 5px #0005}
-.photo-cake-candles .candle-flame{position:absolute;top:0;left:6px;width:14px;height:22px;border-radius:55% 45% 55% 45%;background:radial-gradient(ellipse at 50% 70%,#fff 0 15%,#ffe78b 34%,#ff9c36 65%,transparent 72%);filter:drop-shadow(0 0 8px #ffb83e);animation:candleFlicker .65s ease-in-out infinite alternate}
+.photo-cake-candles .candle-flame{position:absolute;top:-20px;left:6px;width:14px;height:22px;border-radius:55% 45% 55% 45%;background:radial-gradient(ellipse at 50% 70%,#fff 0 15%,#ffe78b 34%,#ff9c36 65%,transparent 72%);filter:drop-shadow(0 0 8px #ffb83e);animation:candleFlicker .65s ease-in-out infinite alternate}
 .photo-cake-candles .cake-candle.blown{opacity:.45;transform:translateY(-4px)}
 .photo-cake-candles .cake-candle.blown .candle-flame{opacity:0;transform:scale(.1);animation:none}
 .photo-cake-candles .cake-candle.blown:after{content:"";position:absolute;top:-4px;left:6px;width:16px;height:23px;border-radius:50%;background:radial-gradient(ellipse,#ddd9d4bb,transparent 70%);filter:blur(5px);animation:smokeFade 1.2s forwards}
 .photo-cake-name{position:absolute;z-index:4;left:50%;top:73%;transform:translate(-50%,-50%) perspective(180px) rotateX(-8deg);font:900 clamp(30px,5.5vw,57px)/1 Georgia,serif;letter-spacing:.18em;padding-left:.18em;color:#ffe7a0;-webkit-text-stroke:1px #8b5721;text-shadow:1px 1px 0 #8b5721,2px 2px 0 #754316,3px 3px 0 #61350f,4px 5px 4px #210e0a,0 0 12px #ffdf87;filter:drop-shadow(0 5px 4px #160a08);white-space:nowrap}
-@media(max-width:700px){.photo-cake-stage{height:clamp(330px,46vh,430px);width:100%;margin-top:16px}.photo-cake-candles{top:8%;gap:25px}.photo-cake-candles .cake-candle{height:62px}.photo-cake-candles .candle-stick{height:42px}.photo-cake-name{top:73%;font-size:clamp(29px,8vw,43px)}}
+@media(max-width:700px){.photo-cake-stage{height:clamp(330px,46vh,430px);width:100%;margin-top:16px}.photo-cake-candles{inset:0}.photo-cake-candles .cake-candle{height:90px}.photo-cake-candles .candle-stick{height:85px}.photo-cake-name{top:73%;font-size:clamp(29px,8vw,43px)}}
