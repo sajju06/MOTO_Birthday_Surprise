@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#100b20">
   <title>For MOTO — A Little Universe of Love</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">\n  <link rel="stylesheet" href="cinematic.css">\n  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -404,7 +404,31 @@ Happy Birthday, meri mohabbat!
       </div>
     </section>
 
-    <section class="page finale" data-page="16" id="finale">
+
+    <!-- CINEMATIC URDU BIRTHDAY SURPRISE -->
+    <section class="page cinematic-page" data-page="16" id="cinematicWish" lang="ur" dir="rtl">
+      <div class="cinema-stars" aria-hidden="true"></div>
+      <div class="rose-petals" id="rosePetals" aria-hidden="true"></div>
+      <div class="cinema-content">
+        <p class="cinema-kicker">صرف تمہارے لیے، میری محبت</p>
+        <div class="cinema-moon">♡</div>
+        <p class="cinema-intro">آج کی یہ خوبصورت رات، یہ چمکتے ستارے، اور دل کی ہر دھڑکن...</p>
+        <h2 class="cinema-title">سب تمہارے نام،<br><em>میری جان۔</em></h2>
+        <p class="cinema-wish">تم میری زندگی کی وہ خوبصورت دعا ہو جس کے قبول ہونے پر میں ہر روز شکر ادا کرتا ہوں۔ اللہ تمہاری ہر صبح خوشیوں سے روشن کرے، ہر خواب کو حقیقت بنائے، اور تمہاری مسکراہٹ ہمیشہ سلامت رکھے۔</p>
+        <div class="cinema-cake" aria-label="سالگرہ کا کیک">
+          <div class="candle"><span class="candle-flame" id="candleFlame"></span></div>
+          <div class="cake-top"></div><div class="cake-layer"></div><div class="cake-base"></div>
+          <div class="cake-plate"></div>
+        </div>
+        <p class="candle-hint" id="candleHint">آنکھیں بند کرو، ایک پیاری سی خواہش مانگو، اور شمع بجھاؤ۔</p>
+        <button class="btn btn-primary candle-button" id="blowCandle">شمع بجھاؤ ✨</button>
+        <p class="candle-blessing hidden" id="candleBlessing">تمہاری ہر دعا قبول ہو، میری جان۔ آمین۔ ♡</p>
+        <button class="btn btn-primary hidden cinema-next" id="cinemaFinale">اب تمہارے لیے آخری سرپرائز ہے ♡</button>
+      </div>
+      <div class="cinema-bottom">میری محبت، آج بھی... ہمیشہ بھی۔</div>
+    </section>
+
+    <section class="page finale" data-page="17" id="finale">
       <canvas id="fireworks"></canvas>
       <div class="finale-content">
         <p class="eyebrow">TODAY, THE UNIVERSE CELEBRATES YOU</p>
@@ -418,7 +442,7 @@ Happy Birthday, meri mohabbat!
       <div class="final-confetti" aria-hidden="true">✦　♡　✧　♡　✦　✧　♡　✦</div>
     </section>
 
-    <section class="page message-book-page" data-page="17" id="messageBook">
+    <section class="page message-book-page" data-page="18" id="messageBook">
       <div class="message-book-card">
         <p class="eyebrow">A LITTLE NOTE FOR MY HEART</p>
         <h2 class="section-title">Your words, <em>my forever keepsake.</em></h2>
@@ -432,7 +456,7 @@ Happy Birthday, meri mohabbat!
           <p id="messageStatus" class="message-status" role="status" aria-live="polite"></p>
         </form>
         <p class="message-private-note">Your message will be saved privately for me to read later. ♡</p>
-        <button class="btn btn-ghost" id="backToFinale" type="button">Back to our birthday wish</button>
+        <button class="btn btn-ghost" id="backToFinale" type="button">واپس سالگرہ کی مبارکباد پر</button>
       </div>
     </section>
 
@@ -448,6 +472,6 @@ Happy Birthday, meri mohabbat!
     <source src="music/our-song.mp3.mp4" type="audio/mpeg">
   </audio>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js"></script>\n  <script src="romance.js"></script>
+  <script src="script.js"></script>\n  <script src="romance.js"></script>\n  <script src="cinematic.js"></script>
 </body>
 </html>
