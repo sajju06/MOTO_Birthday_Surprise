@@ -14,6 +14,7 @@
   const dreamCinema = document.getElementById('dreamCinema');
   const dreamVideo = document.getElementById('dreamCinemaVideo');
   const dreamBack = document.getElementById('dreamCinemaBack');
+  if (dreamCinema && dreamCinema.parentElement !== document.body) document.body.appendChild(dreamCinema);
   const dreamTitle = document.getElementById('dreamCinemaTitle');
   const dreamKicker = document.getElementById('dreamCinemaKicker');
   const dreamLine = document.getElementById('dreamCinemaLine');
@@ -24,7 +25,7 @@
     home: {
       title: 'ہمارا اپنا گھر',
       kicker: 'ایک چھوٹا سا جہاں، صرف ہم دونوں کے لیے',
-      video: 'https://www.pexels.com/download/video/31346772/',
+      video: 'https://www.pexels.com/download/video/34955006/',
       lines: [
         'ایک چھوٹا سا گھر ہو، جہاں ہر کونے میں ہماری محبت بسی ہو۔',
         'صبح تمہاری مسکراہٹ سے ہو، اور شام تمہارے ساتھ چائے سے۔',
@@ -36,7 +37,7 @@
     travel: {
       title: 'دنیا کی سیر',
       kicker: 'ہاتھ میں ہاتھ، منزل سے زیادہ تمہارا ساتھ',
-      video: 'https://www.pexels.com/download/video/11598335/',
+      video: 'https://www.pexels.com/download/video/37528377/',
       lines: [
         'کبھی پہاڑوں کے راستے ہوں، کبھی ڈوبتے سورج کے رنگ۔',
         'نئے شہر دیکھیں، نئی یادیں بنائیں، اور ہر سفر میں تم ساتھ ہو۔',
