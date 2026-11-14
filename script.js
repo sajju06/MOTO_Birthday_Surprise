@@ -45,16 +45,26 @@ document.addEventListener('touchstart', playBirthdaySong);
 window.addEventListener('load', playBirthdaySong);
 
 
+function activateBirthdayVideo(page){
+  document.querySelectorAll('.birthday-film-bg').forEach(video=>{
+    if(video.closest('.page')===page){
+      if(!video.src && video.dataset.src){video.src=video.dataset.src;video.load();}
+      const play=video.play(); if(play && play.catch) play.catch(()=>{});
+    }else{video.pause();}
+  });
+}
+
 function showPage(index){
   if(index<0 || index>=pages.length) return;
 
 
   
   pages.forEach((p,i)=>p.classList.toggle('active',i===index));
+  activateBirthdayVideo(pages[index]);
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===5 || index===22) startFireworks();
+  if(index===9 || index===26) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -63,7 +73,7 @@ $('#unlockBtn').addEventListener('click',unlock);
 $('#passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
 function unlock(){
   const value=$('#passwordInput').value.trim(); 
-  if(value===PASSWORD){$('#lockScreen').classList.add('unlocked');$('#lockError').textContent='';}
+  if(value===PASSWORD){$('#lockScreen').classList.add('unlocked');$('#lockError').textContent='';activateBirthdayVideo(pages[currentPage]);}
   else{$('#lockError').textContent='That is not our secret date. Try again ♡';$('#passwordInput').value='';$('#passwordInput').focus();}
 }
 
@@ -93,7 +103,7 @@ memoryCards.forEach(card => {
 /* Continue Journey */
 
 document.getElementById('memoryContinue')?.addEventListener('click', () => {
-  showPage(8);
+  showPage(12);
 });
 
 
@@ -151,7 +161,7 @@ function startFireworks(){
 $('#replay').onclick=()=>{showPage(0);$('#lockScreen').classList.remove('unlocked');};
 
 
-document.getElementById("continueJourney")?.addEventListener("click", () => showPage(8));
+document.getElementById("continueJourney")?.addEventListener("click", () => showPage(12));
 
 
 
@@ -189,4 +199,4 @@ if (loveForm) {
     sendButton.textContent = 'Send my message ♡';
   });
 }
-document.getElementById('backToFinale')?.addEventListener('click', () => showPage(22));
+document.getElementById('backToFinale')?.addEventListener('click', () => showPage(26));
