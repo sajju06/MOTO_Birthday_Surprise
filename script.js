@@ -47,14 +47,14 @@ window.addEventListener('load', playBirthdaySong);
 
 function showPage(index){
   if(index<0 || index>=pages.length) return;
-  if(currentPage===4 && index!==4 && gameStarted && heartsCaught<10) return;
+  if(currentPage===0 && index!==0 && gameStarted && heartsCaught<10) return;
 
   
   pages.forEach((p,i)=>p.classList.toggle('active',i===index));
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===21 || index===28) startFireworks();
+  if(index===17 || index===24) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -67,146 +67,8 @@ function unlock(){
   else{$('#lockError').textContent='That is not our secret date. Try again ♡';$('#passwordInput').value='';$('#passwordInput').focus();}
 }
 
-$('#yesSpecial').onclick=()=>$('#specialReply').textContent='Then let me remind you: you are one of the best things in my life. ♡';
-$('#noSpecial').onclick=()=>$('#specialReply').textContent='You are my once-in-a-lifetime kind of person. Never forget that.';
-
-
-const quizData = [
-  {
-    q: 'What is my favourite place to be?',
-    a: [
-      'Anywhere with you',
-      'At the moon',
-      'In a crowded room',
-      'Nowhere at all'
-    ],
-    correct: 0,
-    why: 'Exactly. Anywhere feels better when you are there.'
-  },
-  {
-    q: 'What do I wish for you most?',
-    a: [
-      'More expensive things',
-      'A happy heart and fulfilled dreams',
-      'More rainy days',
-      'Endless sleep'
-    ],
-    correct: 1,
-    why: 'Your happiness is one of my favourite wishes.'
-  },
-  {
-    q: 'How long do I want to keep making memories?',
-    a: [
-      'One day',
-      'A little while',
-      'As long as life lets me',
-      'Until the next page'
-    ],
-    correct: 2,
-    why: 'The answer is always: as long as I get to.'
-  }
-];
-
-let quizIndex = 0;
-let quizScore = 0;
-let quizAnswered = false;
-
-function renderQuiz() {
-
-  const item = quizData[quizIndex];
-  quizAnswered = false;
-
-  $('#quizCount').textContent =
-    `QUESTION 0${quizIndex + 1} / 03`;
-
-  $('#quizScore').textContent = '♡ ' + quizScore;
-
-  $('#quizProgress').style.width =
-    (quizIndex / quizData.length * 100) + '%';
-
-  $('#quizQuestion').textContent = item.q;
-
-  $('#quizFeedback').textContent = '';
-
-  $('#quizNext').classList.add('hidden');
-
-  const host = $('#quizOptions');
-  host.innerHTML = '';
-
-  item.a.forEach((answer, i) => {
-
-    const b = document.createElement('button');
-
-    b.className = 'quiz-option';
-    b.textContent = answer;
-
-    b.onclick = function () {
-
-      if (quizAnswered) return;
-
-      // WRONG ANSWER
-      if (i !== item.correct) {
-
-        b.classList.add('wrong');
-
-        $('#quizFeedback').textContent =
-          "I don't expect that from you 🥺 Try again!";
-
-        $('#quizNext').classList.add('hidden');
-
-        return;
-      }
-
-      // CORRECT ANSWER
-      quizAnswered = true;
-      quizScore++;
-
-      b.classList.add('correct');
-
-      $('#quizFeedback').textContent = item.why;
-
-      $('#quizScore').textContent = '♡ ' + quizScore;
-
-      $('#quizProgress').style.width =
-        ((quizIndex + 1) / quizData.length * 100) + '%';
-
-      $$('.quiz-option', host).forEach(option => {
-        option.disabled = true;
-      });
-
-      $('#quizNext').classList.remove('hidden');
-
-      $('#quizNext').textContent =
-        quizIndex === quizData.length - 1
-          ? 'Finish our quiz →'
-          : 'Next question →';
-    };
-
-    host.appendChild(b);
-  });
-}
-
-// NEXT QUESTION BUTTON
-$('#quizNext').onclick = function () {
-
-  if (!quizAnswered) return;
-
-  if (quizIndex < quizData.length - 1) {
-
-    quizIndex++;
-    renderQuiz();
-
-  } else {
-
-    quizIndex = 0;
-    renderQuiz();
-    showPage(4);
-
-  }
-};
-
-// START QUIZ
-renderQuiz();
+if($('#yesSpecial')) $('#yesSpecial').onclick=()=>$('#specialReply').textContent='Then let me remind you: you are one of the best things in my life. ♡';
+if($('#noSpecial')) $('#noSpecial').onclick=()=>$('#specialReply').textContent='You are my once-in-a-lifetime kind of person. Never forget that.';
 
 
 function spawnHeart(){
@@ -244,7 +106,7 @@ memoryCards.forEach(card => {
 /* Continue Journey */
 
 document.getElementById('memoryContinue').addEventListener('click', () => {
-  showPage(7);
+  showPage(3);
 });
 
 
