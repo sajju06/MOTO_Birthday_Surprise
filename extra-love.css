@@ -47,3 +47,43 @@
 .film-next{font:15px 'Noto Nastaliq Urdu',serif}
 .film-final-line{font:22px/2 'Noto Nastaliq Urdu',serif;color:#f4d5a5;margin:22px auto;animation:sceneIn .9s both}
 @media(max-width:700px){.dream-world{grid-template-columns:1fr;max-width:430px}.dream-card{min-height:155px}.named-sky{height:310px}.named-star-message{font-size:18px;width:85%}.film-frame{min-height:330px;padding:40px 18px}.heartbeat-core{width:165px;height:165px}}
+
+
+/* CINEMATIC VISUAL WORLDS — scene art is drawn in CSS, no extra downloads */
+.dream-world{position:relative;display:block;min-height:590px;padding:18px 0 0;isolation:isolate}
+.dream-cinematic-backdrop{height:300px;position:relative;overflow:hidden;border:1px solid #f5d5e633;border-radius:26px;margin:0 auto 18px;background:linear-gradient(180deg,#171d3b 0%,#65476a 55%,#e6a47e 100%);box-shadow:0 20px 60px #0008,inset 0 -40px 70px #160e24aa;transition:background 1s ease}
+.dream-cinematic-backdrop:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 78%,#ffd9a855,transparent 35%),linear-gradient(0deg,#140f22aa,transparent 55%)}
+.dream-scene-moon{position:absolute;width:76px;height:76px;border-radius:50%;top:38px;right:16%;background:#ffe8bd;box-shadow:0 0 45px #ffe1a9aa}
+.dream-scene-house{position:absolute;bottom:53px;left:50%;width:180px;height:112px;transform:translateX(-50%);background:linear-gradient(90deg,#3b2638,#70465a);border:2px solid #e8b6a0;border-bottom:0;clip-path:polygon(0 30%,50% 0,100% 30%,100% 100%,0 100%);filter:drop-shadow(0 0 18px #ffcf9b55)}
+.dream-scene-house:after{content:"";position:absolute;left:42%;bottom:0;width:30px;height:57px;background:#f7c78c;box-shadow:45px 0 0 -5px #f7c78c, -44px -20px 0 -5px #f7c78c}
+.dream-scene-hills{position:absolute;bottom:-75px;left:-5%;width:110%;height:150px;border-radius:50% 50% 0 0;background:#1b2436;box-shadow:0 -35px 0 #293047}
+.dream-scene-caption{position:absolute;z-index:2;bottom:18px;left:0;right:0;color:#fff1df;font:18px 'Noto Nastaliq Urdu',serif;text-shadow:0 2px 12px #000}
+.dream-cinematic-backdrop.scene-travel{background:linear-gradient(180deg,#18284b 0%,#e58a72 58%,#f7c88e 100%)}
+.dream-cinematic-backdrop.scene-travel .dream-scene-house{width:0;height:0;border-left:100px solid transparent;border-right:100px solid transparent;border-bottom:175px solid #27334b;clip-path:none;background:transparent;bottom:36px}
+.dream-cinematic-backdrop.scene-travel .dream-scene-house:after{content:"";position:absolute;top:55px;left:-60px;width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid #3c4962;background:none;box-shadow:none}
+.dream-cinematic-backdrop.scene-travel .dream-scene-hills{background:#1a2639;box-shadow:0 -35px 0 #34435a}
+.dream-cinematic-backdrop.scene-joy{background:linear-gradient(135deg,#26384a,#6f667b 55%,#d49c9a)}
+.dream-cinematic-backdrop.scene-joy .dream-scene-moon{width:0;height:0;background:transparent;border-radius:0;top:0;right:0;box-shadow:none}
+.dream-cinematic-backdrop.scene-joy .dream-scene-house{width:55%;height:75%;bottom:0;clip-path:none;background:repeating-linear-gradient(90deg,#171b2b 0 3px,transparent 3px 31%),linear-gradient(#171b2b,#171b2b);border:0;opacity:.85}
+.dream-cinematic-backdrop.scene-joy .dream-scene-house:after{left:18%;bottom:25%;width:45%;height:42%;background:linear-gradient(90deg,#f8d5a0,#f8d5a0);box-shadow:50px 0 0 #f8d5a0}
+.dream-card{position:relative;z-index:2}
+.film-frame{isolation:isolate;background:#100d1c;transition:background 1s ease}
+.film-visual{position:absolute;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,#182343 0%,#9a6178 62%,#e4a27c 100%);transition:filter 1s,opacity .8s}
+.film-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#100d1cdd,transparent 70%),radial-gradient(ellipse at 50% 65%,#ffd6a866,transparent 38%)}
+.film-visual-moon{position:absolute;top:14%;right:18%;width:72px;height:72px;border-radius:50%;background:#ffe9c4;box-shadow:0 0 45px #ffe3b2}
+.film-visual-horizon{position:absolute;left:-10%;right:-10%;height:45%;bottom:-17%;border-radius:50% 50% 0 0;background:#1c263b;box-shadow:0 -38px 0 #30344c}
+.film-visual-silhouette{position:absolute;bottom:13%;left:50%;width:150px;height:130px;transform:translateX(-50%);background:linear-gradient(90deg,#211b2b 0 45%,transparent 45% 55%,#211b2b 55%);clip-path:polygon(38% 0,62% 0,68% 28%,100% 100%,0 100%,32% 28%);filter:drop-shadow(0 0 15px #000)}
+.film-frame[data-scene="1"] .film-visual{background:linear-gradient(180deg,#172b4b,#d48b72 65%,#f7c58d)}
+.film-frame[data-scene="1"] .film-visual-silhouette{width:260px;height:170px;clip-path:polygon(0 100%,28% 10%,48% 78%,68% 0,100% 100%);background:#26334b}
+.film-frame[data-scene="2"] .film-visual{background:linear-gradient(180deg,#293c53,#e8b18d 70%,#f6d5a4)}
+.film-frame[data-scene="2"] .film-visual-moon{width:0;height:0;box-shadow:none}
+.film-frame[data-scene="2"] .film-visual-silhouette{width:190px;height:115px;bottom:10%;clip-path:polygon(0 35%,50% 0,100% 35%,100% 100%,0 100%);background:#382538}
+.film-frame[data-scene="3"] .film-visual{background:linear-gradient(180deg,#202a42,#58617a 60%,#b17d87)}
+.film-frame[data-scene="3"] .film-visual:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 22px,#ffffff24 23px 24px)}
+.film-frame[data-scene="3"] .film-visual-silhouette{width:240px;height:145px;clip-path:polygon(0 100%,20% 30%,40% 100%,60% 20%,100% 100%);background:#1b2438}
+.film-frame[data-scene="4"] .film-visual{background:radial-gradient(circle at 50% 45%,#a64d78,#301c43 45%,#100d20 80%)}
+.film-frame[data-scene="4"] .film-visual-moon{top:22%;right:calc(50% - 36px);box-shadow:0 0 70px #ffd6e8}
+.film-frame[data-scene="4"] .film-visual-silhouette{width:190px;height:170px;background:#20142b}
+.film-scene-text{position:relative;z-index:2;text-shadow:0 3px 22px #100615,0 0 35px #e99abc88}
+.film-scene-number,.film-caption{position:relative;z-index:2}
+@media(max-width:700px){.dream-world{min-height:720px}.dream-cinematic-backdrop{height:245px}.dream-scene-house{transform:translateX(-50%) scale(.8)}.film-visual-silhouette{transform:translateX(-50%) scale(.8)}}
