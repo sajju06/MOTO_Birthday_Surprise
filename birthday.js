@@ -44,16 +44,19 @@
     });
   });
 
-  const candles = [...document.querySelectorAll('.cake-candle')];
+  const candles = [...document.querySelectorAll('#birthdayCake .cake-candle')];
   const cakeNext = document.getElementById('cakeNext');
   let blown = 0;
   candles.forEach(candle => candle.addEventListener('click', () => {
     if (candle.classList.contains('blown')) return;
     candle.classList.add('blown');
+    candle.setAttribute('aria-label', 'Candle blown out');
     blown++;
     if (blown === candles.length) {
       document.getElementById('cakeInstruction').classList.add('hidden');
-      document.getElementById('cakeBlessing').classList.remove('hidden');
+      const blessing = document.getElementById('cakeBlessing');
+      blessing.classList.remove('hidden');
+      blessing.scrollIntoView({behavior:'smooth',block:'nearest'});
       cakeNext.disabled = false;
       cakeNext.textContent = 'See your birthday memories ♡';
     }
