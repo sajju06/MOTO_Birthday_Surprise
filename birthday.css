@@ -250,3 +250,20 @@ body.gift-cinema-open{overflow:hidden!important}
 .photo-cake-candles .cake-candle.blown:after{content:"";position:absolute;top:-4px;left:6px;width:16px;height:23px;border-radius:50%;background:radial-gradient(ellipse,#ddd9d4bb,transparent 70%);filter:blur(5px);animation:smokeFade 1.2s forwards}
 .photo-cake-name{position:absolute;z-index:4;left:50%;top:73%;transform:translate(-50%,-50%) perspective(180px) rotateX(-8deg);font:900 clamp(30px,5.5vw,57px)/1 Georgia,serif;letter-spacing:.18em;padding-left:.18em;color:#ffe7a0;-webkit-text-stroke:1px #8b5721;text-shadow:1px 1px 0 #8b5721,2px 2px 0 #754316,3px 3px 0 #61350f,4px 5px 4px #210e0a,0 0 12px #ffdf87;filter:drop-shadow(0 5px 4px #160a08);white-space:nowrap}
 @media(max-width:700px){.photo-cake-stage{height:clamp(330px,46vh,430px);width:100%;margin-top:16px}.photo-cake-candles{inset:0}.photo-cake-candles .cake-candle{height:90px}.photo-cake-candles .candle-stick{height:85px}.photo-cake-name{top:73%;font-size:clamp(29px,8vw,43px)}}
+
+/* Chapter 6 — cinematic nature memory museum */
+.memory-museum{position:relative;isolation:isolate;overflow:hidden;background:#090d13}
+.memory-museum .birthday-film-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;z-index:0;filter:brightness(.42) saturate(1.12) contrast(1.08)}
+.memory-museum .birthday-video-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,12,18,.55),rgba(9,14,21,.38) 35%,rgba(7,10,16,.88)),linear-gradient(90deg,rgba(8,13,20,.42),transparent 50%,rgba(8,13,20,.42));pointer-events:none}
+.memory-museum .birthday-section-head,.memory-museum .moto-photo-grid,.memory-museum .photo-upload-note,.memory-museum>.birthday-next{position:relative;z-index:2}
+.memory-museum .birthday-section-head{padding:20px 18px;border:1px solid rgba(232,205,153,.24);border-radius:20px;background:linear-gradient(135deg,rgba(13,20,26,.56),rgba(20,24,32,.34));backdrop-filter:blur(8px);box-shadow:0 16px 50px rgba(0,0,0,.2)}
+.memory-museum .birthday-kicker{color:#f1d59e;text-shadow:0 2px 12px #000}
+.memory-museum .birthday-heading,.memory-museum .birthday-copy{color:#fff5e7;text-shadow:0 2px 18px #000}
+.memory-museum .moto-photo-slot{border:1px solid rgba(237,210,158,.6);box-shadow:0 16px 42px rgba(0,0,0,.42);background:#101820}
+.memory-museum .moto-photo-slot img{filter:saturate(1.12) contrast(1.04);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .6s}
+.memory-museum .moto-photo-slot:hover img{transform:scale(1.08);filter:saturate(1.2) brightness(.8)}
+.memory-museum .moto-photo-caption{background:linear-gradient(180deg,transparent,rgba(5,9,13,.88))}
+.memory-museum .moto-photo-caption strong{color:#fff0cf;text-shadow:0 2px 10px #000}
+.memory-museum .moto-photo-caption small{color:#fff4e8;text-shadow:0 2px 8px #000}
+.memory-museum .photo-upload-note{color:#f3dfbc;text-shadow:0 2px 12px #000}
+@media(max-width:700px){.memory-museum .birthday-section-head{padding:15px 12px}.memory-museum .birthday-film-bg{object-position:center}}
