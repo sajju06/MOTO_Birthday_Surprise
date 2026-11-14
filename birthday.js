@@ -107,6 +107,9 @@
     if(status) status.textContent='HAPPY BIRTHDAY, MOTO! Tonight is yours! ♡';
     const page=document.getElementById('birthdayParty');
     page?.classList.add('party-started');
+    const partyButton=document.getElementById('startBirthdayParty');
+    partyButton?.classList.add('party-fired');
+    if(partyButton) partyButton.innerHTML='THE PARTY IS ON! ✨';
     for(let i=0;i<65;i++){
       const piece=document.createElement('i');
       piece.className='party-confetti';
@@ -142,29 +145,5 @@
 
   // A separate birthday track can be added without replacing the couple's original song.
   const birthdayAudio = document.getElementById('birthdayAudio');
-  const musicMode = document.getElementById('musicModeToggle');
-  if (musicMode && birthdayAudio) {
-    let birthdayMode = false;
-    musicMode.addEventListener('click', async () => {
-      const coupleAudio = document.getElementById('backgroundMusic');
-      const mainMusic = window.birthdaySong;
-      birthdayMode = !birthdayMode;
-      if (birthdayMode) {
-        if (mainMusic) mainMusic.pause();
-        if (coupleAudio) coupleAudio.pause();
-        try {
-          await birthdayAudio.play();
-          musicMode.textContent = 'BIRTHDAY MUSIC ON';
-        } catch (error) {
-          musicMode.textContent = 'BIRTHDAY TRACK MISSING — OUR SONG';
-          birthdayMode = false;
-          if (mainMusic) { try { await mainMusic.play(); } catch (_) {} }
-        }
-      } else {
-        birthdayAudio.pause();
-        if (mainMusic) { try { await mainMusic.play(); } catch (_) {} }
-        musicMode.textContent = 'OUR SONG PLAYING';
-      }
-    });
-  }
+
 })();
