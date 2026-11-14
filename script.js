@@ -205,4 +205,4 @@ if (loveForm) {
     sendButton.textContent = 'Send my message ♡';
   });
 }
-document.getElementById('backToFinale')?.addEventListener('click', () => showPage(21));
+document.getElementById('backToFinale')?.addEventListener('click', () => showPage(17));
