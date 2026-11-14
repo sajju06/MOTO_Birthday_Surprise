@@ -229,3 +229,36 @@ body.gift-cinema-open{overflow:hidden!important}
 .photo-cake-candles .cake-candle.blown:after{content:"";position:absolute;top:-4px;left:6px;width:16px;height:23px;border-radius:50%;background:radial-gradient(ellipse,#ddd9d4bb,transparent 70%);filter:blur(5px);animation:smokeFade 1.2s forwards}
 .photo-cake-name{position:absolute;z-index:4;left:50%;top:73%;transform:translate(-50%,-50%) perspective(180px) rotateX(-8deg);font:900 clamp(30px,5.5vw,57px)/1 Georgia,serif;letter-spacing:.18em;padding-left:.18em;color:#ffe7a0;-webkit-text-stroke:1px #8b5721;text-shadow:1px 1px 0 #8b5721,2px 2px 0 #754316,3px 3px 0 #61350f,4px 5px 4px #210e0a,0 0 12px #ffdf87;filter:drop-shadow(0 5px 4px #160a08);white-space:nowrap}
 @media(max-width:700px){.photo-cake-stage{height:clamp(330px,46vh,430px);width:100%;margin-top:16px}.photo-cake-candles{top:8%;gap:25px}.photo-cake-candles .cake-candle{height:62px}.photo-cake-candles .candle-stick{height:42px}.photo-cake-name{top:73%;font-size:clamp(29px,8vw,43px)}}
+
+
+/* Real uploaded MOTO cake: invisible hit targets align with the photo's actual flames */
+.photo-cake-candles{position:absolute;z-index:5;inset:0;display:block;pointer-events:none}
+.photo-cake-candles .cake-candle{
+  position:absolute;top:7.7%;width:7%;height:10%;padding:0;
+  border:0;background:transparent;cursor:pointer;pointer-events:auto;
+  transform:translateX(-50%);filter:none;
+}
+.photo-cake-candles .cake-candle:nth-child(1){left:44.7%}
+.photo-cake-candles .cake-candle:nth-child(2){left:50.7%}
+.photo-cake-candles .cake-candle:nth-child(3){left:56.4%}
+.photo-cake-candles .cake-candle .candle-stick{display:none}
+.photo-cake-candles .cake-candle .candle-flame{
+  position:absolute;top:0;left:50%;width:46%;height:70%;
+  transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(ellipse,rgba(18,12,13,.96) 0 28%,rgba(18,12,13,.78) 58%,rgba(18,12,13,0) 82%);
+  filter:blur(2px);opacity:0;animation:none;
+}
+.photo-cake-candles .cake-candle.blown .candle-flame{opacity:1;transform:translateX(-50%)}
+.photo-cake-candles .cake-candle.blown:after{
+  content:"";position:absolute;left:50%;top:-24%;width:44%;height:58%;
+  transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(ellipse at 50% 80%,rgba(224,220,215,.45),rgba(190,185,183,.18) 42%,transparent 74%);
+  filter:blur(4px);animation:smokeFade 1.5s ease-out forwards;pointer-events:none;
+}
+.photo-cake-name{display:none!important}
+@media(max-width:700px){
+  .photo-cake-candles .cake-candle{top:7.7%;height:10%;width:8%}
+  .photo-cake-candles .cake-candle:nth-child(1){left:44.7%}
+  .photo-cake-candles .cake-candle:nth-child(2){left:50.7%}
+  .photo-cake-candles .cake-candle:nth-child(3){left:56.4%}
+}
