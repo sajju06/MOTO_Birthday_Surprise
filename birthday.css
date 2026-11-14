@@ -1,0 +1,62 @@
+
+/* ===== MOTO BIRTHDAY CELEBRATION: luxury + magical + Hollywood ===== */
+.birthday-page{isolation:isolate;overflow:hidden;text-align:center;position:relative;min-height:100svh;padding:120px 7vw 75px;background:radial-gradient(ellipse at 50% 30%,#51304b,#171021 60%,#090812);color:#fff}
+.birthday-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.birthday-video-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0a0814aa,#10091866 45%,#090711ee),linear-gradient(90deg,#09071188,transparent 50%,#09071188)}
+.birthday-scene-content,.star-night-content,.grand-finale-content{width:min(850px,100%);margin:auto;position:relative;z-index:2}
+.birthday-kicker{font:600 10px/1.8 Arial,sans-serif;letter-spacing:.28em;color:#f1d5a0;text-transform:uppercase;margin:0 0 18px}
+.birthday-heading{font:500 clamp(42px,7vw,82px)/1.1 Georgia,serif;letter-spacing:-.035em;color:#fff;margin:12px 0 22px;text-shadow:0 8px 35px #0009}
+.birthday-heading em{font-style:italic;color:#f1c9dc;text-shadow:0 0 32px #f2b7d655}
+.birthday-copy{max-width:650px;margin:0 auto 28px;color:#f0e6ed;font:16px/1.9 Arial,sans-serif;text-shadow:0 2px 14px #000}
+.birthday-crown{font-size:76px;color:#f3d69e;text-shadow:0 0 55px #f4d9a4aa;animation:crownFloat 3s ease-in-out infinite}
+@keyframes crownFloat{50%{transform:translateY(-9px) rotate(3deg)}}
+.birthday-seal{display:inline-block;border:1px solid #e9d1a2aa;color:#f3d9a8;padding:10px 22px;letter-spacing:.2em;font:10px Arial,sans-serif;margin:8px auto 28px;background:#130e1b88}
+.birthday-next{margin:12px auto 0}
+.birthday-side-note{position:absolute;bottom:22px;left:0;right:0;color:#e8cda5aa;font:9px Arial,sans-serif;letter-spacing:.3em}
+.star-night{background:radial-gradient(ellipse at 50% 38%,#542c50,#1a1029 55%,#080711)}
+.star-night-backdrop{position:absolute;inset:0;pointer-events:none}
+.star-night-backdrop span{position:absolute;color:#f6d9a5;text-shadow:0 0 20px #f7d99b;animation:starFlash 2.5s ease-in-out infinite alternate}
+.star-night-backdrop span:nth-child(1){top:16%;left:12%;font-size:35px}.star-night-backdrop span:nth-child(2){top:27%;right:14%;font-size:25px}.star-night-backdrop span:nth-child(3){bottom:22%;left:20%;font-size:30px}.star-night-backdrop span:nth-child(4){bottom:30%;right:17%;font-size:38px}.star-night-backdrop span:nth-child(5){top:12%;right:38%;font-size:18px}
+@keyframes starFlash{to{opacity:.3;transform:scale(.65)}}
+.spotlight-ring{width:155px;height:155px;border:1px solid #f3d5a6;border-radius:50%;margin:0 auto 26px;display:grid;place-items:center;box-shadow:0 0 0 12px #f0d3a20c,0 0 65px #e9c78b66;background:radial-gradient(circle,#b58b5744,#130e1b)}
+.spotlight-ring span{font:italic 78px Georgia,serif;color:#f4dcae;text-shadow:0 0 25px #fff}
+.star-night-label,.award-line{font:10px Arial,sans-serif;letter-spacing:.25em;color:#f1d5a0}
+.award-line{margin:28px auto;color:#e8c8a1}
+.gift-night{background:radial-gradient(ellipse at 50% 0%,#56324c,#171021 58%,#090812)}
+.birthday-section-head{max-width:760px;margin:0 auto 30px;text-align:center}
+.birthday-gift-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;width:min(850px,100%);margin:0 auto}
+.birthday-gift{min-height:235px;border:1px solid #e9d1a255;border-radius:20px;background:linear-gradient(145deg,#34213cdd,#171321ee);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:.35s;box-shadow:0 18px 45px #0004}
+.birthday-gift:hover,.birthday-gift.opened{transform:translateY(-8px);border-color:#f4d9a8;box-shadow:0 18px 55px #d5a66a33}
+.gift-number{font:10px Arial,sans-serif;letter-spacing:.2em;color:#e9d1a2}.gift-emoji{font-size:43px;filter:drop-shadow(0 0 15px #efc9a8)}.birthday-gift b{font:italic 27px Georgia,serif;color:#fff}.birthday-gift small{font:12px Arial,sans-serif;color:#cbbacb}
+.birthday-gift-reveal{min-height:75px;width:min(700px,100%);margin:28px auto 14px;padding:18px 20px;border:1px solid #e9d1a233;border-radius:14px;background:#120d1c99;color:#f6e5ed;font:17px/1.8 Georgia,serif}
+.cake-night{background:radial-gradient(ellipse at 50% 45%,#60374d,#1a1029 58%,#090812)}
+.cake-night-glow{position:absolute;width:420px;height:420px;top:18%;left:50%;transform:translateX(-50%);border-radius:50%;background:#eeb4c522;filter:blur(35px);pointer-events:none}
+.real-cake{position:relative;width:270px;height:220px;margin:20px auto 12px;filter:drop-shadow(0 20px 22px #0008)}
+.cake-tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:13px 13px 20px 20px;background:linear-gradient(90deg,#a34e75,#f3b9d1 48%,#a34e75);box-shadow:inset 0 -9px 0 #8c3c65}
+.tier-top{bottom:91px;width:175px;height:55px;background:linear-gradient(90deg,#f2c4d5,#fff0e8 48%,#d98ba9)}
+.tier-bottom{bottom:28px;width:235px;height:72px}
+.cake-plate{position:absolute;bottom:15px;left:8px;width:254px;height:17px;border-radius:50%;background:linear-gradient(#fff1e2,#b87994)}
+.cake-topper{position:absolute;z-index:3;bottom:151px;left:0;right:0;color:#f9e2b4;font:italic 24px Georgia,serif;text-shadow:0 0 15px #fff}
+.cake-candles{position:absolute;z-index:4;bottom:144px;left:0;right:0;display:flex;justify-content:center;gap:12px}
+.cake-candle{border:0;background:transparent;font-size:34px;cursor:pointer;filter:drop-shadow(0 0 12px #ffc86b);transition:.3s}
+.cake-candle.blown{opacity:.35;filter:grayscale(1);transform:translateY(-8px) scale(.8)}
+.cake-instruction,.cake-blessing{font:16px/2 'Noto Nastaliq Urdu',serif;color:#f3d9b0;max-width:760px;margin:10px auto}
+.cake-blessing{font-size:20px;color:#fff0d0;animation:blessingIn 1s both}
+#cakeNext:disabled{opacity:.35;cursor:not-allowed}
+.memory-museum{background:radial-gradient(ellipse at 50% 0%,#4b2a45,#171021 60%,#090812)}
+.moto-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;width:min(950px,100%);margin:0 auto}
+.moto-photo-slot{position:relative;display:block;overflow:hidden;aspect-ratio:4/5;border:1px solid #e9d1a255;border-radius:16px;padding:0;background:linear-gradient(145deg,#4b304d,#171321);cursor:zoom-in;box-shadow:0 14px 38px #0005}
+.moto-photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.moto-photo-slot:hover img{transform:scale(1.06)}
+.photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 35%,#d9a6c833,transparent 55%),linear-gradient(145deg,#34233d,#171321);color:#f1d5a0}
+.photo-placeholder b{font:55px Georgia,serif}.photo-placeholder small{font:10px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.moto-photo-slot.has-photo .photo-placeholder{display:none}
+.photo-upload-note{color:#bcaebf;font:12px/1.7 Arial,sans-serif;margin:18px auto 8px}
+.photo-upload-note code{color:#f1d5a0}
+.birthday-grand-finale{background:radial-gradient(ellipse at 50% 38%,#693b5b,#21132e 55%,#080711)}
+.grand-finale-content{max-width:850px}
+.grand-finale-crown{font-size:70px;color:#f2d6a1;text-shadow:0 0 50px #f4d9a4;animation:crownFloat 3s ease-in-out infinite}
+.grand-finale-urdu{font:22px/2 'Noto Nastaliq Urdu',serif;color:#f4d8e5;margin:25px auto}
+.grand-finale-confetti{font-size:27px;letter-spacing:.12em;margin:22px auto;color:#f4d7a5;animation:starFlash 2s infinite alternate}
+@media(max-width:700px){.birthday-page{padding:110px 6vw 70px}.birthday-heading{font-size:clamp(39px,12vw,58px)}.birthday-copy{font-size:14px}.birthday-gift-grid{grid-template-columns:1fr;max-width:390px}.birthday-gift{min-height:145px}.moto-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.real-cake{transform:scale(.88);margin-top:4px}.birthday-side-note{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.birthday-crown,.star-night-backdrop span,.grand-finale-confetti{animation:none}}
