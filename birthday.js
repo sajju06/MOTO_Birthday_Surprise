@@ -6,7 +6,7 @@
 
   // Full-screen cinematic food reveal for each mystery gift.
   const giftSurprises = [
-    { title: 'A BIRYANI TREAT FOR YOU', subtitle: 'Your first birthday surprise', image: 'https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=2000&q=95', alt: 'A full plate of chicken biryani', message: 'Tumhari favourite biryani — pehla surprise sirf tumhare liye! ♡' },
+    { title: 'A BIRYANI TREAT FOR YOU', subtitle: 'Your first birthday surprise', image: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Chicken_Biryani_in_plate.jpg', alt: 'A full plate of chicken biryani', message: 'Tumhari favourite biryani — pehla surprise sirf tumhare liye! ♡' },
     { title: 'A BURGER JUST FOR YOU', subtitle: 'Your second birthday surprise', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2000&q=95', alt: 'A delicious juicy burger', message: 'Birthday girl ke liye ek yummy burger treat! ♡' },
     { title: 'SPICY SNACKS TIME', subtitle: 'Your third birthday surprise', image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=2000&q=95', alt: 'A bowl of crunchy spicy potato chips', message: 'Spicy Lays aur Black Kukurey — dono tumhare liye! 🌶️' }
   ];
