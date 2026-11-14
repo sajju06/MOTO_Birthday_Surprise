@@ -2,7 +2,7 @@ const $ = (s, root=document) => root.querySelector(s);
 const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 const pages = $$('.page');
 let currentPage = 0;
-let heartsCaught = 0, gameTimer = null, gameStarted = false;
+
 const PASSWORD = '28-11-2006';
 
 function makeParticles(){
@@ -47,14 +47,14 @@ window.addEventListener('load', playBirthdaySong);
 
 function showPage(index){
   if(index<0 || index>=pages.length) return;
-  if(currentPage===0 && index!==0 && gameStarted && heartsCaught<10) return;
+
 
   
   pages.forEach((p,i)=>p.classList.toggle('active',i===index));
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===17 || index===24) startFireworks();
+  if(index===5 || index===22) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -69,19 +69,6 @@ function unlock(){
 
 if($('#yesSpecial')) $('#yesSpecial').onclick=()=>$('#specialReply').textContent='Then let me remind you: you are one of the best things in my life. ♡';
 if($('#noSpecial')) $('#noSpecial').onclick=()=>$('#specialReply').textContent='You are my once-in-a-lifetime kind of person. Never forget that.';
-
-
-function spawnHeart(){
-  if(heartsCaught>=10)return;
-  const h=document.createElement('button');h.className='fall-heart';h.innerHTML=Math.random()>.5?'♥':'♡';
-  h.style.left=(4+Math.random()*90)+'%';h.style.fontSize=(20+Math.random()*23)+'px';
-  h.style.animationDuration=(4+Math.random()*3)+'s';h.style.animationDelay=(Math.random()*.4)+'s';
-  h.setAttribute('aria-label','Catch heart');
-  h.onclick=()=>{if(h.dataset.caught)return;h.dataset.caught='1';heartsCaught++;$('#heartCount').textContent=String(heartsCaught).padStart(2,'0');$('#heartProgress').style.width=(heartsCaught*10)+'%';h.remove();if(heartsCaught>=10)finishGame();};
-  $('#heartField').appendChild(h);setTimeout(()=>h.remove(),8000);
-}
-function finishGame(){clearInterval(gameTimer);$('#gameComplete').classList.remove('hidden');$('#gameContinue').classList.remove('hidden');$('#startGame').classList.add('hidden');}
-$('#startGame').onclick=()=>{if(gameStarted)return;gameStarted=true;$('#startGame').textContent='Catch the hearts!';gameTimer=setInterval(spawnHeart,430);for(let i=0;i<5;i++)setTimeout(spawnHeart,i*200);};
 
 
 /* ===== MEMORIES ANIMATION ===== */
@@ -106,7 +93,7 @@ memoryCards.forEach(card => {
 /* Continue Journey */
 
 document.getElementById('memoryContinue').addEventListener('click', () => {
-  showPage(3);
+  showPage(8);
 });
 
 
@@ -161,13 +148,10 @@ function startFireworks(){
     ctx.globalAlpha=1;fireworkFrame=requestAnimationFrame(draw);
   }draw();
 }
-$('#replay').onclick=()=>{if(fireworkFrame)cancelAnimationFrame(fireworkFrame);heartsCaught=0;gameStarted=false;clearInterval(gameTimer);$('#heartField').innerHTML='';$('#heartCount').textContent='00';$('#heartProgress').style.width='0';$('#gameComplete').classList.add('hidden');$('#gameContinue').classList.add('hidden');$('#startGame').classList.remove('hidden');$('#startGame').textContent='Let the hearts fall';letterOpened=false;$('#envelope').classList.remove('open');$('#letterText').classList.add('hidden');$('#envelopeHint').textContent='TAP THE ENVELOPE TO OPEN';showPage(0);$('#lockScreen').classList.remove('unlocked');};
+$('#replay').onclick=()=>showPage(0)heartsCaught=0;gameStarted=false;clearInterval(gameTimer);$('#heartField').innerHTML='';$('#heartCount').textContent='00';$('#heartProgress').style.width='0';$('#gameComplete').classList.add('hidden');$('#gameContinue').classList.add('hidden');$('#startGame').classList.remove('hidden');$('#startGame').textContent='Let the hearts fall';letterOpened=false;$('#envelope').classList.remove('open');$('#letterText').classList.add('hidden');$('#envelopeHint').textContent='TAP THE ENVELOPE TO OPEN';showPage(0);$('#lockScreen').classList.remove('unlocked');};
 
 
-document.getElementById("continueJourney").addEventListener("click", function () {
-    document.querySelector('[data-page="2"]').classList.remove("active");
-    document.querySelector('[data-page="3"]').classList.add("active");
-});
+document.getElementById("continueJourney")?.addEventListener("click", () => showPage(8));
 
 
 
@@ -205,4 +189,4 @@ if (loveForm) {
     sendButton.textContent = 'Send my message ♡';
   });
 }
-document.getElementById('backToFinale')?.addEventListener('click', () => showPage(17));
+document.getElementById('backToFinale')?.addEventListener('click', () => showPage(22));
