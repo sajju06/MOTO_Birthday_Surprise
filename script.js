@@ -53,7 +53,7 @@ function showPage(index){
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===16) startFireworks();
+  if(index===17) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -342,4 +342,4 @@ if (loveForm) {
     sendButton.textContent = 'Send my message ♡';
   });
 }
-document.getElementById('backToFinale')?.addEventListener('click', () => showPage(16));
+document.getElementById('backToFinale')?.addEventListener('click', () => showPage(17));
