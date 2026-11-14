@@ -6,15 +6,32 @@
 
   document.querySelectorAll('.birthday-gift').forEach(card => {
     card.addEventListener('click', () => {
-      const messages = [
-        'Meri jaan, tum meri zindagi ka sabse khoobsurat tohfa ho. Main chahta hoon tumhara har din pyaar aur izzat se bhara ho. 💌',
-        'Allah tumhare har naye saal ko sehat, sukoon, kamyabi, halal rizq aur dil ki khushiyon se bhar de. Ameen. ✨',
-        'Aaj ki raat ki queen tum ho — aur meri zindagi ke har din ki favourite person bhi. 👑'
+      const surprises = [
+        {title:'A plate made for you ♡', image:'https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=1100&q=90', alt:'A delicious plate of biryani', message:'Tumhari favourite biryani! Aaj ka pehla surprise sirf tumhare liye. 🍽️'},
+        {title:'Your burger treat ♡', image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=90', alt:'A juicy burger', message:'Ek yummy burger, kyun ke birthday girl ko treat to banti hai! 🍔'},
+        {title:'A spicy little treat ♡', image:'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=1100&q=90', alt:'A bowl of spicy potato chips', message:'Spicy Lays aur Black Kukurey — tumhare favourite spicy snacks! 🌶️'}
       ];
-      document.querySelectorAll('.birthday-gift').forEach(item => item.classList.remove('opened'));
+      const item = surprises[Number(card.dataset.gift)] || surprises[0];
+      document.querySelectorAll('.birthday-gift').forEach(gift => {
+        gift.classList.remove('opened');
+        gift.querySelector('.gift-emoji').textContent = '🎁';
+        gift.querySelector('b').textContent = 'Open me';
+        gift.querySelector('small').textContent = 'A little surprise ♡';
+      });
       card.classList.add('opened');
+      card.querySelector('.gift-emoji').textContent = '✨';
+      card.querySelector('b').textContent = 'Surprise opened!';
+      card.querySelector('small').textContent = 'Tap another gift to discover it';
       const reveal = document.getElementById('birthdayGiftReveal');
-      reveal.textContent = messages[Number(card.dataset.gift)] || messages[0];
+      reveal.innerHTML = '<button class="gift-reveal-close" type="button" aria-label="Close surprise">×</button><div class="gift-reveal-picture"><img src="'+item.image+'" alt="'+item.alt+'" loading="lazy"></div><div class="gift-reveal-copy"><p class="birthday-kicker">YOUR SURPRISE IS HERE</p><h3>'+item.title+'</h3><p>'+item.message+'</p></div>';
+      reveal.classList.add('is-open');
+      reveal.querySelector('.gift-reveal-close').addEventListener('click', () => {
+        reveal.classList.remove('is-open');
+        reveal.innerHTML = '<span class="gift-reveal-hint">Choose a wrapped gift to reveal what\'s inside ✨</span>';
+        card.classList.remove('opened');
+        card.querySelector('.gift-emoji').textContent = '🎁';
+        card.querySelector('b').textContent = 'Open me';
+      });
     });
   });
 
