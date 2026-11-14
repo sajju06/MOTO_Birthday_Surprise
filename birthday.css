@@ -139,3 +139,11 @@
 .royal-welcome-copy .birthday-next{margin-top:3px}
 .royal-palace-entrance .birthday-side-note{z-index:7}
 @media(max-width:700px){.royal-palace-video{object-position:center}.palace-pillar{bottom:32%;width:7vw}.palace-arch{left:12%;right:12%;height:53%}.royal-carpet{width:100vw;height:56%}.royal-cake-dais{top:22%;width:76vw;height:34%}.royal-cake{width:145px;height:145px}.royal-moto-name{font-size:42px;top:2%}.royal-welcome-copy{bottom:4%;width:92%;padding:15px 13px 13px}.royal-welcome-copy .birthday-kicker{font-size:8px}.royal-welcome-copy .birthday-heading{font-size:30px}.royal-welcome-copy .birthday-copy{font-size:12px;line-height:1.5}.royal-welcome-copy .birthday-next{padding:10px 18px}}
+
+/* Chapter 2: golden birthday celebration, visually tied to the royal palace */
+.star-night .birthday-film-bg{filter:brightness(.58) saturate(.9) sepia(.12) contrast(1.08);object-position:center 52%}
+.star-night .birthday-video-shade{background:linear-gradient(180deg,rgba(24,8,10,.35),rgba(24,8,10,.22) 45%,rgba(12,4,7,.88)),linear-gradient(90deg,rgba(50,8,15,.38),transparent 45%,rgba(50,8,15,.3))}
+.star-night .star-night-content{border-color:rgba(226,190,122,.35)}
+.star-night .star-night-label,.star-night .birthday-kicker{color:#f2d69d}
+.star-night .spotlight-ring{border-color:rgba(235,198,129,.7);box-shadow:0 0 35px rgba(219,171,91,.3),inset 0 0 25px rgba(219,171,91,.14)}
+.star-night .birthday-heading em{color:#f4d69b;text-shadow:0 0 20px rgba(226,183,104,.4)}
