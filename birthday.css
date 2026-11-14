@@ -167,3 +167,17 @@
 .gift-reveal-close{position:absolute;right:10px;top:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid #f0d5a588;background:#1c101dcc;color:#ffe7c1;font-size:25px;cursor:pointer}
 .gift-reveal-hint{display:block;padding:18px;color:#f6e5ed;font:16px/1.7 Georgia,serif}
 @media(max-width:650px){.mystery-gifts .birthday-gift-grid{grid-template-columns:1fr;gap:12px;width:min(380px,100%)}.mystery-gifts .birthday-gift{min-height:135px;display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;column-gap:12px;padding:16px;text-align:left;justify-items:start}.mystery-gifts .birthday-gift .gift-number{grid-row:1/3;align-self:center}.mystery-gifts .birthday-gift .gift-emoji{font-size:34px;grid-column:2}.mystery-gifts .birthday-gift b,.mystery-gifts .birthday-gift small{grid-column:2}.mystery-gifts .birthday-gift-reveal.is-open{grid-template-columns:1fr;gap:8px;max-height:760px}.gift-reveal-picture{height:190px}.gift-reveal-copy{text-align:center}}
+
+/* Full-screen cinematic food surprise reveal */
+body.gift-cinema-open{overflow:hidden!important}
+.gift-cinema-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;padding:76px 22px 30px;background:radial-gradient(ellipse at 50% 35%,#44232b,#10090e 75%);opacity:0;visibility:hidden;pointer-events:none;transform:scale(.985);transition:opacity .35s ease,transform .4s ease,visibility .35s}
+.gift-cinema-modal.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:scale(1)}
+.gift-cinema-back{position:absolute;top:22px;left:24px;z-index:3;display:flex;align-items:center;gap:10px;border:1px solid #f0d39a99;border-radius:40px;padding:12px 19px;background:#170d13dd;color:#ffe9c5;font:600 12px/1.2 Arial,sans-serif;letter-spacing:.14em;cursor:pointer;backdrop-filter:blur(10px)}
+.gift-cinema-back:first-letter{font-size:20px}
+.gift-cinema-image-wrap{width:min(86vw,1120px);height:min(66vh,700px);display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:22px;border:1px solid #e7c48b99;box-shadow:0 20px 90px #000b,0 0 38px #e8bc6b33;background:#090609}
+.gift-cinema-image{display:block;width:100%;height:100%;object-fit:contain;background:#090609}
+.gift-cinema-caption{text-align:center;max-width:900px;padding:0 14px}
+.gift-cinema-subtitle{margin:0 0 7px;color:#e8c78e;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase}
+.gift-cinema-title{margin:0;color:#fff0d2;font:italic clamp(25px,4vw,48px)/1.15 Georgia,serif;text-shadow:0 0 24px #d9a65b66}
+.gift-cinema-message{margin:10px 0 0;color:#f6e6e8;font:clamp(14px,1.5vw,18px)/1.55 Georgia,serif}
+@media(max-width:650px){.gift-cinema-modal{padding:76px 12px 25px;gap:16px}.gift-cinema-back{top:14px;left:12px;padding:10px 14px;font-size:10px}.gift-cinema-image-wrap{width:100%;height:58vh;border-radius:14px}.gift-cinema-image{object-fit:contain}.gift-cinema-title{font-size:28px}.gift-cinema-message{font-size:14px}}
