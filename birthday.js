@@ -4,34 +4,43 @@
   const enter = document.getElementById('enterBirthdayExperience');
   enter?.addEventListener('click', () => showPage(0));
 
+  // Full-screen cinematic food reveal for each mystery gift.
+  const giftSurprises = [
+    { title: 'A BIRYANI TREAT FOR YOU', subtitle: 'Your first birthday surprise', image: 'https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=2000&q=95', alt: 'A full plate of chicken biryani', message: 'Tumhari favourite biryani — pehla surprise sirf tumhare liye! ♡' },
+    { title: 'A BURGER JUST FOR YOU', subtitle: 'Your second birthday surprise', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2000&q=95', alt: 'A delicious juicy burger', message: 'Birthday girl ke liye ek yummy burger treat! ♡' },
+    { title: 'SPICY SNACKS TIME', subtitle: 'Your third birthday surprise', image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=2000&q=95', alt: 'A bowl of crunchy spicy potato chips', message: 'Spicy Lays aur Black Kukurey — dono tumhare liye! 🌶️' }
+  ];
+  let giftModal = document.getElementById('giftCinemaModal');
+  if (!giftModal) {
+    giftModal = document.createElement('div');
+    giftModal.id = 'giftCinemaModal';
+    giftModal.className = 'gift-cinema-modal';
+    giftModal.setAttribute('aria-hidden', 'true');
+    giftModal.innerHTML = '<button class="gift-cinema-back" type="button" aria-label="Back to gifts">← <span>BACK TO GIFTS</span></button><div class="gift-cinema-image-wrap"><img class="gift-cinema-image" alt=""></div><div class="gift-cinema-caption"><p class="gift-cinema-subtitle"></p><h2 class="gift-cinema-title"></h2><p class="gift-cinema-message"></p></div>';
+    document.body.appendChild(giftModal);
+  }
+  const closeGiftCinema = () => {
+    giftModal.classList.remove('is-visible');
+    giftModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('gift-cinema-open');
+    const image = giftModal.querySelector('.gift-cinema-image');
+    image.removeAttribute('src');
+  };
+  giftModal.querySelector('.gift-cinema-back').addEventListener('click', closeGiftCinema);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && giftModal.classList.contains('is-visible')) closeGiftCinema();
+  });
   document.querySelectorAll('.birthday-gift').forEach(card => {
     card.addEventListener('click', () => {
-      const surprises = [
-        {title:'A plate made for you ♡', image:'https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=1100&q=90', alt:'A delicious plate of biryani', message:'Tumhari favourite biryani! Aaj ka pehla surprise sirf tumhare liye. 🍽️'},
-        {title:'Your burger treat ♡', image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=90', alt:'A juicy burger', message:'Ek yummy burger, kyun ke birthday girl ko treat to banti hai! 🍔'},
-        {title:'A spicy little treat ♡', image:'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=1100&q=90', alt:'A bowl of spicy potato chips', message:'Spicy Lays aur Black Kukurey — tumhare favourite spicy snacks! 🌶️'}
-      ];
-      const item = surprises[Number(card.dataset.gift)] || surprises[0];
-      document.querySelectorAll('.birthday-gift').forEach(gift => {
-        gift.classList.remove('opened');
-        gift.querySelector('.gift-emoji').textContent = '🎁';
-        gift.querySelector('b').textContent = 'Open me';
-        gift.querySelector('small').textContent = 'A little surprise ♡';
-      });
-      card.classList.add('opened');
-      card.querySelector('.gift-emoji').textContent = '✨';
-      card.querySelector('b').textContent = 'Surprise opened!';
-      card.querySelector('small').textContent = 'Tap another gift to discover it';
-      const reveal = document.getElementById('birthdayGiftReveal');
-      reveal.innerHTML = '<button class="gift-reveal-close" type="button" aria-label="Close surprise">×</button><div class="gift-reveal-picture"><img src="'+item.image+'" alt="'+item.alt+'" loading="lazy"></div><div class="gift-reveal-copy"><p class="birthday-kicker">YOUR SURPRISE IS HERE</p><h3>'+item.title+'</h3><p>'+item.message+'</p></div>';
-      reveal.classList.add('is-open');
-      reveal.querySelector('.gift-reveal-close').addEventListener('click', () => {
-        reveal.classList.remove('is-open');
-        reveal.innerHTML = '<span class="gift-reveal-hint">Choose a wrapped gift to reveal what\'s inside ✨</span>';
-        card.classList.remove('opened');
-        card.querySelector('.gift-emoji').textContent = '🎁';
-        card.querySelector('b').textContent = 'Open me';
-      });
+      const item = giftSurprises[Number(card.dataset.gift)] || giftSurprises[0];
+      giftModal.querySelector('.gift-cinema-image').src = item.image;
+      giftModal.querySelector('.gift-cinema-image').alt = item.alt;
+      giftModal.querySelector('.gift-cinema-subtitle').textContent = item.subtitle;
+      giftModal.querySelector('.gift-cinema-title').textContent = item.title;
+      giftModal.querySelector('.gift-cinema-message').textContent = item.message;
+      giftModal.classList.add('is-visible');
+      giftModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('gift-cinema-open');
     });
   });
 
