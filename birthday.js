@@ -2,7 +2,7 @@
 /* Birthday-only scenes. Existing romance, password, music and Supabase flows remain untouched. */
 (() => {
   const enter = document.getElementById('enterBirthdayExperience');
-  enter?.addEventListener('click', () => showPage(19));
+  enter?.addEventListener('click', () => showPage(0));
 
   document.querySelectorAll('.birthday-gift').forEach(card => {
     card.addEventListener('click', () => {
@@ -49,9 +49,9 @@
     });
   });
 
-  cakeNext?.addEventListener('click', () => { if (!cakeNext.disabled) showPage(23); });
-  document.getElementById('birthdayToMessageBook')?.addEventListener('click', () => showPage(18));
-  document.getElementById('birthdayReplay')?.addEventListener('click', () => showPage(19));
+  cakeNext?.addEventListener('click', () => { if (!cakeNext.disabled) showPage(4); });
+  document.getElementById('birthdayToMessageBook')?.addEventListener('click', () => showPage(23));
+  document.getElementById('birthdayReplay')?.addEventListener('click', () => showPage(0));
 
   // A separate birthday track can be added without replacing the couple's original song.
   const birthdayAudio = document.getElementById('birthdayAudio');
