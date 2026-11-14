@@ -19,6 +19,7 @@ makeParticles();
 
 
 const birthdaySong = new Audio('./music/our-song.mp3.mp4');
+window.birthdaySong = birthdaySong;
 
 birthdaySong.loop = true;
 birthdaySong.volume = 0.7;
@@ -53,7 +54,7 @@ function showPage(index){
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===21) startFireworks();
+  if(index===21 || index===28) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -283,7 +284,7 @@ audio.onended=()=>{musicBtn.classList.remove('playing');$('#musicLabel').textCon
 
 let fireworkFrame=null;
 function startFireworks(){
-  const canvas=$('#fireworks'),ctx=canvas.getContext('2d');canvas.width=canvas.offsetWidth*devicePixelRatio;canvas.height=canvas.offsetHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);
+  const canvas=document.querySelector('.page.active canvas') || $('#fireworks');if(!canvas)return;const ctx=canvas.getContext('2d');canvas.width=canvas.offsetWidth*devicePixelRatio;canvas.height=canvas.offsetHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);
   const w=canvas.offsetWidth,h=canvas.offsetHeight;let particles=[];
   function burst(){
     const x=Math.random()*w,y=Math.random()*h*.65+20;
