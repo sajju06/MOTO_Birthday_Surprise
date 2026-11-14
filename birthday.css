@@ -265,3 +265,45 @@ body.gift-cinema-open{overflow:hidden!important}
   .photo-cake-candles .cake-candle:nth-child(2){left:50.7%}
   .photo-cake-candles .cake-candle:nth-child(3){left:56.4%}
 }
+
+
+/* FINAL FIX: render three fully visible, clickable candles above the cake */
+#birthdayCake .photo-cake-candles{
+  position:absolute!important;z-index:20!important;
+  top:8%!important;left:50%!important;right:auto!important;bottom:auto!important;
+  inset:auto!important;transform:translateX(-50%)!important;
+  display:flex!important;align-items:flex-start!important;justify-content:center!important;
+  gap:clamp(20px,4vw,34px)!important;width:auto!important;height:auto!important;
+  pointer-events:none!important;
+}
+#birthdayCake .photo-cake-candles .cake-candle{
+  position:relative!important;display:block!important;flex:0 0 18px!important;
+  width:18px!important;height:76px!important;min-width:18px!important;
+  top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
+  padding:0!important;margin:0!important;border:0!important;
+  background:transparent!important;transform:none!important;
+  opacity:1!important;pointer-events:auto!important;cursor:pointer!important;
+}
+#birthdayCake .photo-cake-candles .candle-stick{
+  display:block!important;position:absolute!important;left:6px!important;bottom:0!important;
+  width:7px!important;height:49px!important;border-radius:3px!important;
+  background:repeating-linear-gradient(45deg,#fff5d9 0 6px,#c34c66 6px 12px)!important;
+  box-shadow:inset -2px 0 2px #713044,0 2px 5px #0005!important;
+}
+#birthdayCake .photo-cake-candles .candle-flame{
+  display:block!important;position:absolute!important;top:0!important;left:4px!important;
+  width:12px!important;height:20px!important;border-radius:55% 45% 55% 45%!important;
+  transform:rotate(4deg)!important;
+  background:radial-gradient(ellipse at 50% 72%,#fffbdc 0 17%,#ffe47a 34%,#ffad36 62%,#f06b2d 76%,transparent 79%)!important;
+  filter:drop-shadow(0 0 6px #ffb83e) drop-shadow(0 0 12px #ff8b32)!important;
+  opacity:1!important;animation:candleFlicker .7s ease-in-out infinite alternate!important;
+}
+#birthdayCake .photo-cake-candles .cake-candle.blown .candle-flame{
+  opacity:0!important;transform:scale(.1)!important;animation:none!important;
+}
+#birthdayCake .photo-cake-candles .cake-candle.blown .candle-stick{opacity:.45!important;}
+@media(max-width:700px){
+  #birthdayCake .photo-cake-candles{top:8%!important;gap:22px!important}
+  #birthdayCake .photo-cake-candles .cake-candle{height:66px!important}
+  #birthdayCake .photo-cake-candles .candle-stick{height:42px!important}
+}
