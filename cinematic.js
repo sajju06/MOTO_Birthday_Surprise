@@ -18,6 +18,6 @@
    document.getElementById('cinemaFinale').classList.remove('hidden');
  });
  document.getElementById('cinemaFinale').addEventListener('click',()=>{
-   if(typeof showPage==='function')showPage(21);
+   if(typeof showPage==='function')showPage(17);
  });
 })();
