@@ -2,7 +2,7 @@ const $ = (s, root=document) => root.querySelector(s);
 const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 const pages = $$('.page');
 let currentPage = 0;
-let heartsCaught = 0, gameTimer = null, gameStarted = false;
+
 const PASSWORD = '28-11-2006';
 
 function makeParticles(){
@@ -19,6 +19,7 @@ makeParticles();
 
 
 const birthdaySong = new Audio('./music/our-song.mp3.mp4');
+window.birthdaySong = birthdaySong;
 
 birthdaySong.loop = true;
 birthdaySong.volume = 0.7;
@@ -44,16 +45,26 @@ document.addEventListener('touchstart', playBirthdaySong);
 window.addEventListener('load', playBirthdaySong);
 
 
+function activateBirthdayVideo(page){
+  document.querySelectorAll('.birthday-film-bg').forEach(video=>{
+    if(video.closest('.page')===page){
+      if(!video.src && video.dataset.src){video.src=video.dataset.src;video.load();}
+      const play=video.play(); if(play && play.catch) play.catch(()=>{});
+    }else{video.pause();}
+  });
+}
+
 function showPage(index){
   if(index<0 || index>=pages.length) return;
-  if(currentPage===4 && index!==4 && gameStarted && heartsCaught<10) return;
+
 
   
   pages.forEach((p,i)=>p.classList.toggle('active',i===index));
+  activateBirthdayVideo(pages[index]);
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===11) startFireworks();
+  if(index===9 || index===26) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -62,163 +73,12 @@ $('#unlockBtn').addEventListener('click',unlock);
 $('#passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
 function unlock(){
   const value=$('#passwordInput').value.trim(); 
-  if(value===PASSWORD){$('#lockScreen').classList.add('unlocked');$('#lockError').textContent='';}
+  if(value===PASSWORD){$('#lockScreen').classList.add('unlocked');$('#lockError').textContent='';activateBirthdayVideo(pages[currentPage]);}
   else{$('#lockError').textContent='That is not our secret date. Try again ♡';$('#passwordInput').value='';$('#passwordInput').focus();}
 }
 
-$('#yesSpecial').onclick=()=>$('#specialReply').textContent='Then let me remind you: you are one of the best things in my life. ♡';
-$('#noSpecial').onclick=()=>$('#specialReply').textContent='You are my once-in-a-lifetime kind of person. Never forget that.';
-
-
-const quizData = [
-  {
-    q: 'What is my favourite place to be?',
-    a: [
-      'Anywhere with you',
-      'At the moon',
-      'In a crowded room',
-      'Nowhere at all'
-    ],
-    correct: 0,
-    why: 'Exactly. Anywhere feels better when you are there.'
-  },
-  {
-    q: 'What do I wish for you most?',
-    a: [
-      'More expensive things',
-      'A happy heart and fulfilled dreams',
-      'More rainy days',
-      'Endless sleep'
-    ],
-    correct: 1,
-    why: 'Your happiness is one of my favourite wishes.'
-  },
-  {
-    q: 'How long do I want to keep making memories?',
-    a: [
-      'One day',
-      'A little while',
-      'As long as life lets me',
-      'Until the next page'
-    ],
-    correct: 2,
-    why: 'The answer is always: as long as I get to.'
-  }
-];
-
-let quizIndex = 0;
-let quizScore = 0;
-let quizAnswered = false;
-
-function renderQuiz() {
-
-  const item = quizData[quizIndex];
-  quizAnswered = false;
-
-  $('#quizCount').textContent =
-    `QUESTION 0${quizIndex + 1} / 03`;
-
-  $('#quizScore').textContent = '♡ ' + quizScore;
-
-  $('#quizProgress').style.width =
-    (quizIndex / quizData.length * 100) + '%';
-
-  $('#quizQuestion').textContent = item.q;
-
-  $('#quizFeedback').textContent = '';
-
-  $('#quizNext').classList.add('hidden');
-
-  const host = $('#quizOptions');
-  host.innerHTML = '';
-
-  item.a.forEach((answer, i) => {
-
-    const b = document.createElement('button');
-
-    b.className = 'quiz-option';
-    b.textContent = answer;
-
-    b.onclick = function () {
-
-      if (quizAnswered) return;
-
-      // WRONG ANSWER
-      if (i !== item.correct) {
-
-        b.classList.add('wrong');
-
-        $('#quizFeedback').textContent =
-          "I don't expect that from you 🥺 Try again!";
-
-        $('#quizNext').classList.add('hidden');
-
-        return;
-      }
-
-      // CORRECT ANSWER
-      quizAnswered = true;
-      quizScore++;
-
-      b.classList.add('correct');
-
-      $('#quizFeedback').textContent = item.why;
-
-      $('#quizScore').textContent = '♡ ' + quizScore;
-
-      $('#quizProgress').style.width =
-        ((quizIndex + 1) / quizData.length * 100) + '%';
-
-      $$('.quiz-option', host).forEach(option => {
-        option.disabled = true;
-      });
-
-      $('#quizNext').classList.remove('hidden');
-
-      $('#quizNext').textContent =
-        quizIndex === quizData.length - 1
-          ? 'Finish our quiz →'
-          : 'Next question →';
-    };
-
-    host.appendChild(b);
-  });
-}
-
-// NEXT QUESTION BUTTON
-$('#quizNext').onclick = function () {
-
-  if (!quizAnswered) return;
-
-  if (quizIndex < quizData.length - 1) {
-
-    quizIndex++;
-    renderQuiz();
-
-  } else {
-
-    quizIndex = 0;
-    renderQuiz();
-    showPage(4);
-
-  }
-};
-
-// START QUIZ
-renderQuiz();
-
-
-function spawnHeart(){
-  if(heartsCaught>=10)return;
-  const h=document.createElement('button');h.className='fall-heart';h.innerHTML=Math.random()>.5?'♥':'♡';
-  h.style.left=(4+Math.random()*90)+'%';h.style.fontSize=(20+Math.random()*23)+'px';
-  h.style.animationDuration=(4+Math.random()*3)+'s';h.style.animationDelay=(Math.random()*.4)+'s';
-  h.setAttribute('aria-label','Catch heart');
-  h.onclick=()=>{if(h.dataset.caught)return;h.dataset.caught='1';heartsCaught++;$('#heartCount').textContent=String(heartsCaught).padStart(2,'0');$('#heartProgress').style.width=(heartsCaught*10)+'%';h.remove();if(heartsCaught>=10)finishGame();};
-  $('#heartField').appendChild(h);setTimeout(()=>h.remove(),8000);
-}
-function finishGame(){clearInterval(gameTimer);$('#gameComplete').classList.remove('hidden');$('#gameContinue').classList.remove('hidden');$('#startGame').classList.add('hidden');}
-$('#startGame').onclick=()=>{if(gameStarted)return;gameStarted=true;$('#startGame').textContent='Catch the hearts!';gameTimer=setInterval(spawnHeart,430);for(let i=0;i<5;i++)setTimeout(spawnHeart,i*200);};
+if($('#yesSpecial')) $('#yesSpecial').onclick=()=>$('#specialReply').textContent='Then let me remind you: you are one of the best things in my life. ♡';
+if($('#noSpecial')) $('#noSpecial').onclick=()=>$('#specialReply').textContent='You are my once-in-a-lifetime kind of person. Never forget that.';
 
 
 /* ===== MEMORIES ANIMATION ===== */
@@ -242,8 +102,8 @@ memoryCards.forEach(card => {
 
 /* Continue Journey */
 
-document.getElementById('memoryContinue').addEventListener('click', () => {
-  showPage(7);
+document.getElementById('memoryContinue')?.addEventListener('click', () => {
+  showPage(12);
 });
 
 
@@ -283,7 +143,7 @@ audio.onended=()=>{musicBtn.classList.remove('playing');$('#musicLabel').textCon
 
 let fireworkFrame=null;
 function startFireworks(){
-  const canvas=$('#fireworks'),ctx=canvas.getContext('2d');canvas.width=canvas.offsetWidth*devicePixelRatio;canvas.height=canvas.offsetHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);
+  const canvas=document.querySelector('.page.active canvas') || $('#fireworks');if(!canvas)return;const ctx=canvas.getContext('2d');canvas.width=canvas.offsetWidth*devicePixelRatio;canvas.height=canvas.offsetHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);
   const w=canvas.offsetWidth,h=canvas.offsetHeight;let particles=[];
   function burst(){
     const x=Math.random()*w,y=Math.random()*h*.65+20;
@@ -298,11 +158,45 @@ function startFireworks(){
     ctx.globalAlpha=1;fireworkFrame=requestAnimationFrame(draw);
   }draw();
 }
-$('#replay').onclick=()=>{if(fireworkFrame)cancelAnimationFrame(fireworkFrame);heartsCaught=0;gameStarted=false;clearInterval(gameTimer);$('#heartField').innerHTML='';$('#heartCount').textContent='00';$('#heartProgress').style.width='0';$('#gameComplete').classList.add('hidden');$('#gameContinue').classList.add('hidden');$('#startGame').classList.remove('hidden');$('#startGame').textContent='Let the hearts fall';letterOpened=false;$('#envelope').classList.remove('open');$('#letterText').classList.add('hidden');$('#envelopeHint').textContent='TAP THE ENVELOPE TO OPEN';showPage(0);$('#lockScreen').classList.remove('unlocked');};
+$('#replay').onclick=()=>{showPage(0);$('#lockScreen').classList.remove('unlocked');};
 
 
-document.getElementById("continueJourney").addEventListener("click", function () {
-    document.querySelector('[data-page="2"]').classList.remove("active");
-    document.querySelector('[data-page="3"]').classList.add("active");
-});
+document.getElementById("continueJourney")?.addEventListener("click", () => showPage(12));
 
+
+
+// ===== MESSAGE BOOK SUPABASE =====
+const SUPABASE_URL = 'https://smqovufaykygviwhctsi.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_0hVvSvMEYMqkLBpPWpL7nw_8IQ1GrGO';
+const loveDb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const loveForm = document.getElementById('loveMessageForm');
+if (loveForm) {
+  loveForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const sendButton = document.getElementById('sendLoveMessage');
+    const status = document.getElementById('messageStatus');
+    const name = document.getElementById('messageName').value.trim();
+    const message = document.getElementById('messageText').value.trim();
+    if (!name || !message) {
+      status.textContent = 'Please write your name and a little message. ♡';
+      return;
+    }
+    sendButton.disabled = true;
+    sendButton.textContent = 'Sending your love...';
+    status.textContent = '';
+    const { error } = await loveDb.from('love_messages').insert([{ name, message }]);
+    if (error) {
+      status.textContent = 'Could not send right now. Please try again in a moment.';
+      console.error('Message Book error:', error.message);
+      sendButton.disabled = false;
+      sendButton.textContent = 'Send my message ♡';
+      return;
+    }
+    loveForm.reset();
+    status.textContent = 'Your message has been saved. I will read it with a smile. ♡';
+    sendButton.disabled = false;
+    sendButton.textContent = 'Send my message ♡';
+  });
+}
+document.getElementById('backToFinale')?.addEventListener('click', () => showPage(26));

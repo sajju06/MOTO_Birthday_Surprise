@@ -42,8 +42,8 @@
   transition: transform .4s ease,
               border-color .4s ease,
               background .4s ease;
-  opacity: 0;
-  transform: translateY(35px);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .memory-card.visible {
@@ -165,3 +165,48 @@
     margin-top: 65px;
   }
 }
+
+
+/* ===== PRIVATE LOVE MESSAGE BOOK ===== */
+.message-book-page{min-height:100vh}
+.message-book-card{width:min(650px,100%);margin:auto;text-align:center}
+.love-message-form{display:flex;flex-direction:column;gap:12px;text-align:left;margin:35px auto 0;max-width:520px;padding:30px;border:1px solid var(--line);background:#ffffff08;backdrop-filter:blur(12px)}
+.love-message-form label{font-size:11px;letter-spacing:.12em;color:var(--gold);margin-top:8px}
+.love-message-form input,.love-message-form textarea{width:100%;padding:15px;color:var(--ink);background:#ffffff0a;border:1px solid var(--line);outline:none;border-radius:2px;resize:vertical}
+.love-message-form input:focus,.love-message-form textarea:focus{border-color:var(--pink)}
+.love-message-form input::placeholder,.love-message-form textarea::placeholder{color:#b8aabd99}
+.love-message-form .btn{margin-top:12px}
+.message-status{min-height:20px;text-align:center;color:var(--gold);font-size:13px}
+.message-private-note{font-size:11px;color:var(--muted);margin:20px 0 28px}
+@media(max-width:480px){.love-message-form{padding:22px 17px}}
+
+
+/* ===== NEW ROMANTIC CHAPTERS ===== */
+.romance-page{min-height:100vh;display:none;align-items:center;justify-content:center;padding-top:110px;padding-bottom:80px}
+.romance-page.active{display:flex}
+.romance-shell{width:min(850px,100%);margin:auto;text-align:center;position:relative;z-index:2}
+.reason-counter{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:32px 0 14px;color:var(--gold);font-family:Georgia,serif}
+.reason-counter span{font-size:44px}.reason-counter i{font-size:14px;font-style:normal;opacity:.65}
+.reason-card{min-height:210px;max-width:620px;margin:0 auto;padding:36px 28px;border:1px solid rgba(239,190,211,.28);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 70px #0003}
+.reason-spark{font-size:25px;color:var(--gold)}.reason-card p{font:clamp(23px,4vw,34px)/1.5 Georgia,serif;margin:20px 0}.reason-foot{font-size:9px;letter-spacing:3px;color:var(--pink);opacity:.8}
+.reason-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}.romance-next{margin-top:28px}
+.love-chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:42px 0 30px;text-align:left}
+.love-chapter{padding:25px 22px;min-height:280px;border:1px solid var(--line);border-radius:18px;background:#ffffff08;backdrop-filter:blur(12px)}
+.love-chapter>span{font-size:10px;letter-spacing:2px;color:var(--gold)}.chapter-symbol{font-size:34px;color:var(--pink);margin:28px 0 12px}
+.love-chapter h3{font:25px Georgia,serif;font-weight:400;margin:0 0 13px}.love-chapter p{font-size:13px;line-height:1.9;color:var(--muted)}
+.love-story-ending,.final-promise-line{font:clamp(21px,3.5vw,30px)/1.5 Georgia,serif;margin:30px auto}.love-story-ending em,.final-promise-line em{color:var(--pink)}
+.heart-orbit{width:140px;height:140px;margin:15px auto 28px;border:1px solid #e8a5bd66;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 45px #e8a5bd25;animation:heartOrbit 5s linear infinite}
+.heart-orbit span{font-size:88px;color:#f1a9c4;text-shadow:0 0 35px #f1a9c4;animation:memoryPulse 1.8s infinite}
+@keyframes heartOrbit{to{transform:rotate(360deg)}}
+.heart-message-card{max-width:620px;margin:30px auto;padding:35px 28px;border:1px solid var(--line);border-radius:20px;background:#ffffff09;backdrop-filter:blur(12px)}
+.heart-message-card p{font:clamp(22px,4vw,32px)/1.55 Georgia,serif}.heart-message-card span{display:block;margin-top:20px;color:var(--gold);font-size:12px;letter-spacing:2px}
+.touch-heart-button{width:190px;height:190px;border:1px solid #f1a9c466;border-radius:50%;background:radial-gradient(circle,#f5a8c52b,#ffffff05 68%);color:#f4a9c2;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:38px auto 20px;cursor:pointer;box-shadow:0 0 35px #f4a9c233,inset 0 0 35px #f4a9c21c;transition:transform .25s,box-shadow .25s}
+.touch-heart-button:hover{transform:scale(1.07);box-shadow:0 0 60px #f4a9c266}.touch-heart-button span{font-size:95px;line-height:1;text-shadow:0 0 28px #f4a9c2;animation:memoryPulse 1.8s infinite}.touch-heart-button i{font-size:9px;letter-spacing:3px;font-style:normal;margin-top:8px}
+.touch-heart-count{font-size:11px;letter-spacing:2px;color:var(--gold)}.touch-heart-message{max-width:540px;min-height:58px;margin:18px auto 28px;font:24px/1.5 Georgia,serif;color:#f2c5d5}
+.promise-list{max-width:680px;margin:35px auto;display:grid;gap:12px;text-align:left}
+.promise-card{width:100%;padding:20px 22px;border:1px solid var(--line);border-radius:15px;background:#ffffff08;color:var(--ink);text-align:left;cursor:pointer;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:8px 12px;transition:background .25s,border-color .25s}
+.promise-card>span{color:var(--gold);font-size:11px;letter-spacing:2px}.promise-card b{font:21px Georgia,serif;font-weight:400}.promise-card i{font-size:10px;color:var(--pink);font-style:normal}
+.promise-card p{display:none;grid-column:2/4;color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 0}
+.promise-card.open{background:#e8a5bd12;border-color:#e8a5bd77}.promise-card.open p{display:block}.promise-card.open i{display:none}
+.pre-finale-whisper{font:italic 19px Georgia,serif;color:#e8a5bd;margin:12px auto 30px;max-width:580px}
+@media(max-width:700px){.love-chapters{grid-template-columns:1fr}.love-chapter{min-height:0;padding:22px}.chapter-symbol{margin:15px 0 8px}.promise-card{grid-template-columns:30px 1fr}.promise-card i{grid-column:2}.promise-card p{grid-column:2}.reason-card{padding:30px 20px}.touch-heart-button{width:165px;height:165px}.touch-heart-button span{font-size:78px}}

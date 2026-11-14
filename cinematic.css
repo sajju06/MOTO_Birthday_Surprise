@@ -1,0 +1,33 @@
+
+/* ===== CINEMATIC URDU BIRTHDAY PAGE ===== */
+.cinematic-page{isolation:isolate;overflow:hidden;min-height:100svh;padding:115px 6vw 75px;background:radial-gradient(ellipse at 50% 35%,#43213f 0%,#1b102b 48%,#090713 100%);text-align:center}
+.cinema-stars{position:absolute;inset:0;z-index:-1;background-image:radial-gradient(2px 2px at 15% 20%,#fff8,transparent),radial-gradient(1px 1px at 70% 12%,#ffe5f5,transparent),radial-gradient(2px 2px at 85% 60%,#fff8,transparent),radial-gradient(1px 1px at 25% 75%,#fff,transparent);background-size:240px 220px;animation:cinemaDrift 18s linear infinite}
+@keyframes cinemaDrift{to{background-position:240px 220px}}
+.cinema-content{width:min(760px,100%);margin:auto;position:relative;z-index:2}
+.cinematic-page [lang],.cinematic-page{font-family:'Noto Nastaliq Urdu',serif}
+.cinema-kicker{font-size:17px;color:#f1d4a8;margin:0 0 20px}
+.cinema-moon{margin:0 auto 18px;width:68px;height:68px;border-radius:50%;display:grid;place-items:center;color:#f8cbdc;font-size:42px;box-shadow:0 0 55px #f5a9ca77;animation:moonGlow 3s ease-in-out infinite alternate}
+@keyframes moonGlow{to{transform:scale(1.12);box-shadow:0 0 85px #f5a9caaa}}
+.cinema-intro{font-size:18px;color:#e9d9e7;line-height:2;margin:15px auto}
+.cinema-title{font-size:clamp(43px,7vw,76px);font-weight:700;line-height:1.8;margin:10px 0;color:#fff0f6;text-shadow:0 0 35px #f0a4c866}
+.cinema-title em{font-style:normal;color:#f4b6d0}
+.cinema-wish{font-size:17px;line-height:2.25;color:#e7cddd;max-width:680px;margin:10px auto 24px}
+.cinema-cake{position:relative;width:190px;height:150px;margin:28px auto 8px;filter:drop-shadow(0 12px 25px #0008);direction:ltr}
+.cake-plate{position:absolute;bottom:4px;left:8px;width:174px;height:13px;border-radius:50%;background:linear-gradient(#f7dce7,#b66e91)}
+.cake-base{position:absolute;bottom:16px;left:25px;width:140px;height:49px;border-radius:9px 9px 15px 15px;background:linear-gradient(90deg,#a84d79,#f0a9c5 48%,#a84d79)}
+.cake-layer{position:absolute;bottom:62px;left:33px;width:124px;height:35px;border-radius:9px 9px 4px 4px;background:linear-gradient(90deg,#f3c3d4,#fff0e7 48%,#d98bab)}
+.cake-top{position:absolute;bottom:88px;left:33px;width:124px;height:15px;border-radius:50%;background:#ffe7ee}
+.candle{position:absolute;z-index:3;bottom:101px;left:91px;width:9px;height:38px;border-radius:3px;background:repeating-linear-gradient(135deg,#fff0d6 0 5px,#d987a8 5px 9px)}
+.candle-flame{position:absolute;left:-3px;top:-21px;width:15px;height:22px;border-radius:60% 40% 60% 40%;background:radial-gradient(ellipse at 50% 70%,#fff8b8 0 20%,#ffbd63 45%,#f16b75 75%);transform:rotate(4deg);filter:drop-shadow(0 0 12px #ffb85e);animation:flameDance .35s ease-in-out infinite alternate;transform-origin:bottom}
+@keyframes flameDance{to{transform:rotate(-8deg) scale(.88)}}
+.candle-flame.blown{opacity:0;transform:scale(.1) translateY(-30px);transition:.5s}
+.candle-hint,.candle-blessing{font-size:16px;line-height:2;color:#f0d5e3}
+.candle-button{margin:8px auto 16px;font-family:'Noto Nastaliq Urdu',serif;font-size:16px}
+.candle-blessing{color:#f4d7a5;font-size:20px;animation:blessingIn 1.2s both}
+@keyframes blessingIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.cinema-next{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;margin-top:10px}
+.cinema-bottom{position:absolute;bottom:18px;left:0;right:0;color:#d8a7c0;font-size:14px;opacity:.8}
+.rose-petal{position:absolute;top:-35px;z-index:1;color:#f2a8c4;text-shadow:0 0 10px #f3a6c7;animation:petalFall linear forwards;pointer-events:none}
+@keyframes petalFall{to{transform:translate3d(var(--drift),110vh,0) rotate(620deg);opacity:.12}}
+.cinematic-page.celebrate .cinema-moon{animation:moonGlow .6s ease-in-out 4}
+@media(max-width:520px){.cinema-kicker{font-size:15px}.cinema-intro,.cinema-wish{font-size:15px}.cinema-title{font-size:45px}.cinema-bottom{font-size:12px}.cinema-cake{transform:scale(.9);margin-top:12px}}

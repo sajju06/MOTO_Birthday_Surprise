@@ -1,0 +1,231 @@
+
+/* ===== MOTO BIRTHDAY CELEBRATION: luxury + magical + Hollywood ===== */
+.birthday-page{isolation:isolate;overflow:hidden;text-align:center;position:relative;min-height:100svh;padding:120px 7vw 75px;background:radial-gradient(ellipse at 50% 30%,#51304b,#171021 60%,#090812);color:#fff}
+.birthday-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.birthday-video-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#0a0814aa,#10091866 45%,#090711ee),linear-gradient(90deg,#09071188,transparent 50%,#09071188)}
+.birthday-scene-content,.star-night-content,.grand-finale-content{width:min(850px,100%);margin:auto;position:relative;z-index:2}
+.birthday-kicker{font:600 10px/1.8 Arial,sans-serif;letter-spacing:.28em;color:#f1d5a0;text-transform:uppercase;margin:0 0 18px}
+.birthday-heading{font:500 clamp(42px,7vw,82px)/1.1 Georgia,serif;letter-spacing:-.035em;color:#fff;margin:12px 0 22px;text-shadow:0 8px 35px #0009}
+.birthday-heading em{font-style:italic;color:#f1c9dc;text-shadow:0 0 32px #f2b7d655}
+.birthday-copy{max-width:650px;margin:0 auto 28px;color:#f0e6ed;font:16px/1.9 Arial,sans-serif;text-shadow:0 2px 14px #000}
+.birthday-crown{font-size:76px;color:#f3d69e;text-shadow:0 0 55px #f4d9a4aa;animation:crownFloat 3s ease-in-out infinite}
+@keyframes crownFloat{50%{transform:translateY(-9px) rotate(3deg)}}
+.birthday-seal{display:inline-block;border:1px solid #e9d1a2aa;color:#f3d9a8;padding:10px 22px;letter-spacing:.2em;font:10px Arial,sans-serif;margin:8px auto 28px;background:#130e1b88}
+.birthday-next{margin:12px auto 0}
+.birthday-side-note{position:absolute;bottom:22px;left:0;right:0;color:#e8cda5aa;font:9px Arial,sans-serif;letter-spacing:.3em}
+.star-night{background:radial-gradient(ellipse at 50% 38%,#542c50,#1a1029 55%,#080711)}
+.star-night-backdrop{position:absolute;inset:0;pointer-events:none}
+.star-night-backdrop span{position:absolute;color:#f6d9a5;text-shadow:0 0 20px #f7d99b;animation:starFlash 2.5s ease-in-out infinite alternate}
+.star-night-backdrop span:nth-child(1){top:16%;left:12%;font-size:35px}.star-night-backdrop span:nth-child(2){top:27%;right:14%;font-size:25px}.star-night-backdrop span:nth-child(3){bottom:22%;left:20%;font-size:30px}.star-night-backdrop span:nth-child(4){bottom:30%;right:17%;font-size:38px}.star-night-backdrop span:nth-child(5){top:12%;right:38%;font-size:18px}
+@keyframes starFlash{to{opacity:.3;transform:scale(.65)}}
+.spotlight-ring{width:155px;height:155px;border:1px solid #f3d5a6;border-radius:50%;margin:0 auto 26px;display:grid;place-items:center;box-shadow:0 0 0 12px #f0d3a20c,0 0 65px #e9c78b66;background:radial-gradient(circle,#b58b5744,#130e1b)}
+.spotlight-ring span{font:italic 78px Georgia,serif;color:#f4dcae;text-shadow:0 0 25px #fff}
+.star-night-label,.award-line{font:10px Arial,sans-serif;letter-spacing:.25em;color:#f1d5a0}
+.award-line{margin:28px auto;color:#e8c8a1}
+.gift-night{background:radial-gradient(ellipse at 50% 0%,#56324c,#171021 58%,#090812)}
+.birthday-section-head{max-width:760px;margin:0 auto 30px;text-align:center}
+.birthday-gift-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;width:min(850px,100%);margin:0 auto}
+.birthday-gift{min-height:235px;border:1px solid #e9d1a255;border-radius:20px;background:linear-gradient(145deg,#34213cdd,#171321ee);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:.35s;box-shadow:0 18px 45px #0004}
+.birthday-gift:hover,.birthday-gift.opened{transform:translateY(-8px);border-color:#f4d9a8;box-shadow:0 18px 55px #d5a66a33}
+.gift-number{font:10px Arial,sans-serif;letter-spacing:.2em;color:#e9d1a2}.gift-emoji{font-size:43px;filter:drop-shadow(0 0 15px #efc9a8)}.birthday-gift b{font:italic 27px Georgia,serif;color:#fff}.birthday-gift small{font:12px Arial,sans-serif;color:#cbbacb}
+.birthday-gift-reveal{min-height:75px;width:min(700px,100%);margin:28px auto 14px;padding:18px 20px;border:1px solid #e9d1a233;border-radius:14px;background:#120d1c99;color:#f6e5ed;font:17px/1.8 Georgia,serif}
+.cake-night{background:radial-gradient(ellipse at 50% 45%,#60374d,#1a1029 58%,#090812)}
+.cake-night-glow{position:absolute;width:420px;height:420px;top:18%;left:50%;transform:translateX(-50%);border-radius:50%;background:#eeb4c522;filter:blur(35px);pointer-events:none}
+.real-cake{position:relative;width:270px;height:220px;margin:20px auto 12px;filter:drop-shadow(0 20px 22px #0008)}
+.cake-tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:13px 13px 20px 20px;background:linear-gradient(90deg,#a34e75,#f3b9d1 48%,#a34e75);box-shadow:inset 0 -9px 0 #8c3c65}
+.tier-top{bottom:91px;width:175px;height:55px;background:linear-gradient(90deg,#f2c4d5,#fff0e8 48%,#d98ba9)}
+.tier-bottom{bottom:28px;width:235px;height:72px}
+.cake-plate{position:absolute;bottom:15px;left:8px;width:254px;height:17px;border-radius:50%;background:linear-gradient(#fff1e2,#b87994)}
+.cake-topper{position:absolute;z-index:3;bottom:151px;left:0;right:0;color:#f9e2b4;font:italic 24px Georgia,serif;text-shadow:0 0 15px #fff}
+.cake-candles{position:absolute;z-index:4;bottom:144px;left:0;right:0;display:flex;justify-content:center;gap:12px}
+.cake-candle{border:0;background:transparent;font-size:34px;cursor:pointer;filter:drop-shadow(0 0 12px #ffc86b);transition:.3s}
+.cake-candle.blown{opacity:.35;filter:grayscale(1);transform:translateY(-8px) scale(.8)}
+.cake-instruction,.cake-blessing{font:16px/2 'Noto Nastaliq Urdu',serif;color:#f3d9b0;max-width:760px;margin:10px auto}
+.cake-blessing{font-size:20px;color:#fff0d0;animation:blessingIn 1s both}
+#cakeNext:disabled{opacity:.35;cursor:not-allowed}
+.memory-museum{background:radial-gradient(ellipse at 50% 0%,#4b2a45,#171021 60%,#090812)}
+.moto-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;width:min(950px,100%);margin:0 auto}
+.moto-photo-slot{position:relative;display:block;overflow:hidden;aspect-ratio:4/5;border:1px solid #e9d1a255;border-radius:16px;padding:0;background:linear-gradient(145deg,#4b304d,#171321);cursor:zoom-in;box-shadow:0 14px 38px #0005}
+.moto-photo-slot img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:transform .6s,opacity .3s}.moto-photo-slot.has-photo img{opacity:1}
+.moto-photo-slot:hover img{transform:scale(1.06)}
+.photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 35%,#d9a6c833,transparent 55%),linear-gradient(145deg,#34233d,#171321);color:#f1d5a0}
+.photo-placeholder b{font:55px Georgia,serif}.photo-placeholder small{font:10px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.moto-photo-slot.has-photo .photo-placeholder{display:none}
+.photo-upload-note{color:#bcaebf;font:12px/1.7 Arial,sans-serif;margin:18px auto 8px}
+.photo-upload-note code{color:#f1d5a0}
+.birthday-grand-finale{background:radial-gradient(ellipse at 50% 38%,#693b5b,#21132e 55%,#080711)}
+.grand-finale-content{max-width:850px}
+.grand-finale-crown{font-size:70px;color:#f2d6a1;text-shadow:0 0 50px #f4d9a4;animation:crownFloat 3s ease-in-out infinite}
+.grand-finale-urdu{font:22px/2 'Noto Nastaliq Urdu',serif;color:#f4d8e5;margin:25px auto}
+.grand-finale-confetti{font-size:27px;letter-spacing:.12em;margin:22px auto;color:#f4d7a5;animation:starFlash 2s infinite alternate}
+@media(max-width:700px){.birthday-page{padding:110px 6vw 70px}.birthday-heading{font-size:clamp(39px,12vw,58px)}.birthday-copy{font-size:14px}.birthday-gift-grid{grid-template-columns:1fr;max-width:390px}.birthday-gift{min-height:145px}.moto-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.real-cake{transform:scale(.88);margin-top:4px}.birthday-side-note{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.birthday-crown,.star-night-backdrop span,.grand-finale-confetti{animation:none}}
+
+#birthdayFireworks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}.birthday-grand-finale .grand-finale-content{z-index:2}
+
+/* Cinematic full-bleed footage and readable editorial overlays */
+.birthday-film-page{isolation:isolate;min-height:100svh}
+.birthday-film-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(.9) contrast(1.06)}
+.birthday-video-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,5,12,.55),rgba(10,7,17,.38) 42%,rgba(7,5,12,.82)),linear-gradient(90deg,rgba(8,5,13,.55),transparent 50%,rgba(8,5,13,.55));pointer-events:none}
+.birthday-page:has(.birthday-film-bg){background:#09070e}
+.birthday-page:has(.birthday-film-bg) .birthday-scene-content,.birthday-page:has(.birthday-film-bg) .star-night-content,.birthday-page:has(.birthday-film-bg) .grand-finale-content{z-index:2}
+.birthday-film-page .birthday-scene-content{max-width:900px}
+.sky-wish-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;max-width:1000px;margin:30px auto 18px}
+.sky-wish{min-height:112px;border:1px solid #f3d8b477;border-radius:14px;background:#130d1d99;color:#f6dcae;font:30px Georgia,serif;cursor:pointer;backdrop-filter:blur(8px);transition:.3s}
+.sky-wish span{display:block;font:10px Arial,sans-serif;letter-spacing:.1em;color:#fff;margin-top:9px}
+.sky-wish:hover,.sky-wish.selected{transform:translateY(-5px);border-color:#fff0c7;background:#b48b5733;box-shadow:0 0 32px #eacb8c33}
+.sky-wish-reveal{min-height:58px;max-width:720px;margin:12px auto 20px;color:#fff0d6;font:italic 20px/1.6 Georgia,serif}
+.moto-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.moto-photo-slot{aspect-ratio:4/5;border:1px solid #e9d1a277;border-radius:14px;overflow:hidden;position:relative;background:#211626;padding:0}
+.moto-photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:transform .7s,filter .7s}
+.moto-photo-slot:hover img{transform:scale(1.06);filter:brightness(.78)}
+.moto-photo-slot .photo-placeholder{display:none}
+.moto-photo-caption{position:absolute;left:0;right:0;bottom:0;padding:46px 16px 16px;text-align:left;background:linear-gradient(transparent,rgba(8,5,13,.94));color:white;z-index:2;pointer-events:none}
+.moto-photo-caption strong{display:block;font:italic 23px Georgia,serif;color:#f9e2c2;margin-bottom:7px}
+.moto-photo-caption small{display:block;font:12px/1.55 Arial,sans-serif;color:#f5e9ed}
+.future-envelope{width:170px;height:150px;margin:20px auto 25px;border:1px solid #f0d6a7aa;border-radius:14px;background:linear-gradient(145deg,#8f526e,#4b2c4e);box-shadow:0 22px 65px #0008,0 0 45px #e9c78b33;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:.5s}
+.future-envelope span{font:70px Georgia,serif;color:#f9e4c2}
+.future-envelope small{font:9px Arial,sans-serif;letter-spacing:.2em;color:#fff}
+.future-envelope:hover,.future-envelope.opened{transform:translateY(-7px) rotate(-2deg);box-shadow:0 25px 80px #0009,0 0 60px #e9c78b66}
+.future-letter-reveal{max-width:680px;margin:0 auto 22px;padding:24px 30px;border:1px solid #efd6ad66;border-radius:12px;background:rgba(18,11,25,.78);backdrop-filter:blur(12px);font:17px/1.9 Georgia,serif;color:#fff1e8;text-align:left;animation:letterReveal .8s both}
+.future-letter-reveal p{margin:0 0 13px}
+.future-letter-sign{color:#f2c8d8;font-style:italic;text-align:right}
+@keyframes letterReveal{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:none}}
+.party-start-btn{display:block;margin:25px auto 12px;padding:19px 34px;border:1px solid #f7dfb6;background:linear-gradient(110deg,#f3d8a4,#d58eaa);color:#261522;font-weight:800;letter-spacing:.2em;cursor:pointer;box-shadow:0 0 45px #f2c88955;transition:.3s}
+.party-start-btn:hover{transform:scale(1.04);box-shadow:0 0 65px #f2c88988}
+.party-status{min-height:30px;color:#f5dfbc;font:italic 18px Georgia,serif}
+.music-mode-button{display:block;margin:12px auto 16px}
+.party-confetti{position:absolute;top:-18px;width:8px;height:14px;z-index:4;background:#f1d6a1;animation:partyFall 3.8s linear forwards;pointer-events:none}
+.party-confetti:nth-child(3n){background:#e99abc}.party-confetti:nth-child(3n + 1){background:#fff0d0}
+@keyframes partyFall{to{transform:translate3d(var(--drift),110vh,0) rotate(760deg);opacity:.15}}
+.month-wish-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:850px;margin:26px auto 18px}
+.month-wish{padding:15px 9px;border:1px solid #f1d8b366;border-radius:9px;background:#150e20aa;color:#f7e5d2;font:italic 18px Georgia,serif;cursor:pointer;backdrop-filter:blur(8px);transition:.25s}
+.month-wish:hover,.month-wish.selected{background:#e6b9c833;border-color:#f4d8a5;transform:translateY(-3px)}
+.month-wish-reveal{min-height:60px;max-width:650px;margin:10px auto 20px;color:#fff0d5;font:italic 20px/1.6 Georgia,serif}
+.birthday-grand-finale .birthday-film-bg{filter:saturate(1.2) contrast(1.1)}
+@media(max-width:700px){.sky-wish-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sky-wish{min-height:88px}.moto-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.moto-photo-caption{padding:38px 10px 11px}.moto-photo-caption strong{font-size:18px}.moto-photo-caption small{font-size:10px}.month-wish-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.month-wish{font-size:15px;padding:12px 5px}.future-letter-reveal{padding:19px;font-size:15px}}
+
+/* Chapter 1: MOTO's palace, red carpet and birthday cake */
+.royal-palace-entrance{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:#10080b}
+.royal-palace-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;z-index:0;filter:brightness(.72) saturate(.9) contrast(1.08)}
+.royal-palace-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#0a050844,#0a040714 38%,#080306b8),linear-gradient(90deg,#0a040755,transparent 35%,transparent 65%,#0a040755);pointer-events:none}
+.royal-palace-architecture{position:absolute;inset:0;z-index:2;pointer-events:none}
+.palace-pillar{position:absolute;top:0;bottom:28%;width:clamp(24px,7vw,105px);opacity:.7;background:linear-gradient(90deg,#2c1714,#c49a59 18%,#f0d69b 31%,#76502c 46%,#1e1110 65%,#b18b55 85%,#261311);box-shadow:0 0 28px #f3d59a22}
+.pillar-left{left:4%}.pillar-right{right:4%}
+.palace-arch{position:absolute;left:16%;right:16%;top:-16%;height:62%;border:clamp(8px,1.2vw,18px) solid #b9945c88;border-bottom:0;border-radius:50% 50% 0 0;box-shadow:inset 0 0 35px #d5b77b22,0 0 25px #e7c98b22}
+.palace-chandelier{position:absolute;top:9%;font:clamp(32px,5vw,66px) Georgia,serif;color:#ffe7b1;text-shadow:0 0 14px #ffe0a0,0 0 45px #e7b65a;animation:palaceGlow 3s ease-in-out infinite alternate}
+.chandelier-left{left:24%}.chandelier-right{right:24%;animation-delay:1.2s}
+@keyframes palaceGlow{from{opacity:.55;filter:brightness(.8)}to{opacity:1;filter:brightness(1.4)}}
+.royal-carpet{position:absolute;z-index:3;left:50%;bottom:-2%;width:min(72vw,920px);height:61%;transform:translateX(-50%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);background:linear-gradient(90deg,#4b0711,#a20e24 14%,#d3293d 49%,#a20e24 86%,#430711);filter:drop-shadow(0 0 20px #e2b86b44)}
+.royal-carpet:before{content:"";position:absolute;inset:0 5%;border-left:3px solid #e6c27c;border-right:3px solid #e6c27c;opacity:.75}
+.royal-carpet:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 45px,#f4c77b22 46px,#f4c77b22 48px,transparent 49px 85px);opacity:.42}
+.royal-cake-dais{position:absolute;z-index:5;left:50%;top:23%;width:min(34vw,390px);height:40%;transform:translateX(-50%);display:flex;align-items:center;flex-direction:column;justify-content:flex-end;filter:drop-shadow(0 18px 35px #0009)}
+.royal-moto-name{position:absolute;top:0;width:100%;text-align:center;font:700 clamp(34px,6vw,76px) Georgia,serif;letter-spacing:.22em;padding-left:.22em;color:#ffe7ae;text-shadow:0 2px 3px #2b1008,0 0 12px #ffdc91,0 0 36px #e7b85f,0 0 70px #d28d3b;animation:motoNameShine 3.8s ease-in-out infinite}
+@keyframes motoNameShine{0%,100%{text-shadow:0 2px 3px #2b1008,0 0 12px #ffdc91,0 0 36px #e7b85f}50%{text-shadow:0 2px 3px #2b1008,0 0 20px #fff1c5,0 0 55px #ffd27c,0 0 85px #e4a344}}
+.royal-cake{position:relative;width:clamp(120px,19vw,220px);height:clamp(120px,18vw,205px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;margin-bottom:15px}
+.cake-tier{display:block;position:relative;border-radius:12px 12px 8px 8px;background:linear-gradient(90deg,#7d1830,#f7d9d0 20%,#fff1e4 50%,#e8a9a7 82%,#79152a);border:2px solid #f5d59a;box-shadow:inset 0 -8px 0 #a92d49,0 5px 10px #0006}
+.cake-tier:before{content:"";position:absolute;left:-2px;right:-2px;top:-7px;height:15px;border-radius:50%;background:linear-gradient(90deg,#f0c9b9,#fff6e9,#d99b9d);border:1px solid #ffe6c0}
+.cake-tier-top{width:45%;height:30%;z-index:3}.cake-tier-middle{width:70%;height:29%;z-index:2}.cake-tier-bottom{width:100%;height:31%;z-index:1}
+.cake-platter{position:absolute;bottom:-7px;width:112%;height:10px;border-radius:50%;background:linear-gradient(#fff0c6,#a66a35 50%,#f8dca0);box-shadow:0 4px 15px #0008}
+.cake-candles{position:absolute;top:0;z-index:5;display:flex;gap:clamp(7px,1vw,14px)}
+.cake-candles i{position:relative;width:5px;height:clamp(22px,3vw,35px);border-radius:3px;background:repeating-linear-gradient(45deg,#f8e8c5 0 4px,#b52a46 4px 8px);margin-top:-19px}
+.cake-candles i:before{content:"";position:absolute;width:10px;height:14px;left:-2px;top:-15px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:radial-gradient(ellipse at 40% 70%,#fffbd5 0 22%,#ffd15c 40%,#ef682a 75%,transparent 76%);filter:drop-shadow(0 0 7px #ffb83e);animation:candleFlicker .8s ease-in-out infinite alternate}
+@keyframes candleFlicker{to{transform:rotate(-38deg) scale(.82);opacity:.8}}
+.cake-dais-glow{position:absolute;bottom:0;width:125%;height:35px;border-radius:50%;background:#e8b95b44;filter:blur(20px);z-index:-1}
+.royal-welcome-copy{position:absolute;z-index:6;left:50%;bottom:5%;transform:translateX(-50%);width:min(90%,720px);text-align:center;padding:22px 24px 18px;border:1px solid #e9c77b55;border-radius:18px;background:linear-gradient(180deg,#0f070a61,#0c0508c7);backdrop-filter:blur(7px);box-shadow:0 12px 55px #0006}
+.royal-welcome-copy .birthday-kicker{color:#f6d99c;letter-spacing:.25em;font-size:10px}
+.royal-welcome-copy .birthday-heading{font-size:clamp(28px,4vw,52px);margin:8px 0}
+.royal-welcome-copy .birthday-copy{font-size:clamp(12px,1.4vw,16px);margin:8px auto 14px}
+.royal-welcome-copy .birthday-next{margin-top:3px}
+.royal-palace-entrance .birthday-side-note{z-index:7}
+@media(max-width:700px){.royal-palace-video{object-position:center}.palace-pillar{bottom:32%;width:7vw}.palace-arch{left:12%;right:12%;height:53%}.royal-carpet{width:100vw;height:56%}.royal-cake-dais{top:22%;width:76vw;height:34%}.royal-cake{width:145px;height:145px}.royal-moto-name{font-size:42px;top:2%}.royal-welcome-copy{bottom:4%;width:92%;padding:15px 13px 13px}.royal-welcome-copy .birthday-kicker{font-size:8px}.royal-welcome-copy .birthday-heading{font-size:30px}.royal-welcome-copy .birthday-copy{font-size:12px;line-height:1.5}.royal-welcome-copy .birthday-next{padding:10px 18px}}
+
+/* Chapter 2: golden birthday celebration, visually tied to the royal palace */
+.star-night .birthday-film-bg{filter:brightness(.58) saturate(.9) sepia(.12) contrast(1.08);object-position:center 52%}
+.star-night .birthday-video-shade{background:linear-gradient(180deg,rgba(24,8,10,.35),rgba(24,8,10,.22) 45%,rgba(12,4,7,.88)),linear-gradient(90deg,rgba(50,8,15,.38),transparent 45%,rgba(50,8,15,.3))}
+.star-night .star-night-content{border-color:rgba(226,190,122,.35)}
+.star-night .star-night-label,.star-night .birthday-kicker{color:#f2d69d}
+.star-night .spotlight-ring{border-color:rgba(235,198,129,.7);box-shadow:0 0 35px rgba(219,171,91,.3),inset 0 0 25px rgba(219,171,91,.14)}
+.star-night .birthday-heading em{color:#f4d69b;text-shadow:0 0 20px rgba(226,183,104,.4)}
+
+/* Chapter 3: secret wrapped food surprises — no video backdrop */
+.mystery-gifts{background:radial-gradient(ellipse at 50% 12%,#533044 0%,#241529 48%,#100b17 100%);position:relative;overflow:hidden}
+.mystery-gifts .birthday-gift-grid{align-items:stretch}
+.mystery-gifts .birthday-gift{min-height:225px;background:linear-gradient(145deg,#5b2339,#241324 72%);border:1px solid #dcb77888;position:relative;overflow:hidden}
+.mystery-gifts .birthday-gift:before{content:"";position:absolute;inset:9px;border:1px solid #e8c98755;border-radius:13px;pointer-events:none}
+.mystery-gifts .birthday-gift .gift-emoji{font-size:58px;filter:drop-shadow(0 0 18px #ffd58b88)}
+.mystery-gifts .birthday-gift b{font:italic 23px Georgia,serif;color:#ffedcf}
+.mystery-gifts .birthday-gift small{color:#e7cbb7}
+.mystery-gifts .birthday-gift.opened{transform:translateY(-5px) scale(1.035);background:linear-gradient(145deg,#8c4a54,#3c1e34);border-color:#ffe0a0;box-shadow:0 0 35px #f0c47b44}
+.mystery-gifts .birthday-gift-reveal{position:relative;min-height:0;width:min(760px,100%);margin:24px auto 16px;padding:0;border:0;background:transparent;overflow:hidden;max-height:0;opacity:0;transform:translateY(14px);transition:max-height .55s ease,opacity .4s ease,transform .4s ease}
+.mystery-gifts .birthday-gift-reveal.is-open{max-height:580px;min-height:270px;opacity:1;transform:translateY(0);padding:16px;border:1px solid #e9d1a277;border-radius:20px;background:linear-gradient(135deg,#261622ee,#130e19f2);box-shadow:0 20px 60px #0006;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:22px}
+.gift-reveal-picture{width:100%;height:245px;border-radius:14px;overflow:hidden;background:#1b111a}
+.gift-reveal-picture img{width:100%;height:100%;object-fit:cover;display:block}
+.gift-reveal-copy{text-align:left;padding:12px}
+.gift-reveal-copy h3{font:italic clamp(23px,3vw,34px) Georgia,serif;color:#ffe6b7;margin:8px 0 12px}
+.gift-reveal-copy p:last-child{font:16px/1.7 Georgia,serif;color:#f4e2e8}
+.gift-reveal-close{position:absolute;right:10px;top:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid #f0d5a588;background:#1c101dcc;color:#ffe7c1;font-size:25px;cursor:pointer}
+.gift-reveal-hint{display:block;padding:18px;color:#f6e5ed;font:16px/1.7 Georgia,serif}
+@media(max-width:650px){.mystery-gifts .birthday-gift-grid{grid-template-columns:1fr;gap:12px;width:min(380px,100%)}.mystery-gifts .birthday-gift{min-height:135px;display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;column-gap:12px;padding:16px;text-align:left;justify-items:start}.mystery-gifts .birthday-gift .gift-number{grid-row:1/3;align-self:center}.mystery-gifts .birthday-gift .gift-emoji{font-size:34px;grid-column:2}.mystery-gifts .birthday-gift b,.mystery-gifts .birthday-gift small{grid-column:2}.mystery-gifts .birthday-gift-reveal.is-open{grid-template-columns:1fr;gap:8px;max-height:760px}.gift-reveal-picture{height:190px}.gift-reveal-copy{text-align:center}}
+
+/* Full-screen cinematic food surprise reveal */
+body.gift-cinema-open{overflow:hidden!important}
+.gift-cinema-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;padding:76px 22px 30px;background:radial-gradient(ellipse at 50% 35%,#44232b,#10090e 75%);opacity:0;visibility:hidden;pointer-events:none;transform:scale(.985);transition:opacity .35s ease,transform .4s ease,visibility .35s}
+.gift-cinema-modal.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:scale(1)}
+.gift-cinema-back{position:absolute;top:22px;left:24px;z-index:3;display:flex;align-items:center;gap:10px;border:1px solid #f0d39a99;border-radius:40px;padding:12px 19px;background:#170d13dd;color:#ffe9c5;font:600 12px/1.2 Arial,sans-serif;letter-spacing:.14em;cursor:pointer;backdrop-filter:blur(10px)}
+.gift-cinema-back:first-letter{font-size:20px}
+.gift-cinema-image-wrap{width:min(86vw,1120px);height:min(66vh,700px);display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:22px;border:1px solid #e7c48b99;box-shadow:0 20px 90px #000b,0 0 38px #e8bc6b33;background:#090609}
+.gift-cinema-image{display:block;width:100%;height:100%;object-fit:contain;background:#090609}
+.gift-cinema-caption{text-align:center;max-width:900px;padding:0 14px}
+.gift-cinema-subtitle{margin:0 0 7px;color:#e8c78e;font:600 10px/1.5 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase}
+.gift-cinema-title{margin:0;color:#fff0d2;font:italic clamp(25px,4vw,48px)/1.15 Georgia,serif;text-shadow:0 0 24px #d9a65b66}
+.gift-cinema-message{margin:10px 0 0;color:#f6e6e8;font:clamp(14px,1.5vw,18px)/1.55 Georgia,serif}
+@media(max-width:650px){.gift-cinema-modal{padding:76px 12px 25px;gap:16px}.gift-cinema-back{top:14px;left:12px;padding:10px 14px;font-size:10px}.gift-cinema-image-wrap{width:100%;height:58vh;border-radius:14px}.gift-cinema-image{object-fit:contain}.gift-cinema-title{font-size:28px}.gift-cinema-message{font-size:14px}}
+
+/* Chapter 4: grand MOTO cake and candle-blown dua */
+.cake-night.moto-cake-scene{isolation:isolate;overflow-y:auto;overflow-x:hidden;background:radial-gradient(ellipse at 50% 55%,#552438 0%,#25101f 48%,#090710 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:0}
+.moto-cake-scene:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 68%,#f4b85b25,transparent 43%),linear-gradient(180deg,#09071022,#09071077)}
+.cake-scene-heading{position:relative;z-index:4;text-align:center;width:min(900px,100%);margin:0 auto 4px}
+.cake-scene-heading .birthday-kicker{color:#f3d39b;letter-spacing:.3em}
+.cake-scene-heading .birthday-heading{margin:7px 0;font-size:clamp(32px,5vw,58px)}
+.cake-scene-heading .birthday-copy{margin:4px auto;color:#f6e3d5}
+.grand-moto-cake{position:relative;z-index:3;width:min(760px,94vw);height:clamp(340px,53vh,510px);margin:12px auto 0;filter:drop-shadow(0 25px 35px #000a)}
+.grand-moto-cake .cake-plate{left:3%;bottom:3%;width:94%;height:24px;border:2px solid #ffe3a4;background:linear-gradient(180deg,#fff8df,#d7a65e 48%,#71432c);box-shadow:0 8px 28px #0008,0 0 35px #edbd6b55}
+.grand-moto-cake .cake-tier{border:2px solid #f6d59c;background:linear-gradient(90deg,#7b233d 0%,#d98591 16%,#fff0df 48%,#e7a4ad 82%,#6e1d38 100%);box-shadow:inset 0 -15px 0 #9f3d59,inset 0 12px 15px #fff7e5,0 12px 22px #0006}
+.grand-moto-cake .cake-tier:before{content:"";position:absolute;top:-12px;left:-2px;right:-2px;height:26px;border-radius:50%;background:linear-gradient(90deg,#e8a9b2,#fff4e5 48%,#d78391);border:2px solid #ffe6bb;box-shadow:0 4px 10px #0003}
+.grand-moto-cake .tier-top{z-index:3;bottom:65%;width:34%;height:22%;border-radius:18px 18px 12px 12px}
+.grand-moto-cake .tier-middle{z-index:2;bottom:35%;width:62%;height:29%;border-radius:22px 22px 14px 14px}
+.grand-moto-cake .tier-bottom{z-index:1;bottom:7%;width:88%;height:30%;border-radius:25px 25px 17px 17px}
+.cake-name{position:absolute;z-index:5;left:0;right:0;top:42%;text-align:center;color:#fff0c9;font:italic 700 clamp(35px,6vw,66px) Georgia,serif;letter-spacing:.22em;padding-left:.22em;text-shadow:0 2px 3px #6b1e32,0 0 12px #fff0bf,0 0 30px #f4c76d}
+.grand-moto-cake .cake-topper{z-index:6;bottom:88%;left:0;right:0;text-align:center;font:700 clamp(24px,4vw,43px) Georgia,serif;letter-spacing:.32em;color:#ffe8ad;text-shadow:0 0 12px #ffd879,0 0 35px #f2b94d}
+.grand-moto-cake .cake-candles{z-index:8;bottom:86%;left:0;right:0;display:flex;justify-content:center;gap:clamp(32px,7vw,74px)}
+.grand-moto-cake .cake-candle{position:relative;width:24px;height:76px;padding:0;display:block;border:0;background:transparent;cursor:pointer;filter:none;transition:transform .3s,opacity .3s}
+.candle-stick{position:absolute;bottom:0;left:8px;width:9px;height:52px;border-radius:4px;background:repeating-linear-gradient(45deg,#fff0ce 0 7px,#b63a58 7px 13px);box-shadow:0 0 12px #ffe1ad55}
+.candle-flame{position:absolute;top:0;left:7px;width:13px;height:21px;border-radius:60% 45% 55% 45%;transform:rotate(4deg);background:radial-gradient(ellipse at 50% 70%,#fffbdc 0 20%,#ffd45d 43%,#f47735 72%,transparent 74%);filter:drop-shadow(0 0 9px #ffb52e);animation:candleFlicker .7s ease-in-out infinite alternate}
+.grand-moto-cake .cake-candle.blown{opacity:.5;transform:translateY(-5px) scale(.9)}
+.grand-moto-cake .cake-candle.blown .candle-flame{opacity:0;transform:scale(.1);animation:none}
+.grand-moto-cake .cake-candle.blown:after{content:"";position:absolute;top:-5px;left:8px;width:15px;height:23px;border-radius:50%;background:radial-gradient(ellipse,#ddd9d4aa,transparent 70%);filter:blur(5px);animation:smokeFade 1.2s forwards}
+@keyframes smokeFade{to{opacity:0;transform:translateY(-25px) scale(1.8)}}
+.cake-ground-glow{position:absolute;z-index:-1;bottom:0;left:15%;width:70%;height:45px;border-radius:50%;background:#e8b95b55;filter:blur(24px)}
+.cake-instruction{position:relative;z-index:4;margin:4px auto 14px;text-align:center;color:#ffe6bd;font:15px/1.8 Georgia,serif;text-shadow:0 2px 8px #000}
+.cake-blessing{position:relative;z-index:5;width:min(900px,94vw);margin:0 auto 15px;padding:18px 24px;border:1px solid #e9c77b88;border-radius:20px;background:linear-gradient(135deg,#1b101def,#3c1a2cef);box-shadow:0 12px 50px #0008,0 0 35px #e8bd6b22;text-align:center;color:#fff0d0}
+.cake-blessing.hidden{display:none}
+.blessing-heading{margin:0 0 8px;color:#f5d49a;font:italic 24px Georgia,serif}
+.blessing-urdu{margin:0 auto;font:clamp(17px,2vw,23px)/2.1 'Noto Nastaliq Urdu',serif;color:#fff0dc;direction:rtl}
+.blessing-sign{margin:10px 0 0;color:#f3d39b;font:italic 16px Georgia,serif}
+#cakeNext{position:relative;z-index:6;margin:5px auto 0}
+#cakeNext:disabled{opacity:.35;cursor:not-allowed}
+@media(max-width:700px){.cake-night.moto-cake-scene{padding:105px 4vw 34px;justify-content:flex-start}.cake-scene-heading .birthday-heading{font-size:clamp(31px,9vw,43px)}.cake-scene-heading .birthday-copy{font-size:13px;line-height:1.6}.grand-moto-cake{width:98vw;height:clamp(300px,43vh,390px);margin-top:24px;transform:none}.grand-moto-cake .tier-top{bottom:65%;height:22%;width:38%}.grand-moto-cake .tier-middle{bottom:35%;height:29%;width:68%}.grand-moto-cake .tier-bottom{bottom:7%;height:30%;width:94%}.grand-moto-cake .cake-candles{bottom:86%;gap:32px}.grand-moto-cake .cake-candle{height:65px}.candle-stick{height:44px}.cake-blessing{padding:13px 12px;margin:0 auto 10px}.blessing-heading{font-size:20px}.blessing-urdu{font-size:16px;line-height:2}.blessing-sign{font-size:14px}.cake-instruction{font-size:13px;margin:3px auto 10px}}
+
+/* Photographic cake stage: use a real cake photograph, not CSS cake shapes */
+.photo-cake-stage{position:relative;isolation:isolate;width:min(660px,94vw);height:clamp(370px,54vh,560px);margin:10px auto 0;display:flex;align-items:center;justify-content:center}
+.photo-cake-image{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 25px 28px #0009);border-radius:12px}
+.photo-cake-candles{position:absolute;z-index:3;top:8%;left:50%;transform:translateX(-50%);display:flex;gap:clamp(24px,5vw,55px)}
+.photo-cake-candles .cake-candle{position:relative;width:23px;height:72px;padding:0;border:0;background:transparent;cursor:pointer;filter:none;transition:opacity .3s,transform .3s}
+.photo-cake-candles .candle-stick{position:absolute;bottom:0;left:7px;width:10px;height:49px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff5d9 0 6px,#c34c66 6px 12px);box-shadow:inset -2px 0 2px #713044,0 2px 5px #0005}
+.photo-cake-candles .candle-flame{position:absolute;top:0;left:6px;width:14px;height:22px;border-radius:55% 45% 55% 45%;background:radial-gradient(ellipse at 50% 70%,#fff 0 15%,#ffe78b 34%,#ff9c36 65%,transparent 72%);filter:drop-shadow(0 0 8px #ffb83e);animation:candleFlicker .65s ease-in-out infinite alternate}
+.photo-cake-candles .cake-candle.blown{opacity:.45;transform:translateY(-4px)}
+.photo-cake-candles .cake-candle.blown .candle-flame{opacity:0;transform:scale(.1);animation:none}
+.photo-cake-candles .cake-candle.blown:after{content:"";position:absolute;top:-4px;left:6px;width:16px;height:23px;border-radius:50%;background:radial-gradient(ellipse,#ddd9d4bb,transparent 70%);filter:blur(5px);animation:smokeFade 1.2s forwards}
+.photo-cake-name{position:absolute;z-index:4;left:50%;top:73%;transform:translate(-50%,-50%) perspective(180px) rotateX(-8deg);font:900 clamp(30px,5.5vw,57px)/1 Georgia,serif;letter-spacing:.18em;padding-left:.18em;color:#ffe7a0;-webkit-text-stroke:1px #8b5721;text-shadow:1px 1px 0 #8b5721,2px 2px 0 #754316,3px 3px 0 #61350f,4px 5px 4px #210e0a,0 0 12px #ffdf87;filter:drop-shadow(0 5px 4px #160a08);white-space:nowrap}
+@media(max-width:700px){.photo-cake-stage{height:clamp(330px,46vh,430px);width:100%;margin-top:16px}.photo-cake-candles{top:8%;gap:25px}.photo-cake-candles .cake-candle{height:62px}.photo-cake-candles .candle-stick{height:42px}.photo-cake-name{top:73%;font-size:clamp(29px,8vw,43px)}}

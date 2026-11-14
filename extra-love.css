@@ -1,0 +1,113 @@
+
+/* ===== FOUR NEW CINEMATIC LOVE EXPERIENCES ===== */
+.extra-love-page{min-height:100svh;overflow:hidden;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 35%,#39203f88,transparent 65%)}
+.extra-love-shell{width:min(900px,100%);margin:auto;position:relative;z-index:2;text-align:center}
+.extra-kicker{font-family:'Noto Nastaliq Urdu',serif;color:#f0d3a7;font-size:17px;margin:0 0 14px}
+.extra-lead{font-family:'Noto Nastaliq Urdu',serif;font-size:17px;line-height:2.2;margin:10px auto 28px;max-width:650px}
+.named-sky{height:350px;max-width:760px;margin:20px auto 22px;position:relative;overflow:hidden;border:1px solid #f2d5e722;border-radius:28px;background:radial-gradient(ellipse at 50% 50%,#463057aa,transparent 70%),linear-gradient(150deg,#0d1028,#21132e 65%,#100d20);box-shadow:inset 0 0 70px #080714aa,0 20px 65px #0004}
+.named-sky:before,.named-sky:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 15% 25%,#fff 50%,transparent 100%),radial-gradient(2px 2px at 75% 18%,#f8d5e9 50%,transparent 100%),radial-gradient(1px 1px at 45% 78%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 88% 70%,#fff 50%,transparent 100%);background-size:190px 170px;opacity:.8;animation:skyTwinkle 4s ease-in-out infinite alternate}
+.named-sky:after{transform:translateX(50px);opacity:.35;animation-delay:1.5s}
+@keyframes skyTwinkle{to{opacity:.25;transform:scale(1.04)}}
+.named-star{position:absolute;z-index:3;border:0;background:none;color:#f8dca9;font-size:36px;cursor:pointer;text-shadow:0 0 18px #f7d99b;animation:namedStarPulse 2s ease-in-out infinite alternate;transition:transform .3s}
+.named-star:hover,.named-star.selected{transform:scale(1.7);color:#fff;text-shadow:0 0 30px #fff}
+.star-a{left:15%;top:22%}.star-b{left:34%;top:60%}.star-c{left:51%;top:18%}.star-d{right:21%;top:55%}.star-e{right:10%;top:17%}
+@keyframes namedStarPulse{to{opacity:.55;filter:drop-shadow(0 0 10px #f3c5e4)}}
+.named-star-message{position:absolute;z-index:2;left:50%;top:48%;transform:translate(-50%,-50%);width:75%;font:22px/2 'Noto Nastaliq Urdu',serif;color:#ffe4f0;text-shadow:0 0 22px #f1a7cd}
+.constellation-heart{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:35px;color:#eaa6c6;opacity:.4}
+.star-signature,.dream-forever{font:16px/2 'Noto Nastaliq Urdu',serif;color:#f1c8da;margin:18px auto 25px}
+.dream-world{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:35px auto 20px}
+.dream-card{min-height:210px;padding:24px 15px;border:1px solid #f0c5d52b;border-radius:20px;background:linear-gradient(145deg,#ffffff12,#ffffff03);color:#f9eaf2;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:.35s}
+.dream-card:hover,.dream-card.selected{transform:translateY(-8px);border-color:#efabc9;background:linear-gradient(145deg,#e99abc25,#ffffff06);box-shadow:0 15px 40px #d97ca522}
+.dream-card span{font-size:10px;letter-spacing:.2em;color:#e9cda5}.dream-card b{font:24px 'Noto Nastaliq Urdu',serif}.dream-card i{font-style:normal;font-size:30px;color:#efaac8}.dream-card small{font:13px 'Noto Nastaliq Urdu',serif;color:#bfaebe}
+.dream-reveal{min-height:75px;max-width:700px;margin:22px auto;padding:18px 25px;border:1px solid #f0c5d52b;border-radius:16px;background:#ffffff08;color:#f4d6e5;font:17px/2.2 'Noto Nastaliq Urdu',serif}
+.heartbeat-core{width:190px;height:190px;border-radius:50%;border:1px solid #f6bad7aa;background:radial-gradient(circle at 40% 35%,#f7c3d8,#a54c7a 65%,#4b244f);box-shadow:0 0 35px #e989b755,0 0 100px #e989b733;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;margin:35px auto 24px;cursor:pointer;animation:heartBeat 1.25s infinite;transition:.25s}
+.heartbeat-core span{font-size:78px;line-height:1;color:#fff1f7;text-shadow:0 0 20px #fff}.heartbeat-core i{font:14px 'Noto Nastaliq Urdu',serif;color:#fff;font-style:normal}
+.heartbeat-core:active{transform:scale(.9)}
+@keyframes heartBeat{0%,100%{transform:scale(1)}12%{transform:scale(1.08)}24%{transform:scale(1)}36%{transform:scale(1.06)}}
+.heartbeat-lines{height:55px;max-width:500px;margin:5px auto 15px;display:flex;align-items:center;justify-content:center;gap:5px;overflow:hidden}
+.heartbeat-lines span{width:5px;height:15px;border-radius:8px;background:#e99abc;box-shadow:0 0 10px #e99abc;animation:ecg .8s ease-in-out infinite}
+.heartbeat-lines span:nth-child(2),.heartbeat-lines span:nth-child(4){height:35px;animation-delay:.12s}.heartbeat-lines span:nth-child(3){height:52px;animation-delay:.24s}
+@keyframes ecg{50%{transform:scaleY(.35);opacity:.4}}
+.heartbeat-message{min-height:55px;font:20px/2 'Noto Nastaliq Urdu',serif;color:#f4d6e5;margin:18px auto}
+.heartbeat-count{font:13px 'Noto Nastaliq Urdu',serif;color:#e9cda5;margin:12px auto 30px}
+.heartbeat-core.heart-burst{animation:heartBurst .55s ease}
+@keyframes heartBurst{50%{transform:scale(1.2);filter:brightness(1.3)}}
+.love-film-page{background:radial-gradient(ellipse at 50% 40%,#44203d,#110d20 70%);isolation:isolate}
+.film-grain{position:absolute;inset:0;z-index:-1;opacity:.13;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+.film-shell{max-width:850px}
+.film-frame{position:relative;min-height:370px;margin:22px auto 25px;padding:45px 30px;border:1px solid #eac6d544;border-radius:5px;background:linear-gradient(135deg,#2b1c32dd,#100d1cdd),radial-gradient(circle at center,#a6537a55,transparent 70%);box-shadow:0 20px 70px #0008,inset 0 0 45px #0007;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+.film-frame:before,.film-frame:after{content:"✦   ✧   ✦   ✧   ✦   ✧   ✦";position:absolute;left:0;right:0;color:#d7a6bd66;font-size:11px;letter-spacing:1em;white-space:nowrap;overflow:hidden}
+.film-frame:before{top:12px}.film-frame:after{bottom:12px}
+.film-scene-number{position:absolute;top:37px;right:25px;color:#e9cda5;font:12px 'Noto Nastaliq Urdu',serif}
+.film-light{font-size:42px;color:#f4d5a5;text-shadow:0 0 40px #f4d5a5;animation:filmGlow 2s infinite alternate}
+@keyframes filmGlow{to{opacity:.45;transform:scale(.8)}}
+.film-scene-text{max-width:650px;min-height:110px;margin:20px auto;color:#fff0f6;font:clamp(23px,4vw,36px)/2.2 'Noto Nastaliq Urdu',serif;text-shadow:0 0 25px #e99abc55;animation:sceneIn .65s both}
+@keyframes sceneIn{from{opacity:0;transform:translateY(18px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+.film-caption{color:#d7b9cb;font:13px 'Noto Nastaliq Urdu',serif}
+.film-next{font:15px 'Noto Nastaliq Urdu',serif}
+.film-final-line{font:22px/2 'Noto Nastaliq Urdu',serif;color:#f4d5a5;margin:22px auto;animation:sceneIn .9s both}
+@media(max-width:700px){.dream-world{grid-template-columns:1fr;max-width:430px}.dream-card{min-height:155px}.named-sky{height:310px}.named-star-message{font-size:18px;width:85%}.film-frame{min-height:330px;padding:40px 18px}.heartbeat-core{width:165px;height:165px}}
+
+
+/* CINEMATIC VISUAL WORLDS — scene art is drawn in CSS, no extra downloads */
+.dream-world{position:relative;display:block;min-height:590px;padding:18px 0 0;isolation:isolate}
+.dream-cinematic-backdrop{height:300px;position:relative;overflow:hidden;border:1px solid #f5d5e633;border-radius:26px;margin:0 auto 18px;background:linear-gradient(180deg,#171d3b 0%,#65476a 55%,#e6a47e 100%);box-shadow:0 20px 60px #0008,inset 0 -40px 70px #160e24aa;transition:background 1s ease}
+.dream-cinematic-backdrop:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 78%,#ffd9a855,transparent 35%),linear-gradient(0deg,#140f22aa,transparent 55%)}
+.dream-scene-moon{position:absolute;width:76px;height:76px;border-radius:50%;top:38px;right:16%;background:#ffe8bd;box-shadow:0 0 45px #ffe1a9aa}
+.dream-scene-house{position:absolute;bottom:53px;left:50%;width:180px;height:112px;transform:translateX(-50%);background:linear-gradient(90deg,#3b2638,#70465a);border:2px solid #e8b6a0;border-bottom:0;clip-path:polygon(0 30%,50% 0,100% 30%,100% 100%,0 100%);filter:drop-shadow(0 0 18px #ffcf9b55)}
+.dream-scene-house:after{content:"";position:absolute;left:42%;bottom:0;width:30px;height:57px;background:#f7c78c;box-shadow:45px 0 0 -5px #f7c78c, -44px -20px 0 -5px #f7c78c}
+.dream-scene-hills{position:absolute;bottom:-75px;left:-5%;width:110%;height:150px;border-radius:50% 50% 0 0;background:#1b2436;box-shadow:0 -35px 0 #293047}
+.dream-scene-caption{position:absolute;z-index:2;bottom:18px;left:0;right:0;color:#fff1df;font:18px 'Noto Nastaliq Urdu',serif;text-shadow:0 2px 12px #000}
+.dream-cinematic-backdrop.scene-travel{background:linear-gradient(180deg,#18284b 0%,#e58a72 58%,#f7c88e 100%)}
+.dream-cinematic-backdrop.scene-travel .dream-scene-house{width:0;height:0;border-left:100px solid transparent;border-right:100px solid transparent;border-bottom:175px solid #27334b;clip-path:none;background:transparent;bottom:36px}
+.dream-cinematic-backdrop.scene-travel .dream-scene-house:after{content:"";position:absolute;top:55px;left:-60px;width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid #3c4962;background:none;box-shadow:none}
+.dream-cinematic-backdrop.scene-travel .dream-scene-hills{background:#1a2639;box-shadow:0 -35px 0 #34435a}
+.dream-cinematic-backdrop.scene-joy{background:linear-gradient(135deg,#26384a,#6f667b 55%,#d49c9a)}
+.dream-cinematic-backdrop.scene-joy .dream-scene-moon{width:0;height:0;background:transparent;border-radius:0;top:0;right:0;box-shadow:none}
+.dream-cinematic-backdrop.scene-joy .dream-scene-house{width:55%;height:75%;bottom:0;clip-path:none;background:repeating-linear-gradient(90deg,#171b2b 0 3px,transparent 3px 31%),linear-gradient(#171b2b,#171b2b);border:0;opacity:.85}
+.dream-cinematic-backdrop.scene-joy .dream-scene-house:after{left:18%;bottom:25%;width:45%;height:42%;background:linear-gradient(90deg,#f8d5a0,#f8d5a0);box-shadow:50px 0 0 #f8d5a0}
+.dream-card{position:relative;z-index:2}
+.film-frame{isolation:isolate;background:#100d1c;transition:background 1s ease}
+.film-visual{position:absolute;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,#182343 0%,#9a6178 62%,#e4a27c 100%);transition:filter 1s,opacity .8s}
+.film-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#100d1cdd,transparent 70%),radial-gradient(ellipse at 50% 65%,#ffd6a866,transparent 38%)}
+.film-visual-moon{position:absolute;top:14%;right:18%;width:72px;height:72px;border-radius:50%;background:#ffe9c4;box-shadow:0 0 45px #ffe3b2}
+.film-visual-horizon{position:absolute;left:-10%;right:-10%;height:45%;bottom:-17%;border-radius:50% 50% 0 0;background:#1c263b;box-shadow:0 -38px 0 #30344c}
+.film-visual-silhouette{position:absolute;bottom:13%;left:50%;width:150px;height:130px;transform:translateX(-50%);background:linear-gradient(90deg,#211b2b 0 45%,transparent 45% 55%,#211b2b 55%);clip-path:polygon(38% 0,62% 0,68% 28%,100% 100%,0 100%,32% 28%);filter:drop-shadow(0 0 15px #000)}
+.film-frame[data-scene="1"] .film-visual{background:linear-gradient(180deg,#172b4b,#d48b72 65%,#f7c58d)}
+.film-frame[data-scene="1"] .film-visual-silhouette{width:260px;height:170px;clip-path:polygon(0 100%,28% 10%,48% 78%,68% 0,100% 100%);background:#26334b}
+.film-frame[data-scene="2"] .film-visual{background:linear-gradient(180deg,#293c53,#e8b18d 70%,#f6d5a4)}
+.film-frame[data-scene="2"] .film-visual-moon{width:0;height:0;box-shadow:none}
+.film-frame[data-scene="2"] .film-visual-silhouette{width:190px;height:115px;bottom:10%;clip-path:polygon(0 35%,50% 0,100% 35%,100% 100%,0 100%);background:#382538}
+.film-frame[data-scene="3"] .film-visual{background:linear-gradient(180deg,#202a42,#58617a 60%,#b17d87)}
+.film-frame[data-scene="3"] .film-visual:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 22px,#ffffff24 23px 24px)}
+.film-frame[data-scene="3"] .film-visual-silhouette{width:240px;height:145px;clip-path:polygon(0 100%,20% 30%,40% 100%,60% 20%,100% 100%);background:#1b2438}
+.film-frame[data-scene="4"] .film-visual{background:radial-gradient(circle at 50% 45%,#a64d78,#301c43 45%,#100d20 80%)}
+.film-frame[data-scene="4"] .film-visual-moon{top:22%;right:calc(50% - 36px);box-shadow:0 0 70px #ffd6e8}
+.film-frame[data-scene="4"] .film-visual-silhouette{width:190px;height:170px;background:#20142b}
+.film-scene-text{position:relative;z-index:2;text-shadow:0 3px 22px #100615,0 0 35px #e99abc88}
+.film-scene-number,.film-caption{position:relative;z-index:2}
+@media(max-width:700px){.dream-world{min-height:720px}.dream-cinematic-backdrop{height:245px}.dream-scene-house{transform:translateX(-50%) scale(.8)}.film-visual-silhouette{transform:translateX(-50%) scale(.8)}}
+
+
+/* Full-screen real-footage dream cinema */
+.dream-world{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;min-height:0;padding:20px 0 0}
+.dream-cinematic-backdrop{display:none}
+.dream-card{min-height:230px;position:relative;overflow:hidden;background:linear-gradient(145deg,#34233d,#171321);border:1px solid #f3c5db55;box-shadow:0 18px 45px #0005}
+.dream-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,#eab4d833,transparent 65%);pointer-events:none}
+.dream-card b{position:relative;z-index:1}
+.dream-cinema{position:fixed;inset:0;z-index:9999;display:none;overflow:hidden;background:#090711;color:#fff;text-align:center}
+.dream-cinema.is-open{display:block;animation:dreamCinemaIn .8s ease both}
+@keyframes dreamCinemaIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.dream-cinema-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.dream-cinema-shade{position:absolute;inset:0;background:linear-gradient(180deg,#07061155 0%,#08061022 35%,#080610aa 72%,#080610ed 100%),linear-gradient(90deg,#08061055,#08061005 50%,#08061055);pointer-events:none}
+.dream-cinema-back{position:absolute;z-index:3;top:max(22px,env(safe-area-inset-top));right:24px;border:1px solid #ffffff66;background:#100d1dcc;color:#fff;padding:12px 20px;border-radius:30px;font:15px 'Noto Nastaliq Urdu',serif;cursor:pointer;backdrop-filter:blur(12px)}
+.dream-cinema-copy{position:absolute;z-index:2;left:50%;bottom:10%;transform:translateX(-50%);width:min(900px,90vw);padding:30px 24px}
+.dream-cinema-kicker{font:17px 'Noto Nastaliq Urdu',serif;color:#f3d6b0;margin:0 0 10px;text-shadow:0 2px 18px #000}
+.dream-cinema-copy h3{font:clamp(30px,5vw,58px) 'Noto Nastaliq Urdu',serif;color:#fff4f8;margin:0 0 20px;text-shadow:0 3px 28px #000}
+.dream-cinema-line{font:clamp(20px,3vw,30px)/2.1 'Noto Nastaliq Urdu',serif;color:#fff;margin:0 auto;min-height:100px;text-shadow:0 2px 20px #000,0 0 25px #000;animation:dreamLineIn .9s both}
+@keyframes dreamLineIn{from{opacity:0;transform:translateY(18px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.dream-cinema-progress{width:min(300px,70vw);height:2px;background:#ffffff55;margin:22px auto 12px;overflow:hidden}
+.dream-cinema-progress span{display:block;width:0;height:100%;background:#ffe4c5}
+.dream-cinema-credit{font:11px/1.5 sans-serif;letter-spacing:.12em;color:#ffffff9c;margin:8px 0}
+@media(max-width:700px){.dream-world{grid-template-columns:1fr;max-width:440px}.dream-card{min-height:150px}.dream-cinema-copy{bottom:8%;width:94vw;padding:20px 12px}.dream-cinema-line{min-height:130px}.dream-cinema-back{right:12px;top:12px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.dream-cinema.is-open{animation:none}.dream-cinema-line{animation:none}}

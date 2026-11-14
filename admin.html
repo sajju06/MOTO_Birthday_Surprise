@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100b20">
+  <title>Private Message Book</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{padding:35px 18px;background:var(--bg);min-height:100vh}
+    .admin-wrap{width:min(760px,100%);margin:45px auto}
+    .admin-panel{padding:30px;border:1px solid var(--line);background:#ffffff08}
+    .admin-panel h1{font:clamp(38px,7vw,58px) var(--serif);font-weight:400;text-align:center}
+    .admin-panel>p{text-align:center;color:var(--muted)}
+    .admin-form{max-width:420px;margin:30px auto;display:grid;gap:12px}
+    .admin-form input{padding:14px;background:#ffffff0a;color:var(--ink);border:1px solid var(--line)}
+    .admin-form label{font-size:11px;color:var(--gold);letter-spacing:.12em}
+    .admin-message{padding:20px;margin:16px 0;border:1px solid var(--line);background:#ffffff08;white-space:pre-wrap;overflow-wrap:anywhere}
+    .admin-message time{display:block;margin-top:12px;color:var(--gold);font-size:11px}
+    #adminStatus{text-align:center;color:var(--gold);min-height:22px}
+    .hidden{display:none!important}
+  </style>
+</head>
+<body>
+  <main class="admin-wrap">
+    <div class="admin-panel">
+      <p class="eyebrow">ONLY FOR THE HUSBAND</p>
+      <h1>Our Message Book</h1>
+      <p>Sign in to read the messages saved by MOTO.</p>
+      <form id="adminLogin" class="admin-form">
+        <label for="adminEmail">EMAIL</label>
+        <input id="adminEmail" type="email" autocomplete="username" required placeholder="Your admin email">
+        <label for="adminPassword">PASSWORD</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Your password">
+        <button class="btn btn-primary" type="submit">Sign in</button>
+      </form>
+      <div id="adminContent" class="hidden">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+          <p>Private messages</p>
+          <button id="refreshMessages" class="btn btn-ghost" type="button">Refresh</button>
+          <button id="adminLogout" class="btn btn-ghost" type="button">Sign out</button>
+        </div>
+        <div id="messagesList"></div>
+      </div>
+      <p id="adminStatus" role="status" aria-live="polite"></p>
+      <p style="text-align:center"><a href="index.html" style="color:var(--pink)">Back to birthday website</a></p>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const db = window.supabase.createClient(
+      'https://smqovufaykygviwhctsi.supabase.co',
+      'sb_publishable_0hVvSvMEYMqkLBpPWpL7nw_8IQ1GrGO'
+    );
+    const loginForm = document.getElementById('adminLogin');
+    const adminContent = document.getElementById('adminContent');
+    const statusEl = document.getElementById('adminStatus');
+    const list = document.getElementById('messagesList');
+
+    function showMessages(rows) {
+      list.replaceChildren();
+      if (!rows.length) {
+        list.textContent = 'No messages yet. When MOTO sends one, it will appear here. ♡';
+        return;
+      }
+      rows.forEach(row => {
+        const card = document.createElement('article');
+        card.className = 'admin-message';
+        const heading = document.createElement('strong');
+        heading.textContent = row.name;
+        const body = document.createElement('p');
+        body.textContent = row.message;
+        const time = document.createElement('time');
+        time.textContent = new Date(row.created_at).toLocaleString();
+        card.append(heading, body, time);
+        list.append(card);
+      });
+    }
+
+    async function loadMessages() {
+      statusEl.textContent = 'Loading messages...';
+      const { data, error } = await db.from('love_messages')
+        .select('id,name,message,created_at')
+        .order('created_at', { ascending: false });
+      if (error) {
+        statusEl.textContent = 'Could not load messages. Check the admin account and database access.';
+        console.error(error.message);
+        return;
+      }
+      showMessages(data || []);
+      statusEl.textContent = (data || []).length + ' message(s) saved.';
+    }
+
+    async function checkSession() {
+      const { data: { session } } = await db.auth.getSession();
+      if (session) {
+        loginForm.classList.add('hidden');
+        adminContent.classList.remove('hidden');
+        await loadMessages();
+      }
+    }
+
+    loginForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusEl.textContent = 'Signing in...';
+      const { error } = await db.auth.signInWithPassword({
+        email: document.getElementById('adminEmail').value.trim(),
+        password: document.getElementById('adminPassword').value
+      });
+      if (error) {
+        statusEl.textContent = 'Sign-in failed. Check your email and password.';
+        return;
+      }
+      loginForm.classList.add('hidden');
+      adminContent.classList.remove('hidden');
+      await loadMessages();
+    });
+
+    document.getElementById('refreshMessages').addEventListener('click', loadMessages);
+    document.getElementById('adminLogout').addEventListener('click', async () => {
+      await db.auth.signOut();
+      adminContent.classList.add('hidden');
+      loginForm.classList.remove('hidden');
+      statusEl.textContent = 'Signed out.';
+    });
+    checkSession();
+  </script>
+</body>
+</html>
