@@ -244,11 +244,14 @@ body.gift-cinema-open{overflow:hidden!important}
 .photo-cake-candles .cake-candle .candle-stick{display:none}
 .photo-cake-candles .cake-candle .candle-flame{
   position:absolute;top:0;left:50%;width:46%;height:70%;
-  transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(ellipse,rgba(18,12,13,.96) 0 28%,rgba(18,12,13,.78) 58%,rgba(18,12,13,0) 82%);
-  filter:blur(2px);opacity:0;animation:none;
+  transform:translateX(-50%) rotate(4deg);border-radius:55% 45% 55% 45%;
+  background:radial-gradient(ellipse at 50% 72%,#fffbdc 0 17%,#ffe47a 34%,#ffad36 62%,#f06b2d 76%,transparent 79%);
+  filter:drop-shadow(0 0 5px #ffb83e) drop-shadow(0 0 11px #ff8b32);
+  opacity:1;animation:candleFlicker .7s ease-in-out infinite alternate;
 }
-.photo-cake-candles .cake-candle.blown .candle-flame{opacity:1;transform:translateX(-50%)}
+.photo-cake-candles .cake-candle.blown .candle-flame{
+  opacity:0;transform:translateX(-50%) scale(.12);animation:none;
+}
 .photo-cake-candles .cake-candle.blown:after{
   content:"";position:absolute;left:50%;top:-24%;width:44%;height:58%;
   transform:translateX(-50%);border-radius:50%;
