@@ -92,7 +92,7 @@ memoryCards.forEach(card => {
 
 /* Continue Journey */
 
-document.getElementById('memoryContinue').addEventListener('click', () => {
+document.getElementById('memoryContinue')?.addEventListener('click', () => {
   showPage(8);
 });
 
@@ -148,7 +148,7 @@ function startFireworks(){
     ctx.globalAlpha=1;fireworkFrame=requestAnimationFrame(draw);
   }draw();
 }
-$('#replay').onclick=()=>showPage(0)heartsCaught=0;gameStarted=false;clearInterval(gameTimer);$('#heartField').innerHTML='';$('#heartCount').textContent='00';$('#heartProgress').style.width='0';$('#gameComplete').classList.add('hidden');$('#gameContinue').classList.add('hidden');$('#startGame').classList.remove('hidden');$('#startGame').textContent='Let the hearts fall';letterOpened=false;$('#envelope').classList.remove('open');$('#letterText').classList.add('hidden');$('#envelopeHint').textContent='TAP THE ENVELOPE TO OPEN';showPage(0);$('#lockScreen').classList.remove('unlocked');};
+$('#replay').onclick=()=>{showPage(0);$('#lockScreen').classList.remove('unlocked');};
 
 
 document.getElementById("continueJourney")?.addEventListener("click", () => showPage(8));
