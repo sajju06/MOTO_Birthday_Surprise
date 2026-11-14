@@ -1,8 +1,8 @@
 
 /* ===== MOTO BIRTHDAY CELEBRATION: luxury + magical + Hollywood ===== */
 .birthday-page{isolation:isolate;overflow:hidden;text-align:center;position:relative;min-height:100svh;padding:120px 7vw 75px;background:radial-gradient(ellipse at 50% 30%,#51304b,#171021 60%,#090812);color:#fff}
-.birthday-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.birthday-video-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0a0814aa,#10091866 45%,#090711ee),linear-gradient(90deg,#09071188,transparent 50%,#09071188)}
+.birthday-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.birthday-video-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#0a0814aa,#10091866 45%,#090711ee),linear-gradient(90deg,#09071188,transparent 50%,#09071188)}
 .birthday-scene-content,.star-night-content,.grand-finale-content{width:min(850px,100%);margin:auto;position:relative;z-index:2}
 .birthday-kicker{font:600 10px/1.8 Arial,sans-serif;letter-spacing:.28em;color:#f1d5a0;text-transform:uppercase;margin:0 0 18px}
 .birthday-heading{font:500 clamp(42px,7vw,82px)/1.1 Georgia,serif;letter-spacing:-.035em;color:#fff;margin:12px 0 22px;text-shadow:0 8px 35px #0009}
@@ -46,7 +46,7 @@
 .memory-museum{background:radial-gradient(ellipse at 50% 0%,#4b2a45,#171021 60%,#090812)}
 .moto-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;width:min(950px,100%);margin:0 auto}
 .moto-photo-slot{position:relative;display:block;overflow:hidden;aspect-ratio:4/5;border:1px solid #e9d1a255;border-radius:16px;padding:0;background:linear-gradient(145deg,#4b304d,#171321);cursor:zoom-in;box-shadow:0 14px 38px #0005}
-.moto-photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.moto-photo-slot img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:transform .6s,opacity .3s}.moto-photo-slot.has-photo img{opacity:1}
 .moto-photo-slot:hover img{transform:scale(1.06)}
 .photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 35%,#d9a6c833,transparent 55%),linear-gradient(145deg,#34233d,#171321);color:#f1d5a0}
 .photo-placeholder b{font:55px Georgia,serif}.photo-placeholder small{font:10px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
@@ -60,3 +60,5 @@
 .grand-finale-confetti{font-size:27px;letter-spacing:.12em;margin:22px auto;color:#f4d7a5;animation:starFlash 2s infinite alternate}
 @media(max-width:700px){.birthday-page{padding:110px 6vw 70px}.birthday-heading{font-size:clamp(39px,12vw,58px)}.birthday-copy{font-size:14px}.birthday-gift-grid{grid-template-columns:1fr;max-width:390px}.birthday-gift{min-height:145px}.moto-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.real-cake{transform:scale(.88);margin-top:4px}.birthday-side-note{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.birthday-crown,.star-night-backdrop span,.grand-finale-confetti{animation:none}}
+
+#birthdayFireworks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}.birthday-grand-finale .grand-finale-content{z-index:2}
