@@ -301,13 +301,14 @@ body.gift-cinema-open{overflow:hidden!important}
 
 /* Page 10 / Personal Birthday Party — cinematic party launch */
 #birthdayParty.party-started{background-image:radial-gradient(ellipse at 50% 0%,#59224f 0%,#17112e 52%,#070916 100%)!important;transition:background .7s ease}
-#birthdayParty.party-launch-flash:after{content:"";position:absolute;inset:0;z-index:8;pointer-events:none;background:#fff8d9;animation:partyLaunchFlash .85s ease-out forwards}
+#birthdayParty .party-launch-flash-overlay{position:absolute;inset:0;z-index:8;pointer-events:none;background:#fff8d9;opacity:0}
+#birthdayParty .party-launch-flash-overlay.is-flashing{animation:partyLaunchFlash .85s ease-out forwards}
 @keyframes partyLaunchFlash{0%{opacity:.95}100%{opacity:0}}
 #birthdayParty .party-launch-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .5s ease}
 #birthdayParty .party-launch-layer.is-live{opacity:1}
 #birthdayParty .party-laser-bank{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .6s ease}
 #birthdayParty.party-started .party-laser-bank{opacity:1}
-#birthdayParty .party-laser-bank i{position:absolute;left:50%;top:0;width:3px;height:125%;transform-origin:top center;transform:rotate(var(--beam-angle));background:linear-gradient(180deg,transparent,#fff 12%,hsl(calc(var(--beam-angle) * -2 + 240),100%,70%) 32%,transparent 78%);filter:drop-shadow(0 0 8px currentColor);animation:partyLaserSweep 2.8s ease-in-out var(--beam-delay) infinite alternate}
+#birthdayParty .party-laser-bank i{position:absolute;left:50%;top:0;width:3px;height:125%;transform-origin:top center;transform:rotate(var(--beam-angle));background:linear-gradient(180deg,transparent,#fff 12%,hsl(var(--beam-hue),100%,70%) 32%,transparent 78%);filter:drop-shadow(0 0 8px currentColor);animation:partyLaserSweep 2.8s ease-in-out var(--beam-delay) infinite alternate}
 @keyframes partyLaserSweep{0%{opacity:.15;transform:rotate(calc(var(--beam-angle) - 13deg)) scaleY(.8)}100%{opacity:.9;transform:rotate(calc(var(--beam-angle) + 13deg)) scaleY(1.08)}}
 #birthdayParty .party-cannon{position:absolute;bottom:-24px;width:12px;height:12px;border-radius:50%;background:#ffe8a5;box-shadow:0 0 25px 12px #ffb84c99}
 #birthdayParty .party-cannon-left{left:7%}
