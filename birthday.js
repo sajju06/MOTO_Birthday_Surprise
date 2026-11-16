@@ -122,7 +122,7 @@
       stage = document.createElement('div');
       stage.className = 'party-launch-layer';
       stage.setAttribute('aria-hidden', 'true');
-      stage.innerHTML = '<div class="party-laser-bank"></div><div class="party-cannon party-cannon-left"></div><div class="party-cannon party-cannon-right"></div><div class="party-fireworks-bank"></div><div class="party-grand-announcement"><span>TONIGHT'S STAR</span><strong>MOTO</strong><small>THE BIRTHDAY PARTY IS LIVE!</small></div>';
+      stage.innerHTML = '<div class="party-laser-bank"></div><div class="party-cannon party-cannon-left"></div><div class="party-cannon party-cannon-right"></div><div class="party-fireworks-bank"></div><div class="party-grand-announcement"><span>TONIGHT’S STAR</span><strong>MOTO</strong><small>THE BIRTHDAY PARTY IS LIVE!</small></div>';
       page.appendChild(stage);
     }
     stage.classList.add('is-live');
