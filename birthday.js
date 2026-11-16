@@ -108,7 +108,7 @@
     const partyButton = document.getElementById('startBirthdayParty');
     if (!page || page.classList.contains('party-started')) return;
 
-    page.classList.add('party-started', 'party-launch-flash');
+    page.classList.add('party-started');
     partyButton?.classList.add('party-fired');
     if (partyButton) {
       partyButton.innerHTML = 'THE PARTY IS ON! ✨';
@@ -122,7 +122,7 @@
       stage = document.createElement('div');
       stage.className = 'party-launch-layer';
       stage.setAttribute('aria-hidden', 'true');
-      stage.innerHTML = '<div class="party-laser-bank"></div><div class="party-cannon party-cannon-left"></div><div class="party-cannon party-cannon-right"></div><div class="party-fireworks-bank"></div><div class="party-grand-announcement"><span>TONIGHT’S STAR</span><strong>MOTO</strong><small>THE BIRTHDAY PARTY IS LIVE!</small></div>';
+      stage.innerHTML = '<div class="party-launch-flash-overlay"></div><div class="party-laser-bank"></div><div class="party-cannon party-cannon-left"></div><div class="party-cannon party-cannon-right"></div><div class="party-fireworks-bank"></div><div class="party-grand-announcement"><span>TONIGHT’S STAR</span><strong>MOTO</strong><small>THE BIRTHDAY PARTY IS LIVE!</small></div>';
       page.appendChild(stage);
     }
     stage.classList.add('is-live');
@@ -132,6 +132,7 @@
       for (let i = 0; i < 12; i++) {
         const beam = document.createElement('i');
         beam.style.setProperty('--beam-angle', (i * 30 - 165) + 'deg');
+        beam.style.setProperty('--beam-hue', (i * 30) + 'deg');
         beam.style.setProperty('--beam-delay', (i * 0.09) + 's');
         laserBank.appendChild(beam);
       }
@@ -187,7 +188,9 @@
       }
     }
 
-    setTimeout(() => page.classList.remove('party-launch-flash'), 900);
+    const flash = stage.querySelector('.party-launch-flash-overlay');
+    flash?.classList.add('is-flashing');
+    setTimeout(() => flash?.classList.remove('is-flashing'), 900);
   });
 
   // Twelve month wishes, each with a different blessing.
