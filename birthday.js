@@ -101,24 +101,93 @@
     if(button){button.classList.add('opened');button.innerHTML='<span>♡</span><small>LETTER OPENED</small>';button.disabled=true;}
   });
 
-  // Party mode: launch a short confetti burst on demand.
+  // Page 10 / Personal Birthday Party: cinematic launch sequence.
   document.getElementById('startBirthdayParty')?.addEventListener('click', () => {
-    const status=document.getElementById('partyStatus');
-    if(status) status.textContent='HAPPY BIRTHDAY, MOTO! Tonight is yours! ♡';
-    const page=document.getElementById('birthdayParty');
-    page?.classList.add('party-started');
-    const partyButton=document.getElementById('startBirthdayParty');
+    const page = document.getElementById('birthdayParty');
+    const status = document.getElementById('partyStatus');
+    const partyButton = document.getElementById('startBirthdayParty');
+    if (!page || page.classList.contains('party-started')) return;
+
+    page.classList.add('party-started', 'party-launch-flash');
     partyButton?.classList.add('party-fired');
-    if(partyButton) partyButton.innerHTML='THE PARTY IS ON! ✨';
-    for(let i=0;i<65;i++){
-      const piece=document.createElement('i');
-      piece.className='party-confetti';
-      piece.style.left=(Math.random()*100)+'%';
-      piece.style.animationDelay=(Math.random()*1.8)+'s';
-      piece.style.setProperty('--drift',(Math.random()*180-90)+'px');
-      page?.appendChild(piece);
-      setTimeout(()=>piece.remove(),4800);
+    if (partyButton) {
+      partyButton.innerHTML = 'THE PARTY IS ON! ✨';
+      partyButton.setAttribute('aria-pressed', 'true');
     }
+    if (status) status.textContent = 'MOTO, THE LIGHTS ARE ON, THE MUSIC IS PLAYING — THIS NIGHT IS ALL YOURS! ♡';
+
+    // Build the visual effects inside this page only.
+    let stage = page.querySelector('.party-launch-layer');
+    if (!stage) {
+      stage = document.createElement('div');
+      stage.className = 'party-launch-layer';
+      stage.setAttribute('aria-hidden', 'true');
+      stage.innerHTML = '<div class="party-laser-bank"></div><div class="party-cannon party-cannon-left"></div><div class="party-cannon party-cannon-right"></div><div class="party-fireworks-bank"></div><div class="party-grand-announcement"><span>TONIGHT'S STAR</span><strong>MOTO</strong><small>THE BIRTHDAY PARTY IS LIVE!</small></div>';
+      page.appendChild(stage);
+    }
+    stage.classList.add('is-live');
+
+    const laserBank = stage.querySelector('.party-laser-bank');
+    if (laserBank && !laserBank.childElementCount) {
+      for (let i = 0; i < 12; i++) {
+        const beam = document.createElement('i');
+        beam.style.setProperty('--beam-angle', (i * 30 - 165) + 'deg');
+        beam.style.setProperty('--beam-delay', (i * 0.09) + 's');
+        laserBank.appendChild(beam);
+      }
+    }
+
+    // Confetti rains from above, then two corner cannons fire outward.
+    for (let i = 0; i < 150; i++) {
+      const piece = document.createElement('i');
+      piece.className = 'party-confetti';
+      piece.style.left = (Math.random() * 100) + '%';
+      piece.style.animationDelay = (Math.random() * 1.5) + 's';
+      piece.style.setProperty('--drift', (Math.random() * 240 - 120) + 'px');
+      page.appendChild(piece);
+      setTimeout(() => piece.remove(), 5200);
+    }
+    ['.party-cannon-left', '.party-cannon-right'].forEach((selector, side) => {
+      const cannon = stage.querySelector(selector);
+      for (let i = 0; i < 42; i++) {
+        const spark = document.createElement('i');
+        const angle = side === 0 ? (Math.random() * 125 - 62) : (Math.random() * 125 + 118);
+        spark.className = 'party-cannon-spark';
+        spark.style.setProperty('--spark-angle', angle + 'deg');
+        spark.style.setProperty('--spark-distance', (150 + Math.random() * 300) + 'px');
+        spark.style.setProperty('--spark-hue', Math.floor(Math.random() * 360));
+        spark.style.animationDelay = (Math.random() * 0.35) + 's';
+        cannon.appendChild(spark);
+        setTimeout(() => spark.remove(), 1900);
+      }
+    });
+
+    // Several animated firework bursts across the sky.
+    const fireworksBank = stage.querySelector('.party-fireworks-bank');
+    for (let i = 0; i < 7; i++) {
+      const firework = document.createElement('i');
+      firework.className = 'party-firework';
+      firework.style.left = (12 + Math.random() * 76) + '%';
+      firework.style.top = (9 + Math.random() * 48) + '%';
+      firework.style.setProperty('--firework-hue', Math.floor(Math.random() * 360));
+      firework.style.animationDelay = (0.35 + i * 0.38) + 's';
+      fireworksBank.appendChild(firework);
+      setTimeout(() => firework.remove(), 3600 + i * 380);
+    }
+
+    // Try the dedicated birthday track; browser permission may be required.
+    const birthdayTrack = document.getElementById('birthdayAudio');
+    if (birthdayTrack && birthdayTrack.paused) {
+      birthdayTrack.volume = 0.8;
+      const playback = birthdayTrack.play();
+      if (playback && typeof playback.catch === 'function') {
+        playback.catch(() => {
+          if (status) status.textContent = 'MOTO, THE PARTY IS LIVE! Tap the music button above if you want to start the birthday song. ♡';
+        });
+      }
+    }
+
+    setTimeout(() => page.classList.remove('party-launch-flash'), 900);
   });
 
   // Twelve month wishes, each with a different blessing.
