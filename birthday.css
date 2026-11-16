@@ -297,3 +297,37 @@ body.gift-cinema-open{overflow:hidden!important}
 #birthdayParty.party-started .party-status{color:#ffe3a5;text-shadow:0 0 18px #ffcf76;animation:partyStatusGlow 1.1s ease-in-out infinite alternate}
 @keyframes partyStatusGlow{to{text-shadow:0 0 26px #ffcf76,0 0 44px #f08ab8}}
 @media(prefers-reduced-motion:reduce){.party-start-btn,.party-start-btn:before,.party-start-btn:after,#birthdayParty:before,#birthdayParty.party-started .party-status{animation:none}}
+
+
+/* Page 10 / Personal Birthday Party — cinematic party launch */
+#birthdayParty.party-started{background-image:radial-gradient(ellipse at 50% 0%,#59224f 0%,#17112e 52%,#070916 100%)!important;transition:background .7s ease}
+#birthdayParty.party-launch-flash:after{content:"";position:absolute;inset:0;z-index:8;pointer-events:none;background:#fff8d9;animation:partyLaunchFlash .85s ease-out forwards}
+@keyframes partyLaunchFlash{0%{opacity:.95}100%{opacity:0}}
+#birthdayParty .party-launch-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .5s ease}
+#birthdayParty .party-launch-layer.is-live{opacity:1}
+#birthdayParty .party-laser-bank{position:absolute;inset:0;overflow:hidden;opacity:0;transition:opacity .6s ease}
+#birthdayParty.party-started .party-laser-bank{opacity:1}
+#birthdayParty .party-laser-bank i{position:absolute;left:50%;top:0;width:3px;height:125%;transform-origin:top center;transform:rotate(var(--beam-angle));background:linear-gradient(180deg,transparent,#fff 12%,hsl(calc(var(--beam-angle) * -2 + 240),100%,70%) 32%,transparent 78%);filter:drop-shadow(0 0 8px currentColor);animation:partyLaserSweep 2.8s ease-in-out var(--beam-delay) infinite alternate}
+@keyframes partyLaserSweep{0%{opacity:.15;transform:rotate(calc(var(--beam-angle) - 13deg)) scaleY(.8)}100%{opacity:.9;transform:rotate(calc(var(--beam-angle) + 13deg)) scaleY(1.08)}}
+#birthdayParty .party-cannon{position:absolute;bottom:-24px;width:12px;height:12px;border-radius:50%;background:#ffe8a5;box-shadow:0 0 25px 12px #ffb84c99}
+#birthdayParty .party-cannon-left{left:7%}
+#birthdayParty .party-cannon-right{right:7%}
+#birthdayParty .party-cannon-spark{position:absolute;left:50%;top:50%;width:9px;height:15px;border-radius:2px;background:hsl(var(--spark-hue),100%,68%);box-shadow:0 0 12px hsl(var(--spark-hue),100%,70%);animation:partyCannonBlast 1.5s cubic-bezier(.12,.65,.28,1) forwards}
+@keyframes partyCannonBlast{0%{opacity:1;transform:rotate(var(--spark-angle)) translateY(0) scale(1)}100%{opacity:0;transform:rotate(var(--spark-angle)) translateY(calc(-1 * var(--spark-distance))) scale(.15)}}
+#birthdayParty .party-fireworks-bank{position:absolute;inset:0}
+#birthdayParty .party-firework{position:absolute;width:8px;height:8px;border-radius:50%;background:hsl(var(--firework-hue),100%,70%);box-shadow:0 0 12px 5px hsl(var(--firework-hue),100%,65%);opacity:0;animation:partyFireworkBurst 2.7s ease-out forwards}
+#birthdayParty .party-firework:before{content:"";position:absolute;inset:-5px;border-radius:50%;background:repeating-conic-gradient(from 0deg,hsl(var(--firework-hue),100%,75%) 0deg 3deg,transparent 4deg 15deg);mask:radial-gradient(circle,transparent 0 15%,#000 18% 100%);transform:scale(.05);filter:drop-shadow(0 0 5px hsl(var(--firework-hue),100%,70%));animation:partyFireworkRays 1.25s ease-out .15s forwards}
+@keyframes partyFireworkBurst{0%{opacity:0;transform:scale(.1)}12%{opacity:1}65%{opacity:1}100%{opacity:0;transform:scale(1.3)}}
+@keyframes partyFireworkRays{0%{transform:scale(.05);opacity:1}75%{transform:scale(5);opacity:.9}100%{transform:scale(6);opacity:0}}
+#birthdayParty .party-grand-announcement{position:absolute;z-index:3;left:50%;top:17%;width:min(700px,90%);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;opacity:0;transform:translate(-50%,-20px) scale(.8);pointer-events:none}
+#birthdayParty.party-started .party-grand-announcement{animation:partyAnnouncement 1s cubic-bezier(.2,.8,.2,1) .65s forwards}
+#birthdayParty .party-grand-announcement span{color:#ffe6a9;font:700 10px Arial,sans-serif;letter-spacing:.42em;text-shadow:0 0 14px #ffcc6a}
+#birthdayParty .party-grand-announcement strong{color:#fff2c7;font:italic 900 clamp(54px,12vw,112px)/.95 Georgia,serif;letter-spacing:.13em;text-shadow:0 0 10px #fff,0 0 30px #ffcf69,0 0 65px #ff4b9c}
+#birthdayParty .party-grand-announcement small{color:#fff;font:800 clamp(11px,2vw,16px) Arial,sans-serif;letter-spacing:.24em;text-shadow:0 2px 15px #000,0 0 20px #ff80bd}
+@keyframes partyAnnouncement{0%{opacity:0;transform:translate(-50%,-20px) scale(.8)}70%{opacity:1;transform:translate(-50%,5px) scale(1.04)}100%{opacity:1;transform:translate(-50%,0) scale(1)}}
+#birthdayParty .birthday-scene-content{z-index:4}
+#birthdayParty.party-started .birthday-scene-content{animation:partyContentLift .8s ease-out both}
+@keyframes partyContentLift{from{transform:translateY(12px);filter:brightness(.6)}to{transform:translateY(0);filter:brightness(1)}}
+#birthdayParty .party-confetti{z-index:5}
+@media(max-width:650px){#birthdayParty .party-grand-announcement{top:12%}#birthdayParty .party-grand-announcement span{letter-spacing:.22em;font-size:8px}#birthdayParty .party-grand-announcement small{letter-spacing:.12em;font-size:10px}#birthdayParty .party-cannon-left{left:3%}#birthdayParty .party-cannon-right{right:3%}}
+@media(prefers-reduced-motion:reduce){#birthdayParty .party-laser-bank i,#birthdayParty .party-firework,#birthdayParty .party-firework:before,#birthdayParty.party-started .party-grand-announcement{animation:none!important}}
