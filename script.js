@@ -64,7 +64,7 @@ function showPage(index){
   currentPage=index;
   $('#progressBar').style.width=((index)/(pages.length-1)*100)+'%';
 
-  if(index===9 || index===26) startFireworks();
+  if(index===8 || index===26) startFireworks();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
